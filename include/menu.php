@@ -145,7 +145,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="">
+									<a href="../admin/liste_admins.php">
 										<span class="micon bi bi-circle  mr-3"></span>
 										Administrateurs
 									</a>

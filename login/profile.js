@@ -65,3 +65,19 @@
     document.getElementById('photo').click();
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

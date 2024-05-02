@@ -137,7 +137,7 @@ if (isset($_POST["enregistrer"])) {
 
             // Envoyer le code généré à l'utilisateur par e-mail
             sendVerificationCode($email, $code);
-         $succes_message = "Votre compte a été créé avec succès. Un e-mail contenant un code de vérification a été envoyé à votre adresse e-mail. <a href='code_verification.php?user_id=$user_id'>Cliquez ici</a> pour entrer votre code de validation.";
+         $succes_message = "Votre compte a été créé avec succès. Un e-mail contenant un code de vérification a été envoyé à votre adresse e-mail. <a href='code_verification.php?user_id=$user_id' class='text-danger'>Cliquez ici</a> pour entrer votre code de validation.";
            
  
 
