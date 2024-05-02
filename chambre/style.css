@@ -1,0 +1,4 @@
+.img-fluid-custom {
+    max-width: 100%; /* Ajustez la valeur selon vos besoins */
+    height: auto; /* Garantit que les proportions de l'image sont préservées */
+}

@@ -1,0 +1,25 @@
+
+
+    .edit-indicator {
+    position: absolute;
+    bottom: 0; /* Ajustez cette valeur selon vos préférences */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.edit-indicator:hover {
+    opacity: 0.8;
+}
+.profile-img {
+    width: 150px; /* Taille de l'image */
+    height: 150px; /* Taille de l'image */
+    border-radius: 50%; /* Pour arrondir l'image */
+    object-fit: cover; /* Pour que l'image conserve ses proportions et remplisse le conteneur */
+    cursor: pointer; /* Curseur pointer pour indiquer que l'image est cliquable */
+}

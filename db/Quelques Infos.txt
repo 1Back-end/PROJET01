@@ -1,0 +1,27 @@
+   
+
+         Informatique et Technologies de l'Information et de la Communication (TIC) :
+
+        Filières : Génie Informatique, Réseaux et Télécommunications, Développement Web et Applications Mobiles, Sécurité Informatique.
+
+       Gestion et Commerce :
+
+        Filières : Management, Finance, Comptabilité, Marketing, Ressources Humaines, Logistique et Supply Chain Management.
+
+    Droit et Sciences Politiques :
+        Filières : Droit Public, Droit Privé, Sciences Politiques, Relations Internationales.
+
+    Ingénierie et Sciences Appliquées :
+        Filières : Génie Civil, Génie Électrique, Génie Mécanique, Génie des Procédés, Génie Industriel.
+
+    Agriculture et Environnement :
+        Filières : Agronomie, Gestion de l'Environnement, Sciences Forestières, Élevage et Productions Animales.
+
+    Tourisme et Hôtellerie :
+        Filières : Management du Tourisme, Gestion Hôtelière, Guide Touristique.
+
+    Arts et Communication :
+        Filières : Journalisme et Communication, Arts Visuels et Design, Cinéma et Audiovisuel, Musique et Spectacle Vivant.
+
+    Éducation et Sciences de l'Éducation :
+        Filières : Enseignement Primaire et Secondaire, Pédagogie et Sciences de l'Éducation, Formation des Enseignants.

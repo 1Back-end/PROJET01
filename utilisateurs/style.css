@@ -1,0 +1,33 @@
+/* Google Poppins Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root{
+    --primary-font-family: 'Poppins', sans-serif;
+    --light-white:#f5f8fa;
+    --gray:#5e6278;
+    --gray-1:#e3e3e3;
+}
+body{
+    font-family:var(--primary-font-family);
+    font-size: 14px;
+    background:#0E2E50;
+} 
+
+/* Main CSS */ 
+
+
+
+.form-control::placeholder {
+    color: var(--bs-secondary-color);
+    opacity: 1;
+    font-size: 12px;
+    }
+        
+      

@@ -1,0 +1,11 @@
+/* Style pour les icônes sur les écrans larges */
+.icon{
+    font-size:16px;
+}
+
+/* Style pour les icônes sur les écrans plus petits */
+@media (max-width: 732px) { /* Modifier la taille de l'écran selon vos besoins */
+    .icon {
+        font-size: 12px; /* Taille de l'icône sur les écrans plus petits */
+    }
+}
