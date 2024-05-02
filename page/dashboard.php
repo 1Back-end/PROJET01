@@ -30,7 +30,7 @@ if ($IsSuperAdmin) {
   <div class="col-lg-4 col-md-12 col-sm-12 mb-30">
     <div class="card-box pd-20 height-80-p">
         <div class="text-center">
-            <?php $total_clients = getTotalClients($connexion); ?>
+            <?php $nombre_interesses_valides = countValidatedInterests($connexion); ?>
             <h6 class="mb-3 text-uppercase font-12 h6">Total Clients</h6>
             <div class="d-flex justify-content-between align-items-center">
             <div class="mr-auto">
@@ -41,7 +41,7 @@ if ($IsSuperAdmin) {
                     </div>
                 </div>
                 <div class="ml-auto">
-                    <h6 class="mr-2" style="font-size: 16px;"><?php echo $total_clients; ?></h6>
+                    <h6 class="mr-2" style="font-size: 16px;"><?php echo $nombre_interesses_valides; ?></h6>
                 </div>
                 
             </div>
@@ -92,7 +92,7 @@ if ($IsSuperAdmin) {
                    </div>
                 </div>
                 <div class="ml-auto"> <!-- Nombre à droite -->
-                <h6 class="mr-2" style="font-size: 16px;" ><?php echo $total_agents_immobiliers; ?></h6>
+                <h6 class="mr-2" style="font-size: 16px;"><?php echo $total_agents_immobiliers; ?></h6>
 
                 </div>
             </div>
@@ -104,7 +104,7 @@ if ($IsSuperAdmin) {
 <div class="col-lg-4 col-md-12 col-sm-12 mb-30">
     <div class="card-box pd-20 height-80-p">
         <div class="text-center">
-            <?php $total_clients = getTotalClients($connexion); ?>
+        <?php $total_admins = getTotalAdmins($connexion);?>
             <h6 class="mb-3 h6 text-uppercase font-12">Total Admins</h6>
             <div class="d-flex justify-content-between align-items-center">
             <div class="mr-auto logo">
@@ -115,7 +115,7 @@ if ($IsSuperAdmin) {
                     </div>
                 </div>
                 <div class="ml-auto">
-                    <h6 class="mr-2" style="font-size: 16px;"><?php echo $total_clients; ?></h6>
+                    <h6 class="mr-2" style="font-size: 16px;"><?php echo $total_admins; ?></h6>
                 </div>
                 
             </div>
@@ -253,7 +253,7 @@ if ($IsSuperAdmin) {
 <div class="col-lg-4 col-md-12 col-sm-12 mb-30">
     <div class="card-box pd-20 height-80-p">
         <div class="progress-box text-center">
-            <?php $total_reservation_en_cours = getTotalReservationEnCours($connexion); ?>
+            <?php $nombre_reservations_en_attente = countPendingReservations($connexion);?>
             <h6 class="text-center text-uppercase font-12 padding-top-10 h6">Reservation En cours</h6> <!-- Titre du total de Chambres -->
             <div class="d-flex justify-content-between align-items-center">
             <div class="mr-auto"> <!-- Icône à droite -->
@@ -265,7 +265,7 @@ if ($IsSuperAdmin) {
                 </div>
             <!-- Div pour le nombre et l'icône, avec écart -->
                 <div class="ml-auto" > <!-- Nombre à gauche -->
-                    <h6 class="mb-0" style="font-size: 16px;"><?php echo $total_reservation_en_cours; ?></h6> <!-- Nombre de Chambres en tant que h6 -->
+                    <h6 class="mb-0" style="font-size: 16px;"><?php echo $nombre_reservations_en_attente; ?></h6> <!-- Nombre de Chambres en tant que h6 -->
                 </div>
                
             </div>
@@ -279,7 +279,7 @@ if ($IsSuperAdmin) {
 <div class="col-lg-4 col-md-12 col-sm-12 mb-30">
     <div class="card-box pd-20 height-80-p">
         <div class="progress-box text-center">
-            <?php $total_reservation_annuler = getTotalReservationAnnuler($connexion); ?>
+            <?php $nombre_reservations_annulees = countCancelledReservations($connexion); ?>
             <h6 class="text-center text-uppercase font-12 padding-top-10 h6">Reservation Annulée</h6> <!-- Titre du total de Chambres -->
             <div class="d-flex justify-content-between align-items-center">
             <div class="mr-auto"> <!-- Icône à droite -->
@@ -291,7 +291,7 @@ if ($IsSuperAdmin) {
                 </div>
             <!-- Div pour le nombre et l'icône, avec écart -->
                 <div class="ml-auto" > <!-- Nombre à gauche -->
-                    <h6 class="mb-0" style="font-size: 16px;"><?php echo $total_reservation_annuler; ?></h6> 
+                    <h6 class="mb-0" style="font-size: 16px;"><?php echo $nombre_reservations_annulees; ?></h6> 
                     <!-- Nombre de Chambres en tant que h6 -->
                 </div>
                
@@ -304,7 +304,7 @@ if ($IsSuperAdmin) {
 <div class="col-lg-4 col-md-12 col-sm-12 mb-30">
     <div class="card-box pd-20 height-80-p">
         <div class="progress-box text-center">
-            <?php $total_reservation_valider = getTotalReservationValider($connexion); ?>
+            <?php $nombre_reservations_validees = countValidatedReservations($connexion); ?>
             <h6 class="text-center text-uppercase font-12 padding-top-10 h6">Reservation Validée</h6> <!-- Titre du total de Chambres -->
             <div class="d-flex justify-content-between align-items-center">
             <div class="mr-auto"> <!-- Icône à droite -->
@@ -316,7 +316,7 @@ if ($IsSuperAdmin) {
                 </div>
             <!-- Div pour le nombre et l'icône, avec écart -->
                 <div class="ml-auto" > <!-- Nombre à gauche -->
-                    <h6 class="mb-0" style="font-size: 16px;"><?php echo $total_reservation_valider; ?></h6> 
+                    <h6 class="mb-0" style="font-size: 16px;"><?php echo $nombre_reservations_validees; ?></h6> 
                     <!-- Nombre de Chambres en tant que h6 -->
                 </div>
                
@@ -334,7 +334,7 @@ if ($IsSuperAdmin) {
 
 <style>
     .fa-2x {
-  font-size: 20px;
+  font-size: 18px;
 }
 </style>
 
