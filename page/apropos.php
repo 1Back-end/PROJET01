@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <?php include_once("../fonction.php"); ?>
 <?php include_once("../database/db.php"); ?>
 <head>
@@ -131,10 +131,10 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 p-md-5 p-3 wow fadeIn" data-wow-delay="0.5s">
-                        <h3 class="mb-4">Endroit n°1 pour trouver la propriété idéale</h3>
-                        <p class="mb-4"><span class="text-primary">IMMO INVESTEMENT SCI</span>, votre destination privilégiée pour trouver la propriété parfaite. Avec notre expertise et notre engagement envers la qualité, nous sommes l'endroit n°1 pour vos besoins immobiliers. Faites confiance à notre équipe pour vous guider vers la maison de vos rêves.</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Nous vous guidons vers votre propriété de rêve, avec expertise et engagement.</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Découvrez votre propriété parfaite, avec un service dédié et des solutions adaptées.</p>
+                        <h3 class="mb-4">Endroit n°1 pour trouver le logement idéale</h3>
+                        <p class="mb-4"><span class="text-primary">IMMO INVESTEMENT SCI</span>, votre destination privilégiée pour trouver le logement parfait. Avec notre expertise et notre engagement envers la qualité, nous sommes l'endroit n°1 pour vos besoins immobiliers. Faites confiance à notre équipe pour vous guider vers la maison de vos rêves.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Nous vous guidons vers votre logement de rêve, avec expertise et engagement.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Découvrez votre logement parfait, avec un service dédié et des solutions adaptées.</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Explorez un monde de possibilités immobilières avec notre expertise à vos côtés.</p>
                         <a class="btn btn-primary py-3 px-5 mt-3" href="">En savoir plus</a>
                     </div>
@@ -195,7 +195,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="mb-3">Nos Propriétés</h4>
+                    <h4 class="mb-3">Nos Logements</h4>
                     <p class="">Dans notre vaste sélection de propriétés, vous découvrirez une gamme variée répondant à tous les styles de vie. Des appartements modernes offrant un confort contemporain aux chambres élégantes créant une atmosphère apaisante, en passant par les studios modernes conçus pour une vie urbaine dynamique, chaque type de logement a été soigneusement sélectionné pour répondre à vos besoins uniques. Que vous recherchiez l'espace supplémentaire d'un duplex ou la simplicité d'un studio moderne, vous trouverez votre refuge idéal parmi nos options diverses.</p>
                 </div>
                 <div class="row g-4">
@@ -247,6 +247,12 @@
                             </div>
                         </a>
                  </div>
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h4 class="mb-3">pourcentages</h4>
+                    <p class="">Lors de la publication d'un produit par un acteur du système (Agent immobilier ou Propriétaire), lorsque le produit est validé par l'administrateur, si le logement est pris par un client, l'utilisateur bénéficiera d'un pourcentage sur son logement. Les pourcentages sont repartis comme suite:</p>
+                        <p><i class="fa fa-check text-primary me-3"></i><span class="text text-danger">Agent Immobilier:</span> Il bénéficiera de 30% sur chacun de ses produits pris pas les clients</p>
+                        <p><i class="fa fa-check text-primary me-3"></i><span class="text text-danger">Propriétaire:</span> Il bénéficiera de 20% sur chacun de ses produits pris pas les clients</p>
+                </div>
                 </div>
             </div>
         </div>

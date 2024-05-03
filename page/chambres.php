@@ -190,7 +190,7 @@ if ($result) {
             }
         } else {
             // Aucun résultat trouvé, afficher un message d'alerte
-            echo '<div class="alert alert-info" role="alert">Nous sommes désolés, mais aucune chambre moderne n\'a été trouvée pour le moment. Nous actualisons régulièrement notre inventaire, veuillez revenir ultérieurement ou nous contacter pour plus d\'informations.</div>';
+            echo '<div class="alert alert-info" role="alert">Aucune  Chambre Moderne n\'a encore été enregistré.</div>';
 
 
         }

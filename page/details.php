@@ -105,7 +105,7 @@
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
-                    <h4 class="display-5 animated fadeIn mt-5">Details du produit</h4> 
+                    <h4 class="display-5 animated fadeIn mt-5">Details du Logement</h4> 
                         <nav aria-label="breadcrumb animated fadeIn">
                         <ol class="breadcrumb text-uppercase">
                             <li class="breadcrumb-item"><a href="../index.php">Acceuil</a></li>
@@ -145,7 +145,7 @@ if (isset($_GET['id'])) {
                 <div class="row">
                     <!-- Colonne des images et des informations du produit -->
                     <div class="col-md-6 col-sm-12 shadow-sm py-3 p-3 mt-3">
-                        <h5 class="font-12 text-uppercase">Images du produit</h5>
+                        <h5 class="font-12 text-uppercase">Images du Logement</h5>
                         <?php 
                         // Récupérer les images du produit
                         $images = explode(',', $row['photo']);
@@ -164,7 +164,7 @@ if (isset($_GET['id'])) {
                             </div>
                         <?php } ?>
                         <div class="mt-3">
-                            <h5 class="font-12 text-uppercase">Informations du produit</h5>
+                            <h5 class="font-12 text-uppercase">Informations sur le Logement</h5>
                             <p class="text-justify w-100"><?php echo $row['description']; ?></p>
 
                             <div class="info">
@@ -199,15 +199,15 @@ if (isset($_GET['id'])) {
                                 echo "<div class='alert alert-danger' role='alert'>$erreur_champ</div>";
                             } else {
                                 // Affichage du message de succès
-                                echo "<div class='alert alert-success' role='alert'>Votre demande a été soumise avec succès.</div>";
+                                echo "<div class='alert alert-success' role='alert'>Votre demande a été soumise avec succès, Nous vous contacterons le plus tôt possible.</div>";
                             }
                         }
                         ?>
 
 
                         <div class="shadow-sm py-3 p-3 mt-3">
-                            <h5 class="font-12 text-uppercase">Formulaire de contact</h5>
-                            <p class="text-justify">Pour toute demande d'information ou pour manifester votre intérêt, veuillez remplir le formulaire ci-dessous et soumettre vos coordonnées. Vous pouvez également nous contacter directement via WhatsApp.</p>
+                            <h5 class="font-12 text-uppercase">Nous Contacter</h5>
+                            <p class="text-justify">Pour toute demande d'information ou pour manifester votre intérêt, veuillez remplir le formulaire ci-dessous et soumettre vos coordonnées.</p>
                             <form action="" method="post">
                                 <?php $id_chambre = $_GET["id"]; ?>
                                 <div class="mb-2">
@@ -225,11 +225,11 @@ if (isset($_GET['id'])) {
                                     <input type="tel" id="phone" class="form-control py-2" placeholder="Votre numéro de téléphone" name="tel">
                                 </div>
                                 <div class="mb-2">
-                                    <textarea name="description" id="" cols="5" rows="5" class="form-control" placeholder="Hello ! je suis intéressé par l'appartement moderne..."></textarea>
+                                    <textarea name="description" id="" cols="5" rows="5" class="form-control" placeholder="Hello ! je suis intéressé par ce Logement ..."></textarea>
                                 </div>
                                 <div class="mb-2">
-                                <button  class="btn btn-dark mb-2 btn-responsive"  name="envoyer" type="submit"><i class="fas fa-paper-plane"></i> Soumettre</button>
-                                    <a href="#" class="btn btn-success mb-2 btn-responsive border-0" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i> Nous contacter sur WhatsApp</a>
+                                <button  class="btn btn-dark mb-2 btn-responsive"  name="envoyer" type="submit"><i class="fas fa-paper-plane"></i> Soumettre votre demande</button>
+                                    <!--<a href="#" class="btn btn-success mb-2 btn-responsive border-0" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i> Nous contacter sur WhatsApp</a>-->
 
                                 </div>
                             </form>
@@ -250,15 +250,14 @@ if (isset($_GET['id'])) {
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Entrer en contact</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                <h5 class="text-white mb-4">Nous contacter</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Palais des congrès, Yaoundé, Cameroun</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@gmail.com</p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">

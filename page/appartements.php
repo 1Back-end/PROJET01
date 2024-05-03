@@ -190,7 +190,7 @@ if ($result) {
             }
         } else {
             // Aucun résultat trouvé, afficher un message d'alerte
-            echo '<div class="alert alert-info" role="alert">Aucun Appartement Moderne n\'a été trouvé pour le moment. Veuillez vérifier ultérieurement ou contactez-nous pour plus d\'informations.</div>';
+            echo '<div class="alert alert-info" role="alert">Aucun  Appartement Moderne n\'a encore été enregistré.</div>';
 
         }
         ?>

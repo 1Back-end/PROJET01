@@ -100,7 +100,7 @@
                         <p class="animated text-justify fadeIn mb-4 pb-2">Bienvenue chez <span class="text-primary">IMMO INVESTMENT SCI</span>, votre partenaire de confiance pour la gestion de vos biens immobiliers. Explorez notre vaste sélection de propriétés immobilières, comprenant des chambres modernes élégantes, des appartements urbains, des duplex spacieux et d'autres options pour répondre à vos besoins et à vos préférences. Avec <span class="text-primary">IMMO INVESTMENT SCI</span>, trouvez la résidence idéale pour votre style de vie.</p>
                         </div>
 
-                    <a href="#produit" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Commencer</a>
+                    <a href="#produit" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Nos Logements</a>
                 </div>
                 <div class="col-md-6 animated fadeIn">
                     <div class="owl-carousel header-carousel">
@@ -124,9 +124,25 @@
                     <div class="col-md-10">
                     <form  method="GET">
                         <div class="row g-2">
+                            <div class="col-md-3">
+                                <select name="region" class="form-select border-0 py-3" required>
+                                    <option selected>Region</option>
+                                    <?php foreach ($regions as $region): ?>
+                                    <option><?php echo $region; ?></option>
+                                <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="ville" class="form-select border-0 py-3" required>
+                                    <option selected>ville</option>
+                                    <?php foreach ($villes as $ville): ?>
+                                    <option><?php echo $ville; ?></option>
+                                <?php endforeach; ?>
+                                </select>
+                            </div>
                         <div class="col-md-3">
                                 <select name="quartier" class="form-select border-0 py-3" required>
-                                    <option selected>Tous les quartiers</option>
+                                    <option selected>quartier</option>
                                     <?php foreach ($quartiers as $quartier): ?>
                                         <option><?php echo $quartier; ?></option>
                                     <?php endforeach; ?>
@@ -134,26 +150,10 @@
                             </div>
                             <div class="col-md-3">
                                 <select name="logement" class="form-select border-0 py-3" required>
-                                    <option selected>Toutes les propriété</option>
+                                    <option selected>Type de logement</option>
                                     <?php foreach ($types_logement as $type_logement): ?>
                                         <option><?php echo $type_logement; ?></option>
                                     <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <select name="ville" class="form-select border-0 py-3" required>
-                                    <option selected>Toutes les  villes</option>
-                                    <?php foreach ($villes as $ville): ?>
-                                    <option><?php echo $ville; ?></option>
-                                <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <select name="region" class="form-select border-0 py-3" required>
-                                    <option selected>Toutes les regions</option>
-                                    <?php foreach ($regions as $region): ?>
-                                    <option><?php echo $region; ?></option>
-                                <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-6">
                 <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                    <h1 class="mb-3">Liste des propriétés</h1>
+                    <h1 class="mb-3">Liste des Logements</h1>
                     <p>Explorez notre gamme de biens immobiliers contemporains, incluant des appartements modernes, des duplex élégants, des chambres stylées et des studios fonctionnels. Chez <span class="text-primary">IMMO INVESTMENT SCI</span>, nous sommes là pour vous proposer des options de logement qui incarnent le confort et le style modernes.</p>
                 </div>
             </div>
@@ -287,7 +287,7 @@ if ($result) {
                           
                         </div>
                         <div class="btn-group text-center" role="group" aria-label="Options">
-                            <a href="page/details.php?id=<?php echo $row['id']; ?>" class="btn btn-xs btn-sm btn-success text-white ">Voir plus <i class="bi bi-arrow-right"></i></a>
+                            <a href="page/details.php?id=<?php echo $row['id']; ?>" class="btn btn-xs btn-sm btn-success text-white ">Voir Les Détails <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -321,7 +321,7 @@ if ($result) {
  <div class="container-xxl py-5 ">
             <div class="container p-2">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="mb-3">Types de propriétés                    </h4>
+                    <h4 class="mb-3">Types de Logement                    </h4>
                     <p>Explorez notre sélection diversifiée de propriétés : des appartements urbains tendance aux duplex élégants, en passant par les chambres contemporaines et les studios pratiques. Trouvez votre chez-vous idéal avec <span class="text-primary">IMMO INVESTMENT SCI</span>.</p>
                 </div>
                 <div class="row g-4">
@@ -332,7 +332,7 @@ if ($result) {
                                 <div class="mb-3">
                                 <i class="fa fa-building fa-2x"></i>
                                 </div>
-                                <h6>Appartements</h6>
+                                <h6>Appartements Modernes</h6>
                                 <span style="font-size:25px;font-weight:700;"><?php echo $resultat['total_appartements_moderne'] ?></span>
                             </div>
                         </a>
@@ -345,7 +345,7 @@ if ($result) {
                                 <div class="mb-3">
                                 <i class="fa fa-building fa-2x"></i>
                                 </div>
-                                <h6>Studios Moderne</h6>
+                                <h6>Studios Modernes</h6>
                                 <span style="font-size:25px;font-weight:700;"><?php echo $resultat['total_studios_moderne'] ?></span>
                             </div>
                         </a>
@@ -357,7 +357,7 @@ if ($result) {
                                 <div class="mb-3">
                                 <i class="fa fa-building fa-2x"></i>
                                 </div>
-                                <h6>Chambres Moderne</h6>
+                                <h6>Chambres Modernes</h6>
                                 <span style="font-size:25px;font-weight:700;"><?php echo $resultat['total_chambres_moderne'] ?></span>
                             </div>
                         </a>
@@ -394,7 +394,7 @@ if ($result) {
                         </div>
                     </div>
                     <div class="col-lg-6 p-md-5 p-3 wow fadeIn" data-wow-delay="0.5s">
-                        <h3 class="mb-4">Endroit n°1 pour trouver la propriété idéale</h3>
+                        <h3 class="mb-4">Endroit n°1 pour trouver le logement idéale</h3>
                         <p class="mb-4"><span class="text-primary">IMMO INVESTEMENT SCI</span>, votre destination privilégiée pour trouver la propriété parfaite. Avec notre expertise et notre engagement envers la qualité, nous sommes l'endroit n°1 pour vos besoins immobiliers. Faites confiance à notre équipe pour vous guider vers la maison de vos rêves.</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Nous vous guidons vers votre propriété de rêve, avec expertise et engagement.</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Découvrez votre propriété parfaite, avec un service dédié et des solutions adaptées.</p>
@@ -412,11 +412,11 @@ if ($result) {
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Entrer en contact</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                <h5 class="text-white mb-4">Nous contacter</h5>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Palais de congrès, Yaoundé, Cameroun</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 699 99 93 18</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 673 20 41 59</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>www@example.com</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>www@gmail.com</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>

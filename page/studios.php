@@ -190,7 +190,7 @@ if ($result) {
             }
         } else {
             // Aucun résultat trouvé, afficher un message d'alerte
-            echo '<div class="alert alert-info" role="alert">Nous sommes désolés, mais aucun studio moderne n\'a été trouvé pour le moment.Veuillez revenir ultérieurement ou nous contacter pour plus d\'informations.</div>';
+            echo '<div class="alert alert-info" role="alert">Aucun  Studio Moderne n\'a encore été enregistré.</div>';
 
         }
         ?>
