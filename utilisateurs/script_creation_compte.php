@@ -205,6 +205,7 @@ function sendVerificationCode($email, $code) {
         // Contenu
         $mail->isHTML(true);
         $mail->Subject = 'Code de vérification';
+        $mail->CharSet = 'UTF-8'; // Définir l'encodage des caractères
         $mail->Body    = 'Votre code de vérification est : ' . $code;
 
         $mail->send();

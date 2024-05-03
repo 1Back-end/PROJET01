@@ -26,7 +26,7 @@ if ($result && $result->rowCount() > 0) {
             </div>
         </div>
 
-        <div class="col-md-12 col-sm-12 p-2">
+        <div class="col-md-12 col-sm-12 p-3">
             <div class="row">
                 <?php
                 // Boucle sur chaque ligne de résultat

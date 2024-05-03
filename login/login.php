@@ -67,7 +67,7 @@
                         <a class="btn btn-success btn-add btn-lg btn-block" href="../utilisateurs/creation_compte.php">Créer un compte</a>
                     </div></br>
                     <div class="col-6">
-                        <div class="back"><a href="../index.php"><label for="">Retour à l'acceuil</label></a></div>
+                        <div class="back tex-center"><a href="../index.php"><label for="">Retour à l'acceuil</label></a></div>
                     </div>
                 </div>
             </div>

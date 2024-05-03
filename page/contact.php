@@ -107,7 +107,7 @@
                         </p>
                 </div>
                 <div class="col-md-6 animated fadeIn">
-                    <img class="img-fluid" src="../package/img/image1.jpg" alt="">
+                    <img class="img-entete" src="../package/img/image1.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -132,7 +132,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                            <div class="col-md-6 col-lg-5 wow fadeIn" data-wow-delay="0.3s">
                                 <div class="bg-light rounded p-3">
                                     <div class="d-flex align-items-center bg-white rounded p-3" style="border: 1px dashed rgba(0, 185, 142, .3)">
                                         <div class="icon me-3" style="width: 45px; height: 45px;">
@@ -142,7 +142,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                                 <div class="bg-light rounded p-3">
                                     <div class="d-flex align-items-center bg-white rounded p-3" style="border: 1px dashed rgba(0, 185, 142, .3)">
                                         <div class="icon me-3" style="width: 45px; height: 45px;">

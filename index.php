@@ -280,13 +280,8 @@ if ($result) {
                             ?>
                           
                         </div>
-<<<<<<< HEAD
                         <div class="pb-2" style="position: relative; bottom: 5px;">
                             <a href="page/details.php?id=<?php echo $row['id']; ?>" class="btn btn-sm  btn-add p-2 btn-success text-white mx-2" >Voir plus <i class="bi bi-arrow-right"></i></a>
-=======
-                        <div class="btn-group text-center" role="group" aria-label="Options">
-                            <a href="page/details.php?id=<?php echo $row['id']; ?>" class="btn btn-xs btn-sm btn-success text-white ">Voir Les Détails <i class="bi bi-arrow-right"></i></a>
->>>>>>> 1d0e2838b2311c73fe4cdc95778b9a1fd928d3d2
                         </div>
                     </div>
                 </div>
@@ -415,8 +410,8 @@ if ($result) {
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-">
-                        <h5 class="text-white mb-4">Immo Investment SCI</h5>
-                        <img src="src/images/logo_footer.png" alt="" width="180px" style="padding-left: 50px;">
+                        <h5 class="text-white mb-4 text-uppercase">Immo <span class="text-primary">Investment SCI</span></h5>
+                        <img src="src/images/logo_footer.png" class="rounded-circle img-fluid" alt="" width="180px" style="padding-left: 50px;">
                     </div>
                     <div class="col-lg-4 col-md-">
                         <h5 class="text-white mb-4">Contact</h5>

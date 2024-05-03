@@ -1,112 +1,160 @@
 <?php
-include_once("../database/db.php");
-
-// Pagination
-$itemsPerPage = 5;
-$page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
-$offset = ($page - 1) * $itemsPerPage;
-
-// Requête SQL de base pour récupérer tous les produits avec un statut "Présent"
-$sql = "SELECT produits.*, utilisateurs.nom AS proprietaire_nom, utilisateurs.prenom AS proprietaire_prenom 
-        FROM produits 
-        LEFT JOIN utilisateurs ON produits.proprietaire_id = utilisateurs.ID 
-        WHERE produits.STATUS = 'Present'";
-
-// Initialisation des valeurs de recherche
-$searchConditions = [];
-$searchParams = [];
-
-// Vérifier si une recherche est effectuée
-if (isset($_GET['afficher'])) {
-    // Récupérer les valeurs des champs de recherche
-    $search_keyword = isset($_GET['search_keyword']) ? $_GET['search_keyword'] : '';
-    $region = isset($_GET['region']) ? $_GET['region'] : '';
-    $departement = isset($_GET['departement']) ? $_GET['departement'] : '';
-    $logement = isset($_GET['logement']) ? $_GET['logement'] : '';
-    $statut = isset($_GET['statut']) ? $_GET['statut'] : '';
-
-    // Construire les conditions de recherche et les paramètres correspondants
-    if (!empty($search_keyword)) {
-        $searchConditions[] = "produits.code = ?";
-        $searchParams[] = $search_keyword;
-    }
-    if (!empty($region)) {
-        $searchConditions[] = "produits.region = ?";
-        $searchParams[] = $region;
-    }
-    if (!empty($departement)) {
-        $searchConditions[] = "produits.departement = ?";
-        $searchParams[] = $departement;
-    }
-    if (!empty($logement)) {
-        $searchConditions[] = "produits.type_logement = ?";
-        $searchParams[] = $logement;
-    }
-    if (!empty($statut)) {
-        $searchConditions[] = "produits.statut = ?";
-        $searchParams[] = $statut;
-    }
-
-    // Ajouter les conditions de recherche à la requête SQL
-    if (!empty($searchConditions)) {
-        $sql .= " AND " . implode(" AND ", $searchConditions);
-    }
+// Vérifiez s'il y a un message de succès ou d'erreur dans l'URL
+if (isset($_GET['success'])) {
+    $success_message = $_GET['success'];
 }
-
-// Ajouter l'ordre de tri et la limitation pour la pagination
-$sql .= " ORDER BY produits.date_ajout DESC LIMIT $offset, $itemsPerPage";
-
-// Préparer la requête SQL avec les conditions de recherche
-$stmt = $connexion->prepare($sql);
-// Exécuter la requête SQL avec les paramètres de recherche
-$stmt->execute($searchParams);
-// Récupérer les résultats de la requête
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// Récupérer le nombre total de produits pour la pagination
-$totalProducts = $connexion->query("SELECT COUNT(*) AS total FROM produits")->fetch()['total'];
-$totalPages = ceil($totalProducts / $itemsPerPage);
-
-// Récupérer les types de logements pour le formulaire de recherche
-$sql = "SELECT DISTINCT type_logement FROM produits ORDER BY type_logement ASC";
-$produit = $connexion->query($sql)->fetchAll();
-
-// Récupérer les statuts pour le formulaire de recherche
-$sql = "SELECT DISTINCT statut FROM produits ORDER BY statut ASC";
-$statut = $connexion->query($sql)->fetchAll();
-
-// Récupérer les régions pour le formulaire de recherche
-$sql = "SELECT DISTINCT region FROM produits ORDER BY region ASC";
-$region = $connexion->query($sql)->fetchAll();
-
-// Récupérer les départements pour le formulaire de recherche
-$sql = "SELECT DISTINCT departement FROM produits ORDER BY departement ASC";
-$departement = $connexion->query($sql)->fetchAll();
+if (isset($_GET['error'])) {
+    $error_message = $_GET['error'];
+}
 ?>
 
+<?php
+
+include_once("../database/db.php");
+
+// Nombre d'éléments par page
+$elements_par_page = 5;
+
+// Récupération du numéro de page actuel à partir de l'URL
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+
+// Calcul de l'offset pour la requête SQL
+$offset = ($page - 1) * $elements_par_page;
+
+// Requête SQL pour récupérer les utilisateurs avec un rôle d'agent immobilier et un statut "Présent"
+$sql = "SELECT * FROM utilisateurs WHERE ROLE = 4 AND STATUT = 'Present' LIMIT :limit OFFSET :offset";
+$stmt = $connexion->prepare($sql);
+$stmt->bindParam(':limit', $elements_par_page, PDO::PARAM_INT);
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+$stmt->execute();
+$utilisateurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Compter le nombre total d'agents immobiliers
+$stmt_count = $connexion->prepare("SELECT COUNT(*) FROM utilisateurs WHERE ROLE = 4 AND STATUT = 'Present'");
+$stmt_count->execute();
+$total_utilisateurs = $stmt_count->fetchColumn();
+
+// Calcul du nombre total de pages
+$total_pages = ceil($total_utilisateurs / $elements_par_page);
+?>
+
+
 <?php include_once("../include/menu.php"); ?>
-<link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <div class="main-container pb-5">
-    <div class="col-md-12 col-sm-12 ">
-  
-    <div class="card-box p-3 mb-3 d-flex justify-content-between align-items-center">
-     <div class="mr-auto">
-     <h5 class="text-uppercase">LISTE Administrateurs</h5>
-     </div>
-       <div class="ml-auto">
-       <a href="ajouter.php" class="btn btn-dark btn-add btn-sm mt-2 mt-sm-0 order-sm-2"><i class="bi bi-plus-circle mr-2"></i>AJOUTER</a>
-       </div>
+    <?php if ($total_utilisateurs == 0) : ?>
+    <div class="col-md-12  col-sm-12">
+    <div class="alert text-center alert-info" role="alert">
+        Aucun administrateur trouvé.
     </div>
+    </div>
+    <?php else : ?>
+    <div class="col-md-12 col-sm-12">
+        <div class="card-box mb-30 py-2">
+            <h4 class="text-center text-uppercase">LISTE DES AdministrateurS</h4>
+        </div>
+    </div>
+    <div class="col-md-12 col-sm-12">
+    <!-- Afficher le message de succès -->
+<?php if (isset($success_message)): ?>
+    <div id="success_message" class="alert alert-success" role="alert">
+        <?= $success_message ?>
+    </div>
+    <script>
+        // Masquer le message de succès après 2 secondes
+        setTimeout(function() {
+            document.getElementById('success_message').style.display = 'none';
+        }, 2000);
+    </script>
+<?php endif; ?>
+
+<!-- Afficher le message d'erreur -->
+<?php if (isset($error_message)): ?>
+    <div id="error_message" class="alert alert-danger" role="alert">
+        <?= $error_message ?>
+    </div>
+    <script>
+        // Masquer le message d'erreur après 2 secondes
+        setTimeout(function() {
+            document.getElementById('error_message').style.display = 'none';
+        }, 2000);
+    </script>
+<?php endif; ?>
+</div>
+
+    <div class="col-md-12 col-sm-12">
+        <div class="pd-20 card-box mb-3 w-100">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped text-center table-striped table-hover">
+                    <thead class="text-center">
+                        <tr>
+                            <th scope="col">Avatar</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prenom</th>
+                            <th scope="col">Telephone</th>
+                            <th scope="col">Statut</th>
+                            <th scope="col">Details</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($utilisateurs as $utilisateur) : ?>
+                            <tr>
+                                <td><img src="../image_utilisateurs/<?php echo $utilisateur['PHOTO']; ?>" alt="Avatar" width="40" height="40" class="rounded-circle" style='border-radius: 50%;object-fit: cover; aspect-ratio: 1/1;'></td>
+                                <td><?php echo $utilisateur['NOM']; ?></td>
+                                <td><?php echo $utilisateur['PRENOM']; ?></td>
+                                <td><?php echo $utilisateur['TELEPHONE']; ?></td>
+                                <td>
+                                <?php 
+                                    $status = $utilisateur['STATUS'];
+                                    if ($status == 'Actif') {
+                                        echo '<span class="text-success">' . $status . '</span>';
+                                    } elseif ($status == 'Inactif') {
+                                        echo '<span class="text-danger">' . $status . '</span>';
+                                    } else {
+                                        echo $status; // Gérer d'autres cas si nécessaire
+                                    }
+                                ?>
+                            </td>
+
+                               <td> <a class="mx-2 btn btn-info btn-sm btn-xs btn-add" href="../admin/details_compte.php?id=<?= $utilisateur['ID'] ?>">Details</a></td>
+                            <td>
+                        <div class="justify-content-center justify-content-md-center align-items-center">
+                            <?php 
+                            $status = $utilisateur['STATUS'];
+                            if ($status == 'Actif') :
+                            ?>
+                                <a class="mx-2 btn btn-danger text-white btn-sm btn-xs btn-add" href="../admin/desactiver_compte.php?id=<?= $utilisateur['ID'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir désactiver ce compte ?')">Désactiver</a>
+                            <?php elseif ($status == 'Inactif') : ?>
+                                <a class="mx-2 btn btn-success btn-sm btn-xs btn-add" href="../admin/activer_compte.php?id=<?= $utilisateur['ID'] ?>" onclick="return confirm('Voulez-vous vraiment activer ce compte ?')">Activer</a>
+                            <?php else : ?>
+                                <?= $status ?> <!-- Gérer d'autres cas si nécessaire -->
+                            <?php endif; ?>
+                        </div>
+                    </td>
+
+
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Affichage de la pagination -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <?php for ($i = 1; $i <= $total_pages; $i++) : ?>
+                    <li class="page-item <?php if ($page == $i) echo 'active'; ?>">
+                        <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                    </li>
+                <?php endfor; ?>
+            </ul>
+        </nav>
+    </div>
+    <?php endif; ?>
 </div>
 
 
-    
-    
-                   
-    </div>
-
-       
-</div>
+</body>
+</html>

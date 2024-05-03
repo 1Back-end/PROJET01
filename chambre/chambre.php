@@ -26,14 +26,14 @@ if ($result && $result->rowCount() > 0) {
             </div>
         </div>
 
-        <div class="col-md-12 col-sm-12 p-2">
+        <div class="col-md-12 col-sm-12 p-3">
             <div class="row">
                 <?php
                 // Boucle sur chaque ligne de résultat
                 foreach ($result as $row) {
                 ?>
                     <div class="col-md-4 col-sm-12 p-2 col-xxl-12">
-                        <div class="card-box mb-10 text-white text-center pl-3 p-2">
+                        <div class="card-box mb-10 text-white text-center  p-2">
                             <div class="img-area mb-4 ">
                                 <img src="../uploads/<?php echo $row['photo_principale']; ?>" class="img-card  w-100" alt="Image du produit">
                             </div>

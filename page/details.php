@@ -232,14 +232,9 @@ if (isset($_GET['id'])) {
                                     <textarea name="description" id="" cols="5" rows="5" class="form-control" placeholder="Hello ! je suis intéressé par ce Logement ..."></textarea>
                                 </div>
                                 <div class="mb-2">
-<<<<<<< HEAD
-                                <button  class="btn btn-dark mb-2 btn-responsive"  name="envoyer" type="submit">Soumettre <i class="fas fa-paper-plane"></i> </button>
-                                    
-=======
                                 <button  class="btn btn-dark mb-2 btn-responsive"  name="envoyer" type="submit"><i class="fas fa-paper-plane"></i> Soumettre votre demande</button>
                                     <!--<a href="#" class="btn btn-success mb-2 btn-responsive border-0" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i> Nous contacter sur WhatsApp</a>-->
 
->>>>>>> 1d0e2838b2311c73fe4cdc95778b9a1fd928d3d2
                                 </div>
                             </form>
                         </div>

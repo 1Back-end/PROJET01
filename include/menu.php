@@ -125,33 +125,38 @@
 							<span class="micon bi bi-circle"></span><span class="mtext">Utilisateurs</span>
 						</a>
 						<ul class="submenu">
-					
-								<li>
-									<a href="../client/client.php">
+						<li>
+									<a href="../admin/liste_admins.php">
 										<span class="micon bi bi-circle  mr-3"></span>
-										Clients
+										Administrateurs
 									</a>
 								</li>
+
 								<li>
 									<a href="../agent/AgentImmobilier.php">
 										<span class="micon bi bi-circle  mr-3"></span>
 										Agents Immobiliers
 									</a>
 								</li>
+
 								<li>
 									<a href="../proprietaire/proprietaire.php">
 										<span class="micon bi bi-circle  mr-3"></span>
 										Propriétaires
 									</a>
 								</li>
+
 								<li>
-									<a href="../admin/liste_admins.php">
+									<a href="../client/client.php">
 										<span class="micon bi bi-circle  mr-3"></span>
-										Administrateurs
+										Clients
 									</a>
 								</li>
+								
+								
+								
 						</ul>
-					</li><br>
+					</li>
 					<?php endif; ?>
 
 					
@@ -162,8 +167,6 @@
 							<span class="micon bi bi-circle"></span><span class="mtext">Produits</span>
 						</a>
 						<ul class="submenu">
-
-					
 							<li>
 								<a href="../duplex/duplex.php">
 									<span class="micon bi bi-circle mr-3"></span>
@@ -173,19 +176,19 @@
 							<li>
 								<a href="../appartement/appartement.php">
 									<span class="micon bi bi-circle mr-3"></span>
-									Appartements
+									Appartements Moderne
 								</a>
 							</li>
 							<li>
 								<a href="../studio/studio.php">
 									<span class="micon bi bi-circle mr-3"></span>
-									Studios
+									Studios Moderne
 								</a>
 							</li>
 							<li>
 								<a href="../chambre/chambre.php">
 									<span class="micon bi bi-circle mr-3"></span>
-									Chambres
+									Chambres Moderne
 								</a>
 							</li>
 						</ul>

@@ -11,8 +11,8 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 // Calcul de l'offset pour la requête SQL
 $offset = ($page - 1) * $elements_par_page;
 
-// Requête SQL pour récupérer les réservations avec pagination et tri alphabétique
-$sql = "SELECT id, interesse, email, telephone,date_reservation FROM reservation ORDER BY id ASC LIMIT :limit OFFSET :offset";
+// Requête SQL pour récupérer les réservations avec pagination, tri alphabétique et statut validé
+$sql = "SELECT id, interesse, email, telephone, date_reservation FROM reservation WHERE statut = 'validé' ORDER BY id ASC LIMIT :limit OFFSET :offset";
 $stmt = $connexion->prepare($sql);
 $stmt->bindParam(':limit', $elements_par_page, PDO::PARAM_INT);
 $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
@@ -20,7 +20,7 @@ $stmt->execute();
 $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Compter le nombre total de réservations
-$stmt_count = $connexion->prepare("SELECT COUNT(*) FROM reservation");
+$stmt_count = $connexion->prepare("SELECT COUNT(*) FROM reservation WHERE statut = 'validé'");
 $stmt_count->execute();
 $total_reservations = $stmt_count->fetchColumn();
 
@@ -33,7 +33,7 @@ $total_pages = ceil($total_reservations / $elements_par_page);
     <?php if ($total_reservations == 0) : ?>
     <div class="col-md-12 col-sm-12">
     <div class="alert text-center alert-info" role="alert">
-        Aucune réservation trouvée.
+        Aucune client trouvée.
     </div>
     </div>
     <?php else : ?>
@@ -84,4 +84,3 @@ $total_pages = ceil($total_reservations / $elements_par_page);
     </div>
     <?php endif; ?>
 </div>
-
