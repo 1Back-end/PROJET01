@@ -65,6 +65,9 @@
                         <input class="btn btn-dark btn-add btn-lg btn-block" name="connexion" type="submit" value="Se connecter">
                         <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OU</div>
                         <a class="btn btn-success btn-add btn-lg btn-block" href="../utilisateurs/creation_compte.php">Créer un compte</a>
+                    </div></br>
+                    <div class="col-6">
+                        <div class="back"><a href="../index.php"><label for="">Retour à l'acceuil</label></a></div>
                     </div>
                 </div>
             </div>

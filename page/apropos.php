@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <?php include_once("../fonction.php"); ?>
 <?php include_once("../database/db.php"); ?>
 <head>
@@ -107,12 +107,13 @@
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
                     <h1 class="display-5 animated fadeIn mt-5">À propos de nous</h1> 
-                        <nav aria-label="breadcrumb animated fadeIn">
-                        <ol class="breadcrumb text-uppercase">
-                            <li class="breadcrumb-item"><a href="../index.php">Acceuil</a></li>
-                            <li class="breadcrumb-item text-body active" aria-current="page">À propos</li>
-                        </ol>
-                    </nav>
+                        <p>
+                            Notre équipe expérimentée est composée d'experts du marché immobilier
+                             qui connaissent parfaitement les tendances actuelles et les opportunités
+                              à saisir. Que vous cherchiez la maison de vos rêves, un investissement 
+                              lucratif ou que vous souhaitiez mettre en vente votre propriété, nous 
+                              sommes là pour vous aider à atteindre vos objectifs.
+                        </p>
                 </div>
                 <div class="col-md-6 animated fadeIn">
                     <img class="img-entete" src="../package/img/image1.jpg" alt="">
@@ -131,11 +132,14 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 p-md-5 p-3 wow fadeIn" data-wow-delay="0.5s">
-                        <h3 class="mb-4">Endroit n°1 pour trouver la propriété idéale</h3>
-                        <p class="mb-4"><span class="text-primary">IMMO INVESTEMENT SCI</span>, votre destination privilégiée pour trouver la propriété parfaite. Avec notre expertise et notre engagement envers la qualité, nous sommes l'endroit n°1 pour vos besoins immobiliers. Faites confiance à notre équipe pour vous guider vers la maison de vos rêves.</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Nous vous guidons vers votre propriété de rêve, avec expertise et engagement.</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Découvrez votre propriété parfaite, avec un service dédié et des solutions adaptées.</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Explorez un monde de possibilités immobilières avec notre expertise à vos côtés.</p>
+                        <h3 class="mb-4">N°1 pour trouver le logement idéale</h3>
+                        <p class="mb-4">
+                            Trouvez votre chez-vous idéal parmi notre sélection exclusive de biens immobiliers,
+                            tout en découvrant des propriétés uniques qui correspondent à votre style de vie et à vos besoins.
+                        </p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Accessibilité 24/7</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Présentation détaillée des biens</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Économie de temps et d'efforts</p>
                         <a class="btn btn-primary py-3 px-5 mt-3" href="">En savoir plus</a>
                     </div>
                 </div>
@@ -147,7 +151,10 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="mb-3">NOS ACTEURS                  </h4>
-                    <p class="">Dans notre écosystème immobilier, chaque protagoniste joue un rôle clé. Pour nos locataires, c'est une aventure à travers une sélection de logements modernes et de styles de vie adaptés. Guidés par nos agents immobiliers experts, chaque étape devient une opportunité de découverte. Pour les propriétaires, c'est une vitrine élégante pour présenter leurs biens avec aisance. Ensemble, créons une expérience où chacun trouve sa place et son bonheur.</p>
+                    <p class="">Dans notre écosystème immobilier, chaque protagoniste joue un rôle clé. Pour nos locataires, c'est une aventure à travers une sélection de logements modernes et de styles de vie adaptés.
+                        Guidés par nos agents immobiliers experts, chaque étape devient une opportunité de découverte. 
+                        Pour les propriétaires, c'est une vitrine élégante pour présenter leurs biens avec aisance. 
+                        Ensemble, créons une expérience où chacun trouve sa place et son bonheur.</p>
                 </div>
                 <div class="row g-4">
                     
@@ -195,7 +202,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="mb-3">Nos Propriétés</h4>
+                    <h4 class="mb-3">Nos Logements</h4>
                     <p class="">Dans notre vaste sélection de propriétés, vous découvrirez une gamme variée répondant à tous les styles de vie. Des appartements modernes offrant un confort contemporain aux chambres élégantes créant une atmosphère apaisante, en passant par les studios modernes conçus pour une vie urbaine dynamique, chaque type de logement a été soigneusement sélectionné pour répondre à vos besoins uniques. Que vous recherchiez l'espace supplémentaire d'un duplex ou la simplicité d'un studio moderne, vous trouverez votre refuge idéal parmi nos options diverses.</p>
                 </div>
                 <div class="row g-4">
@@ -247,6 +254,12 @@
                             </div>
                         </a>
                  </div>
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h4 class="mb-3">pourcentages</h4>
+                    <p class="">Lors de la publication d'un produit par un acteur du système (Agent immobilier ou Propriétaire), lorsque le produit est validé par l'administrateur, si le logement est pris par un client, l'utilisateur bénéficiera d'un pourcentage sur son logement. Les pourcentages sont repartis comme suite:</p>
+                        <p><i class="fa fa-check text-primary me-3"></i><span class="text text-danger">Agent Immobilier:</span> Il bénéficiera de 30% sur chacun de ses produits pris pas les clients</p>
+                        <p><i class="fa fa-check text-primary me-3"></i><span class="text text-danger">Propriétaire:</span> Il bénéficiera de 20% sur chacun de ses produits pris pas les clients</p>
+                </div>
                 </div>
             </div>
         </div>
@@ -255,83 +268,55 @@
 
         
 
-         
-                        <!-- Footer Start -->
- <div class="container-fluid bg-dark text-white-50 footer pt-5  mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Entrer en contact</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Liens rapides</h5>
-                <a class="btn btn-link text-white-50" href="">À propos de nous</a>
-                <a class="btn btn-link text-white-50" href="">Contactez-nous</a>
-                <a class="btn btn-link text-white-50" href="">Nos services</a>
-                <a class="btn btn-link text-white-50" href="">politique de confidentialité</a>
-                <a class="btn btn-link text-white-50" href="">Termes et conditions</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Galerie de photos</h5>
-                <div class="row g-2 pt-2">
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-1.jpg" alt="">
+        
+         <!-- Footer Start -->
+         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-">
+                        <h5 class="text-white mb-4">Immo Investment SCI</h5>
+                        <img src="../src/images/logo_footer.png" alt="" width="180px" style="padding-left: 50px;">
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-2.jpg" alt="">
+                    <div class="col-lg-4 col-md-">
+                        <h5 class="text-white mb-4">Contact</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Neptune Golf Bastos, Yaoundé</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 6 99 99 93 18</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>immoinvestmentsci@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-3.jpg" alt="">
+                    <div class="col-lg-2 col-md-">
+                        <h5 class="text-white mb-4">Menu</h5>
+                        <a class="btn btn-link text-white-50" href="../index.php">Acceuil</a>
+                        <a class="btn btn-link text-white-50" href="apropos.php">A propos</a>
+                        <a class="btn btn-link text-white-50" href="contact.php">Contact</a>
+                        <a class="btn btn-link text-white-50" href="#">Politique de Confidentialité</a>
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-4.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-5.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-6.jpg" alt="">
+                   
+                    <div class="col-lg-3 col-md-">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Inscrivez-vous dès maintenant pour recevoir nos prochaines actualités directement dans votre boîte de réception</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre E-mail">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Newsletter</h5>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#"></a> All Right Reserved. 
-                    
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="">IMMO INVESTMENT SCI</a>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="footer-menu">
-                      
+            <div class="container" >
+                <div class="copyright" >
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0"  >
+                            &copy; <a class="border-bottom" href="#" >IMMO INVESTMENT SCI</a>, Tous droits réservés. 	
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- Footer End -->
+        <!-- Footer End -->
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
