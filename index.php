@@ -95,9 +95,10 @@
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 col-sm-12 p-md-5 p-3 mt-lg-5">
-                    <h5 style="font-size:30px;" class="fw-bold w-100   text-uppercase animated fadeIn mb-4">Commencez votre recherche de logement dès maintenant avec <span class="text-primary">IMMO INVESTMENT SCI</span>.</h5>
+                    <h5 style="font-size:30px;" class="fw-bold w-100   text-uppercase animated fadeIn mb-4">Votre recherche<span class="text-primary"> du logement idéale </span>commence ici</h5>
                         <div class="container">
-                        <p class="animated text-justify fadeIn mb-4 pb-2">Bienvenue chez <span class="text-primary">IMMO INVESTMENT SCI</span>, votre partenaire de confiance pour la gestion de vos biens immobiliers. Explorez notre vaste sélection de propriétés immobilières, comprenant des chambres modernes élégantes, des appartements urbains, des duplex spacieux et d'autres options pour répondre à vos besoins et à vos préférences. Avec <span class="text-primary">IMMO INVESTMENT SCI</span>, trouvez la résidence idéale pour votre style de vie.</p>
+                        <p class="animated text-justify fadeIn mb-4 pb-2">Bienvenue chez <span class="text-primary">IMMO INVESTMENT SCI</span>, votre partenaire de confiance pour trouver la propriété parfaite. 
+                        Découvrez des biens immobiliers exceptionnels qui répondent à vos besoins tout en explorant un monde de possibilités immobilières.</p>
                         </div>
 
                     <a href="#produit" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Nos Logements</a>
@@ -175,7 +176,7 @@
             <div class="col-lg-6">
                 <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
                     <h1 class="mb-3">Liste des Logements</h1>
-                    <p>Explorez notre gamme de biens immobiliers contemporains, incluant des appartements modernes, des duplex élégants, des chambres stylées et des studios fonctionnels. Chez <span class="text-primary">IMMO INVESTMENT SCI</span>, nous sommes là pour vous proposer des options de logement qui incarnent le confort et le style modernes.</p>
+                    <p>Trouvez votre havre de paix avec notre sélection exclusive de biens immobiliers de qualité sur notre site web immobilier. Votre prochaine maison vous attend ici !</p>
                 </div>
             </div>
         </div>
@@ -322,7 +323,7 @@ if ($result) {
             <div class="container p-2">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="mb-3">Types de Logement                    </h4>
-                    <p>Explorez notre sélection diversifiée de propriétés : des appartements urbains tendance aux duplex élégants, en passant par les chambres contemporaines et les studios pratiques. Trouvez votre chez-vous idéal avec <span class="text-primary">IMMO INVESTMENT SCI</span>.</p>
+                    <p>Explorez notre sélection diversifiée de propriétés : des appartements Modernes tendance aux duplex élégants, en passant par les chambres modernes et les studios modernes. Trouvez votre chez-vous idéal chez <span class="text-primary">IMMO INVESTMENT SCI</span>.</p>
                 </div>
                 <div class="row g-4">
                     
@@ -394,11 +395,14 @@ if ($result) {
                         </div>
                     </div>
                     <div class="col-lg-6 p-md-5 p-3 wow fadeIn" data-wow-delay="0.5s">
-                        <h3 class="mb-4">Endroit n°1 pour trouver le logement idéale</h3>
-                        <p class="mb-4"><span class="text-primary">IMMO INVESTEMENT SCI</span>, votre destination privilégiée pour trouver la propriété parfaite. Avec notre expertise et notre engagement envers la qualité, nous sommes l'endroit n°1 pour vos besoins immobiliers. Faites confiance à notre équipe pour vous guider vers la maison de vos rêves.</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Nous vous guidons vers votre propriété de rêve, avec expertise et engagement.</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Découvrez votre propriété parfaite, avec un service dédié et des solutions adaptées.</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Explorez un monde de possibilités immobilières avec notre expertise à vos côtés.</p>
+                        <h3 class="mb-4">N°1 Pour trouver la propriété idéale</h3>
+                        <p class="mb-4"> 
+                            Trouvez votre chez-vous idéal parmi notre sélection exclusive de biens immobiliers,
+                            tout en découvrant des propriétés uniques qui correspondent à votre style de vie et à vos besoins.
+                        </p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Accessibilité 24/7</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Présentation détaillée des biens</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Économie de temps et d'efforts</p>
                         <a class="btn btn-primary py-3 px-5 mt-3" href="page/apropos.php">En savoir plus</a>
                     </div>
                 </div>
@@ -407,83 +411,55 @@ if ($result) {
         <!-- About End -->
 </div>
 </div>
- <!-- Footer Start -->
- <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Nous contacter</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Palais de congrès, Yaoundé, Cameroun</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 699 99 93 18</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 673 20 41 59</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>www@gmail.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Liens rapides</h5>
-                <a class="btn btn-link text-white-50" href="">À propos de nous</a>
-                <a class="btn btn-link text-white-50" href="">Contactez-nous</a>
-                <a class="btn btn-link text-white-50" href="">Nos services</a>
-                <a class="btn btn-link text-white-50" href="">politique de confidentialité</a>
-                <a class="btn btn-link text-white-50" href="">Termes et conditions</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Galerie de photos</h5>
-                <div class="row g-2 pt-2">
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="package/img/property-1.jpg" alt="">
+        
+         <!-- Footer Start -->
+         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-">
+                        <h5 class="text-white mb-4">Immo Investment SCI</h5>
+                        <img src="src/images/logo_footer.png" alt="" width="180px" style="padding-left: 50px;">
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="package/img/property-2.jpg" alt="">
+                    <div class="col-lg-4 col-md-">
+                        <h5 class="text-white mb-4">Contact</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Neptune Golf Bastos, Yaoundé</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 6 99 99 93 18</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>immoinvestmentsci@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="package/img/property-3.jpg" alt="">
+                    <div class="col-lg-2 col-md-">
+                        <h5 class="text-white mb-4">Menu</h5>
+                        <a class="btn btn-link text-white-50" href="index.php">Acceuil</a>
+                        <a class="btn btn-link text-white-50" href="page/apropos.php">A propos</a>
+                        <a class="btn btn-link text-white-50" href="page/contact.php">Contact</a>
+                        <a class="btn btn-link text-white-50" href="#">Politique de Confidentialité</a>
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="package/img/property-4.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="package/img/property-5.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="package/img/property-6.jpg" alt="">
+                   
+                    <div class="col-lg-3 col-md-">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Inscrivez-vous dès maintenant pour recevoir nos prochaines actualités directement dans votre boîte de réception</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre E-mail">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Newsletter</h5>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#"></a> All Right Reserved. 
-                    
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="">IMMO INVESTMENT SCI</a>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="footer-menu">
-                      
+            <div class="container" >
+                <div class="copyright" >
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0"  >
+                            &copy; <a class="border-bottom" href="#" >IMMO INVESTMENT SCI</a>, Tous droits réservés. 	
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- Footer End -->
+        <!-- Footer End -->
 
 
 <!-- Back to Top -->

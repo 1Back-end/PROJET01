@@ -99,12 +99,12 @@
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
                     <h1 class="display-5 animated fadeIn mb-4">Contactez-nous</h1> 
-                        <nav aria-label="breadcrumb animated fadeIn">
-                        <ol class="breadcrumb text-uppercase">
-                            <li class="breadcrumb-item"><a href="../index.php">Acceuil</a></li>
-                            <li class="breadcrumb-item text-body active" aria-current="page">Contact</li>
-                        </ol>
-                    </nav>
+                        <p>
+                            Nous sommes là pour répondre à toutes vos questions et vous aider 
+                            dans votre recherche de propriété. N'hésitez pas à nous contacter 
+                            en utilisant le formulaire ci-dessous ou en nous appelant directement.
+                             Notre équipe dévouée se fera un plaisir de vous assister dans votre projet immobilier.
+                        </p>
                 </div>
                 <div class="col-md-6 animated fadeIn">
                     <img class="img-fluid" src="../package/img/image1.jpg" alt="">
@@ -119,10 +119,6 @@
         <!-- Contact Start -->
         <div class="container-xxl py-5">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Contactez-nous</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
-                </div>
                 <div class="row g-4">
                     <div class="col-12">
                         <div class="row gy-4">
@@ -132,7 +128,7 @@
                                         <div class="icon me-3" style="width: 45px; height: 45px;">
                                             <i class="fa fa-map-marker-alt text-primary"></i>
                                         </div>
-                                        <span>123 Street, New York, USA</span>
+                                        <span>Neptune Golf Bastos, Yaoundé</span>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +138,7 @@
                                         <div class="icon me-3" style="width: 45px; height: 45px;">
                                             <i class="fa fa-envelope-open text-primary"></i>
                                         </div>
-                                        <span>info@example.com</span>
+                                        <span>immoinvestmentsci@gmail.com</span>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +148,7 @@
                                         <div class="icon me-3" style="width: 45px; height: 45px;">
                                             <i class="fa fa-phone-alt text-primary"></i>
                                         </div>
-                                        <span>+012 345 6789</span>
+                                        <span>+237 6 99 99 93 18</span>
                                     </div>
                                 </div>
                             </div>
@@ -160,41 +156,46 @@
                     </div>
                     <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <iframe class="position-relative rounded w-100 h-100"
-                            src="https://www.google.com/maps/dir//VFWX%2BH9W+Golf+Neptune+Petrol+Station,+Yaound%C3%A9,+Cameroun/@3.8970034,11.4868157,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x108bcf2dc86a14e3:0xd0aa9764892c2723!2m2!1d11.4984461!2d3.8964833!5m1!1e1?ucbcb=1&entry=ttu"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d497.57471572203974!2d11.498744945910774!3d3.896047183328143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2scm!4v1713604176425!5m2!1sfr!2scm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                             frameborder="0" style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false"
                             tabindex="0"></iframe>
                     </div>
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.5s">
-                            <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                            <p class="mb-4">
+                                Nous sommes ravis de vous accueillir sur notre site ! Si vous avez des questions, des 
+                                commentaires ou si vous souhaitez simplement en savoir plus sur nos services, n'hésitez
+                                 pas à nous contacter en utilisant le formulaire ci-dessous. Nous nous engageons à vous
+                                 répondre dans les plus brefs délais. Merci de nous faire confiance !
+                            </p>
                             <form>
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                            <label for="name">Your Name</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Votre Nom">
+                                            <label for="name">Votre Nom</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                            <label for="email">Your Email</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Votre adresse Email">
+                                            <label for="email">Votre adresse Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                            <label for="subject">Subject</label>
+                                            <input type="text" class="form-control" id="subject" placeholder="Objet">
+                                            <label for="subject">Objet</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <textarea class="form-control" placeholder="Veillez entrer votre Message" id="message" style="height: 150px"></textarea>
                                             <label for="message">Message</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Envoyer le message</button>
                                     </div>
                                 </div>
                             </form>
@@ -205,82 +206,55 @@
         </div>
         <!-- Contact End -->
 
-
-        <div class="container-fluid bg-dark text-white-50 footer pt-5  mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Entrer en contact</h5>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Liens rapides</h5>
-                <a class="btn btn-link text-white-50" href="">À propos de nous</a>
-                <a class="btn btn-link text-white-50" href="">Contactez-nous</a>
-                <a class="btn btn-link text-white-50" href="">Nos services</a>
-                <a class="btn btn-link text-white-50" href="">politique de confidentialité</a>
-                <a class="btn btn-link text-white-50" href="">Termes et conditions</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Galerie de photos</h5>
-                <div class="row g-2 pt-2">
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-1.jpg" alt="">
+        
+         <!-- Footer Start -->
+         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-">
+                        <h5 class="text-white mb-4">Immo Investment SCI</h5>
+                        <img src="../src/images/logo_footer.png" alt="" width="180px" style="padding-left: 50px;">
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-2.jpg" alt="">
+                    <div class="col-lg-4 col-md-">
+                        <h5 class="text-white mb-4">Contact</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Neptune Golf Bastos, Yaoundé</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 6 99 99 93 18</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>immoinvestmentsci@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-3.jpg" alt="">
+                    <div class="col-lg-2 col-md-">
+                        <h5 class="text-white mb-4">Menu</h5>
+                        <a class="btn btn-link text-white-50" href="../index.php">Acceuil</a>
+                        <a class="btn btn-link text-white-50" href="apropos.php">A propos</a>
+                        <a class="btn btn-link text-white-50" href="contact.php">Contact</a>
+                        <a class="btn btn-link text-white-50" href="#">Politique de Confidentialité</a>
                     </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-4.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-5.jpg" alt="">
-                    </div>
-                    <div class="col-4">
-                        <img class="img-fluid rounded bg-light p-1" src="../package/img/property-6.jpg" alt="">
+                   
+                    <div class="col-lg-3 col-md-">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Inscrivez-vous dès maintenant pour recevoir nos prochaines actualités directement dans votre boîte de réception</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre E-mail">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Newsletter</h5>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#"></a> All Right Reserved. 
-                    
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="">IMMO INVESTMENT SCI</a>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="footer-menu">
-                      
+            <div class="container" >
+                <div class="copyright" >
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0"  >
+                            &copy; <a class="border-bottom" href="#" >IMMO INVESTMENT SCI</a>, Tous droits réservés. 	
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- Footer End -->
+        <!-- Footer End -->
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
