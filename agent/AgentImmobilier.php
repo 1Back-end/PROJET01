@@ -79,8 +79,8 @@ $total_pages = ceil($total_utilisateurs / $elements_par_page);
                                 </td>
                                 <td>
                                     
-                                    <a href="details_agent.php?id=<?php echo $utilisateur['ID']; ?>"><i class="bi bi-eye btn btn-sm mt-2  btn-info"></i></a>
-                                    <a href="supprimer_agent.php?id=<?php echo $utilisateur['ID']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet Agent Immobilier ? Cette action est irréversible et supprimera toutes les données associées à cet utilisateur.');">
+                                    <a href="../utilisateurs/details_utilisateurs.php?id=<?php echo $utilisateur['ID']; ?>"><i class="bi bi-eye btn btn-sm mt-2  btn-info"></i></a>
+                                    <a href="../utilisateurs/supprimer_utilisateurs.php?id=<?php echo $utilisateur['ID']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet cette entrée ?');">
                                         <i class="bi bi-trash3  btn btn-danger btn-sm mt-2"></i>
                                     </a>
                                 </td>

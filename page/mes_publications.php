@@ -13,7 +13,7 @@ $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * $itemsPerPage;
 
 // Requête SQL pour récupérer les produits publiés par l'utilisateur connecté
-$sql = "SELECT * FROM produits WHERE  proprietaire_id = :proprietaire_id LIMIT :itemsPerPage OFFSET :offset";
+$sql = "SELECT * FROM produits WHERE proprietaire_id = :proprietaire_id LIMIT :itemsPerPage OFFSET :offset";
 
 // Préparer la requête SQL avec la clause WHERE et la pagination
 $stmt = $connexion->prepare($sql);
@@ -24,7 +24,7 @@ $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Récupérer le nombre total de produits pour la pagination
-$totalProducts = $connexion->query("SELECT COUNT(*) AS total FROM produits WHERE  proprietaire_id = $identifiant")->fetch()['total'];
+$totalProducts = $connexion->query("SELECT COUNT(*) AS total FROM produits WHERE proprietaire_id = $identifiant")->fetch()['total'];
 $totalPages = ceil($totalProducts / $itemsPerPage);
 ?>
 
@@ -33,28 +33,31 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <div class="main-container">
-    <div class="col-md-12 col-xl-12 col-lg-12">
-        <div class="card-box p-3 mb-3">
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <div class="text-left mt-2">
-                        <h5>LISTE DE MES PRODUITS</h5>
-                    </div> 
-                </div>
-                <div class="col-md-6 col-sm-12 text-right">
-                    <a href="../produit/ajouter.php" class="btn btn-add btn-dark"><i class="bi bi-plus-circle-fill"></i> Ajouter</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="col-md-12 col-sm-12 ">
+  
+  <div class="card-box p-3 mb-3 d-flex justify-content-between align-items-center">
+   <div class="mr-auto">
+   <h5 class="text-uppercase">MES PRODUITS</h5>
+   </div>
+     <div class="ml-auto">
+     <a href="../produit/ajouter.php" class="btn btn-dark btn-add btn-sm mt-2 mt-sm-0 order-sm-2"><i class="bi bi-plus-circle mr-2"></i>AJOUTER</a>
+     </div>
+  </div>
+</div>
 
+   
+    <?php // Vérifier s'il existe des produits à afficher
+    if (empty($result)) {
+        echo "<div class='col-md-12 col-sm-12'><div class='alert alert-success text-center' role='alert'>Vous n'avez aucune publication.</div></div>";
+    } else {
+    ?>
     <div class="col-md-12 col-sm-12">
         <div class="pd-20 card-box mb-3 w-100">
             <div class="table-responsive">
                 <table class="table table-bordered text-center table-striped table-hover">
                     <thead class="text-center">
                         <tr>
-                        <th scope="col">Region</th>
+                            <th scope="col">Region</th>
                             <th scope="col">Ville</th>
                             <th scope="col">Departement</th>
                             <th scope="col">Quartier</th>
@@ -85,33 +88,30 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
                                     }
                                     ?>
                                 </td>
+                              
                                 <td>
-                            <!-- Vérifier s'il existe des commentaires pour ce produit -->
-                            <?php
-                            $id_produit = $row['id'];
-                            $sql_commentaires = "SELECT COUNT(*) AS total_commentaires FROM commentaire WHERE ID_PRODUIT = :id_produit";
-                            $stmt_commentaires = $connexion->prepare($sql_commentaires);
-                            $stmt_commentaires->execute([':id_produit' => $id_produit]);
-                            $total_commentaires = $stmt_commentaires->fetchColumn();
+                                <div class="d-flex justify-content-center justify-content-md-center">
+                                    <!-- Vérifier s'il existe des commentaires pour ce produit -->
+                                 <?php
+                                $id_produit = $row['id'];
+                                $sql_commentaires = "SELECT COUNT(*) AS total_commentaires FROM commentaire WHERE ID_PRODUIT = :id_produit";
+                                $stmt_commentaires = $connexion->prepare($sql_commentaires);
+                                $stmt_commentaires->execute([':id_produit' => $id_produit]);
+                                $total_commentaires = $stmt_commentaires->fetchColumn();
 
-                            // Vérifier s'il y a des commentaires
-                            if ($total_commentaires > 0) {
-                                // S'il y a des commentaires, afficher le lien
+                                // Vérifier s'il y a des commentaires
+                                if ($total_commentaires > 0) {
+                                    // S'il y a des commentaires, afficher le lien
                                 ?>
-                                <a class="btn btn-info btn-sm btn-xs" href='mes_commentaires.php?id=<?php echo $row['id']; ?>'>Details</a>
+                                    <a class="btn btn-info btn-sm btn-xs" href='mes_commentaires.php?id=<?php echo $row['id']; ?>'>Details</a>
                                 <?php
-                            } else {
-                                // S'il n'y a pas de commentaires, désactiver le lien et changer la couleur en primaire
+                                }
                                 ?>
-                                <a class="btn btn-info btn-sm btn-xs" href="#" onclick="return false;" disabled>Details</a>
-                                <?php
-                            }
-                            ?>
-                        </td>
-
-                                <td>
-                                    <a class="btn btn-success btn-sm btn-xs" href='../produit/modifier.php?id=<?php echo $row['id']; ?>'>Modifier</a>
+                                    <a class="btn btn-success btn-sm btn-xs mx-2" href='../produit/modifier.php?id=<?php echo $row['id']; ?>'>Modifier</a>
+                                    </div>
                                 </td>
+                               
+
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -130,6 +130,8 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
             </ul>
         </nav>
     </div>
+    <?php } ?>
+
 </div>
 
 <script>

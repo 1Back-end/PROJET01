@@ -180,14 +180,7 @@
             </div>
         </div>
    
-<style>
-    .btn-group > .btn, .btn-group-vertical > .btn {
-  position: relative;
-  flex: 1 1 auto;
-  bottom: 20px;
-  padding: 5px;
-}
-</style>
+
 
 <?php
 // Initialisation des variables de recherche
@@ -286,8 +279,8 @@ if ($result) {
                             ?>
                           
                         </div>
-                        <div class="btn-group text-center" role="group" aria-label="Options">
-                            <a href="page/details.php?id=<?php echo $row['id']; ?>" class="btn btn-xs btn-sm btn-success text-white ">Voir plus <i class="bi bi-arrow-right"></i></a>
+                        <div class="pb-2" style="position: relative; bottom: 5px;">
+                            <a href="page/details.php?id=<?php echo $row['id']; ?>" class="btn btn-sm  btn-add p-2 btn-success text-white mx-2" >Voir plus <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

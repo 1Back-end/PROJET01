@@ -237,11 +237,13 @@
 
 }
 .line-champ {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  color: cadetblue;
 }
  /* Ajoutez vos styles CSS personnalisés ici */
  .profile-card {
@@ -343,9 +345,10 @@ h5 {
       width: 100%; /* Largeur de 100% en mode responsive */
   }
 }
+
 .btn-group > .btn, .btn-group-vertical > .btn {
   position: relative;
   flex: 1 1 auto;
-  bottom: 20px;
-  padding: 10px;
+  bottom:5px;
+  padding: 8px;
 }

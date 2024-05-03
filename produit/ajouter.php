@@ -101,7 +101,7 @@ font-size: 12px;
 
                         <div class="form-group">
                             <label for="prix">Prix de la location</label>
-                            <input id="prix" type="text" class="form-control" name="prix" min="0"  placeholder="150000 / Mois">
+                            <input id="prix" type="text" class="form-control" name="prix" min="0"  placeholder="150000">
                         </div>
                   
 

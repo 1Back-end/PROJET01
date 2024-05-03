@@ -26,6 +26,7 @@
     <!-- Libraries Stylesheet -->
     <link href="../package/lib/animate/animate.min.css" rel="stylesheet">
     <link href="../package/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../package/css/bootstrap.min.css" rel="stylesheet">
@@ -181,8 +182,8 @@ if ($result) {
                             echo '<p class="text-center line-champ">' . $descriptionLimitee . '</p>';
                             ?>
                         </div>
-                        <div class="btn-group mt-3 text-center" role="group" aria-label="Options">
-                            <a href="details.php?id=<?php echo $row['id']; ?>" class="btn btn-xs btn-sm btn-success text-white mx-2">Voir plus <i class="bi bi-arrow-right"></i></a>
+                        <div class="pb-2" style="position: relative; bottom: 5px;">
+                            <a href="details.php?id=<?php echo $row['id']; ?>" class="btn btn-sm  btn-add p-2 btn-success text-white mx-2" >Voir plus <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

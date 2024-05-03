@@ -11,15 +11,15 @@
             // Vérifier si l'ID de la chambre est défini dans l'URL
             if (isset($_GET['id'])) {
                 // Récupérer l'ID de la chambre depuis l'URL
-                $id_chambre = $_GET['id'];
+                $id_produit = $_GET['id'];
 
-                // Requête SQL pour récupérer les détails de la chambre spécifique
-                $sql = "SELECT code,type_logement FROM produits WHERE id = :id";
+                // Requête SQL pour récupérer les détails du produit spécifique et les informations du propriétaire
+                $sql = "SELECT p.*, u.nom, u.prenom, u.telephone FROM produits p INNER JOIN utilisateurs u ON p.proprietaire_id = u.id WHERE p.id = :id";
                 $stmt = $connexion->prepare($sql);
-                $stmt->execute([':id' => $id_chambre]);
+                $stmt->execute([':id' => $id_produit]);
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                // Vérifier si la chambre avec l'ID spécifié existe
+                // Vérifier si le produit avec l'ID spécifié existe
                 if ($row) {
             ?>
                     <h4 class="text-center">DETAILS DU PRODUIT N° #<?php echo $row['code']; ?></h4>
@@ -32,20 +32,20 @@
     </div>
     <div class="col-md-12 col-sm-12">
         <?php
-        // Vérifier si l'ID de la chambre est défini dans l'URL
+        // Vérifier si l'ID du produit est défini dans l'URL
         if (isset($_GET['id'])) {
-            // Récupérer l'ID de la chambre depuis l'URL
-            $id_chambre = $_GET['id'];
+            // Récupérer l'ID du produit depuis l'URL
+            $id_produit = $_GET['id'];
 
-            // Requête SQL pour récupérer les détails de la chambre spécifique
-            $sql = "SELECT * FROM produits WHERE id = :id";
+            // Requête SQL pour récupérer les détails du produit spécifique et les informations du propriétaire
+            $sql = "SELECT p.*, u.nom, u.prenom, u.telephone FROM produits p INNER JOIN utilisateurs u ON p.proprietaire_id = u.id WHERE p.id = :id";
             $stmt = $connexion->prepare($sql);
-            $stmt->execute([':id' => $id_chambre]);
+            $stmt->execute([':id' => $id_produit]);
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // Vérifier si la chambre avec l'ID spécifié existe
+            // Vérifier si le produit avec l'ID spécifié existe
             if ($row) {
-                // Afficher les détails de la chambre
+                // Afficher les détails du produit
                 ?>
                 <div class="row">
                     <!-- Carte d'informations du produit -->
@@ -53,16 +53,22 @@
                         <div class="card-box mb-30">
                             <div class="card-body">
                                 <h5 class="card-title">Informations du produit</h5>
-                                <p class="card-text text-justify">Description: <?php echo $row['description']; ?></p>
-                                <p class="card-text">Prix: <?php echo $row['prix']; ?> Frcfa</p>
-                                <p class="card-text">Région: <?php echo $row['region']; ?></p>
-                                <p class="card-text">Departement: <?php echo $row['departement']; ?></p>
-                                <p class="card-text">Arrondissement: <?php echo $row['arrondissement']; ?></p>
-                                <p class="card-text">Ville: <?php echo $row['ville']; ?></p>
-                                <p class="card-text">Quartier: <?php echo $row['quartier']; ?></p>
+                                <p class="card-text text-justify"><i class="bi bi-list-ol mr-2 fs-3"></i>Description : <?php echo $row['description']; ?></p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Type Logement : <?php echo $row['type_logement']; ?></p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Prix : <?php echo $row['prix']; ?>XAF / Mois</p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Région : <?php echo $row['region']; ?></p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Département : <?php echo $row['departement']; ?></p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Arrondissement : <?php echo $row['arrondissement']; ?></p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Ville : <?php echo $row['ville']; ?></p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Quartier : <?php echo $row['quartier']; ?></p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Prix à l'adresse de destination : <?php echo $row['distance']; ?>XAF</p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Nombre de kilomètres par rapport à la route : <?php echo $row['destination']; ?></p>
+                                <!-- Informations du propriétaire -->
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Propriétaire : <?php echo $row['prenom'] . ' ' . $row['nom']; ?></p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Téléphone : <?php echo $row['telephone']; ?></p>
                                 <!-- Boutons Accepté / Refusé -->
                                 <?php
-                                // Récupérer le statut de la chambre
+                                // Récupérer le statut du produit
                                 $statut = $row['statut'];
 
                                 // Vérifier si le statut n'est ni "accepté" ni "refusé"
@@ -100,18 +106,14 @@
                                 </div>
                             </div>
                         </div>
-
-                     
-                      </div>
-
                     </div>
                 </div>
                 <?php
             } else {
-                echo "Aucune chambre trouvée avec cet ID.";
+                echo "Aucun produit trouvé avec cet ID.";
             }
         } else {
-            echo "ID de chambre non spécifié.";
+            echo "ID du produit non spécifié.";
         }
         ?>
     </div>

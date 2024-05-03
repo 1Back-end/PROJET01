@@ -3,7 +3,7 @@
 include_once("../database/db.php");
 
 // Nombre d'éléments par page
-$elements_par_page = 3;
+$elements_par_page = 5;
 
 // Récupération du numéro de page actuel à partir de l'URL
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -31,17 +31,17 @@ $total_pages = ceil($total_utilisateurs / $elements_par_page);
 
 <?php include_once("../include/menu.php"); ?>
 
-<div class="main-container">
+<div class="main-container pb-5">
     <?php if ($total_utilisateurs == 0) : ?>
-   <div class="col-md-12 col-sm-12">
-   <div class="alert text-center alert-info" role="alert">
-        Aucun  propriétaire trouvé.
+    <div class="col-md-12  col-sm-12">
+    <div class="alert text-center alert-info" role="alert">
+        Aucun agent immobilier trouvé.
     </div>
-   </div>
+    </div>
     <?php else : ?>
     <div class="col-md-12 col-sm-12">
         <div class="card-box mb-30 py-2">
-            <h4 class="text-center">LISTE DES PROPRIETAIRES</h4>
+            <h4 class="text-center">LISTE DES AGENTS IMMOBILIERS</h4>
         </div>
     </div>
 
@@ -79,8 +79,8 @@ $total_pages = ceil($total_utilisateurs / $elements_par_page);
                                 </td>
                                 <td>
                                     
-                                <a href="details_proprietaire.php?id=<?php echo $utilisateur['ID']; ?>"><i class="bi bi-eye btn btn-sm mt-2  btn-info"></i></a>
-                                    <a href="supprimer_proprietaire.php?id=<?php echo $utilisateur['ID']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette entrée ? Cette action est irréversible et supprimera toutes les données associées à cet utilisateur.');">
+                                    <a href="../utilisateurs/details_utilisateurs.php?id=<?php echo $utilisateur['ID']; ?>"><i class="bi bi-eye btn btn-sm mt-2  btn-info"></i></a>
+                                    <a href="../utilisateurs/supprimer_utilisateurs.php?id=<?php echo $utilisateur['ID']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet cette entrée ?');">
                                         <i class="bi bi-trash3  btn btn-danger btn-sm mt-2"></i>
                                     </a>
                                 </td>
@@ -104,7 +104,6 @@ $total_pages = ceil($total_utilisateurs / $elements_par_page);
     </div>
     <?php endif; ?>
 </div>
-
 
 
 </body>

@@ -9,7 +9,7 @@ include_once("../database/db.php");
 
 <div class="main-container">
     <div class="col-md-6 col-sm-12">
-        <div class="card-box mb-5 py-3">
+        <div class="card-box mb-3 py-3">
             <h4 class="text-center">COMMENTAIRE</h4>
         </div>
     </div>
@@ -41,7 +41,7 @@ include_once("../database/db.php");
                 $stmt_produit->execute([':id_produit' => $id_produit]);
                 $row_produit = $stmt_produit->fetch(PDO::FETCH_ASSOC);
         ?>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 mb-3 col-sm-12">
                     <div class="card-box mb-5">
                         <div class="card-body">
                             <p class="card-text text-justify">

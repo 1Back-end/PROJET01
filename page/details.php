@@ -32,7 +32,7 @@
     <!-- Libraries Stylesheet -->
     <link href="../package/lib/animate/animate.min.css" rel="stylesheet">
     <link href="../package/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../package/css/bootstrap.min.css" rel="stylesheet">
 
@@ -170,14 +170,17 @@ if (isset($_GET['id'])) {
                             <div class="info">
                                 <div class="row">
                                     <div class="col-md-6">
-                                    <p class="mb-2"><i class="fas fa-home me-3"></i><?php echo $row['type_logement']; ?></p>
-                                    <p class="mb-2"><i class="fas fa-money-bill me-3"></i><?php echo $row['prix']; ?> XAF / Mois</p>
-                                    <p class="mb-2"><i class="fas fa-map-marker-alt me-3"></i><?php echo $row['region']; ?></p>
+                                    <p class="mb-2"><i class="bi bi-house-lock-fill me-3"></i><?php echo $row['type_logement']; ?></p>
+                                    <p class="mb-2"><i class="bi bi-currency-dollar me-3"></i><?php echo $row['prix']; ?> XAF / Mois</p>
+                                    <p class="mb-2"><i class="bi bi-pin-map-fill  me-3"></i>Région : <?php echo $row['region']; ?></p>
+                                    <p class="mb-2"><i class="bi bi-radar me-3"></i>Ville : <?php echo $row['ville']; ?></p>
 
                                     </div>
 
                                     <div class="col-md-6">
-                                    <p class="mb-2"><i class="fas fa-map-marker-alt me-3"></i><?php echo $row['departement']; ?></p>
+                                    <p class="mb-2"><i class="bi bi-geo-fill me-3"></i>Département : <?php echo $row['departement']; ?></p>
+                                     <p class="mb-2"><i class="fas fa-map-marker-alt me-3"></i>Arrondissement : <?php echo $row['arrondissement']; ?></p>
+
                                     <p class="mb-2"><i class='bx bxs-car me-3'></i><?php echo $row['distance']; ?> XAF par rapport à la route</p>
                                     <p class="mb-2"><i class="fas fa-walking me-3"></i><?php echo $row['destination']; ?>  par rapport à la route</p>
 
@@ -186,6 +189,7 @@ if (isset($_GET['id'])) {
                             </div>
                         </div>
                     </div>
+                
                     <!-- Colonne du formulaire -->
                     <?php include_once("script_message.php");?>
                    
@@ -228,9 +232,8 @@ if (isset($_GET['id'])) {
                                     <textarea name="description" id="" cols="5" rows="5" class="form-control" placeholder="Hello ! je suis intéressé par l'appartement moderne..."></textarea>
                                 </div>
                                 <div class="mb-2">
-                                <button  class="btn btn-dark mb-2 btn-responsive"  name="envoyer" type="submit"><i class="fas fa-paper-plane"></i> Soumettre</button>
-                                    <a href="#" class="btn btn-success mb-2 btn-responsive border-0" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i> Nous contacter sur WhatsApp</a>
-
+                                <button  class="btn btn-dark mb-2 btn-responsive"  name="envoyer" type="submit">Soumettre <i class="fas fa-paper-plane"></i> </button>
+                                    
                                 </div>
                             </form>
                         </div>
