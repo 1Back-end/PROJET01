@@ -212,14 +212,12 @@ $departement = $connexion->query($sql)->fetchAll();
 
                                 </td>
                                 <td>
-                            <div class="d-flex justify-content-center justify-content-md-start">
-                            <a href='details.php?id=<?php echo $row['id']; ?>' class="mx-1 mx-md-2" onclick="return confirm('Êtes-vous sûr de vouloir voir les détails ?');"><i class="bi bi-eye-fill btn-sm mt-2 btn-info"></i></a>
+                            <div class="d-flex justify-content-center justify-content-md-center align-items-center">
+                            <a  class="mb-2 mx-2 btn btn-info btn-sm btn-add btn-xs" href='details.php?id=<?php echo $row['id']; ?>' class="mx-1 mx-md-2" onclick="return confirm('Êtes-vous sûr de vouloir voir les détails ?');">Details</a>
 
-                            <a href='modifier.php?id=<?php echo $row['id']; ?>' class="mx-1 mx-md-2" onclick="return confirm('Êtes-vous sûr de vouloir modifier cette entrée ?')">
-                                <i class="bi bi-pencil-square btn-sm mt-2 btn-success"></i>
-                            </a>
-                            <a href='supprimer.php?id=<?php echo $row['id']; ?>' class="mx-1 mx-md-2" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette entrée ?')">
-                                <i class="bi bi-trash3 btn-sm mt-2 btn-danger"></i>
+                        
+                            <a class="mb-2 mx-2 btn btn-danger btn-sm btn-add btn-xs" href='supprimer.php?id=<?php echo $row['id']; ?>' class="mx-1 mx-md-2" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette entrée ?')">
+                               Supprimé
                             </a>
 
                             </div>

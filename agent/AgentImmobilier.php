@@ -41,7 +41,7 @@ $total_pages = ceil($total_utilisateurs / $elements_par_page);
     <?php else : ?>
     <div class="col-md-12 col-sm-12">
         <div class="card-box mb-30 py-2">
-            <h4 class="text-center">LISTE DES AGENTS IMMOBILIERS</h4>
+            <h4 class="text-center text-uppercase">LISTE DES AGENTS IMMOBILIERS</h4>
         </div>
     </div>
 
@@ -53,7 +53,7 @@ $total_pages = ceil($total_utilisateurs / $elements_par_page);
                         <tr>
                             <th scope="col">Avatar</th>
                             <th scope="col">Nom</th>
-                            <th scope="col">Email</th>
+                           
                             <th scope="col">Telephone</th>
                             <th scope="col">Ville</th>
                             <th scope="col">Statut</th>
@@ -65,7 +65,6 @@ $total_pages = ceil($total_utilisateurs / $elements_par_page);
                             <tr>
                                 <td><img src="../image_utilisateurs/<?php echo $utilisateur['PHOTO']; ?>" alt="Avatar" width="40" height="40" class="rounded-circle" style='border-radius: 50%;object-fit: cover; aspect-ratio: 1/1;'></td>
                                 <td><?php echo $utilisateur['NOM']; ?></td>
-                                <td><?php echo $utilisateur['EMAIL']; ?></td>
                                 <td><?php echo $utilisateur['TELEPHONE']; ?></td>
                                 <td><?php echo $utilisateur['VILLE']; ?></td>
                                 <td>
@@ -78,11 +77,12 @@ $total_pages = ceil($total_utilisateurs / $elements_par_page);
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    
-                                    <a href="../utilisateurs/details_utilisateurs.php?id=<?php echo $utilisateur['ID']; ?>"><i class="bi bi-eye btn btn-sm mt-2  btn-info"></i></a>
-                                    <a href="../utilisateurs/supprimer_utilisateurs.php?id=<?php echo $utilisateur['ID']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet cette entrée ?');">
-                                        <i class="bi bi-trash3  btn btn-danger btn-sm mt-2"></i>
+                                <div class="d-flex justify-content-center justify-content-md-center">
+                                    <a  class="mx-2 btn-info btn-sm btn-xs btn-info" href="../utilisateurs/details_utilisateurs.php?id=<?php echo $utilisateur['ID']; ?>">Details</a>
+                                    <a class="mx-2 btn-info btn-sm btn-xs btn-danger" href="../utilisateurs/supprimer_utilisateurs.php?id=<?php echo $utilisateur['ID']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet cette entrée ?');">
+                                       Supprimé
                                     </a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

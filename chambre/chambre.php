@@ -8,7 +8,7 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 // Requête SQL pour récupérer les produits avec une seule image aléatoire et triées par date d'ajout ASC
 $itemsPerPage = 6;
 $offset = ($currentPage - 1) * $itemsPerPage;
-$sql = "SELECT *, SUBSTRING_INDEX(photo, ',', 1) AS photo_principale FROM produits WHERE STATUS ='Present' AND type_logement = 'Chambre Moderne' ORDER BY date_ajout ASC LIMIT $offset, $itemsPerPage";
+$sql = "SELECT *, SUBSTRING_INDEX(photo, ',', 1) AS photo_principale FROM produits  WHERE statut ='Accepté' AND STATUS ='Present' AND type_logement = 'Chambre Moderne' ORDER BY date_ajout ASC LIMIT $offset, $itemsPerPage";
 $result = $connexion->query($sql);
 
 // Vérification si la requête a réussi et s'il y a des chambres modernes disponibles
@@ -69,7 +69,7 @@ if ($result && $result->rowCount() > 0) {
             <ul class="pagination justify-content-center">
                 <?php
                 // Compter le nombre total de produits
-                $totalCountSQL = "SELECT COUNT(*) AS total FROM produits WHERE STATUS ='Present' AND type_logement = 'Chambre Moderne' ORDER BY date_ajout ASC";
+                $totalCountSQL = "SELECT COUNT(*) AS total FROM produits WHERE  statut ='Accepté' AND STATUS ='Present' AND type_logement = 'Chambre Moderne' ORDER BY date_ajout ASC";
                 $totalCountResult = $connexion->query($totalCountSQL);
                 $totalCountRow = $totalCountResult->fetch(PDO::FETCH_ASSOC);
                 $totalCount = $totalCountRow['total'];
@@ -89,6 +89,6 @@ if ($result && $result->rowCount() > 0) {
 <?php
 } else {
     // Aucune chambre moderne n'est disponible
-    echo '<div class="main-container mt-2 pb-5"><div class="col-md-12 col-sm-12 text-center"><div class="alert alert-warning" role="alert">Aucune chambre moderne n\'est disponible pour le moment.</div></div></div>';
+    echo '<div class="main-container mt-2 pb-5"><div class="col-md-12 col-sm-12 text-center"><div class="alert alert-info" role="alert">Aucune chambre moderne n\'est disponible pour le moment.</div></div></div>';
 }
 ?>
