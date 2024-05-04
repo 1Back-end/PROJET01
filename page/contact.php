@@ -168,29 +168,36 @@
                                  pas à nous contacter en utilisant le formulaire ci-dessous. Nous nous engageons à vous
                                  répondre dans les plus brefs délais. Merci de nous faire confiance !
                             </p>
-                            <form>
+    <div class="col-sm-12 col-md-12">
+    <?php
+    if(!empty($succes_message)) {
+            echo '<div id="success-message" class="alert alert-success text-center">' . $succes_message . '</div>';
+        }
+    ?>
+   </div>
+                            <form action="envoi.php" name="form" method="POST" class="php-email" enctype="multipart/from-data">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Votre Nom">
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Votre Nom">
                                             <label for="name">Votre Nom</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Votre adresse Email">
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Votre adresse Email">
                                             <label for="email">Votre adresse Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Objet">
+                                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Objet">
                                             <label for="subject">Objet</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Veillez entrer votre Message" id="message" style="height: 150px"></textarea>
+                                            <textarea class="form-control" placeholder="Veillez entrer votre Message" name="message" id="message" style="height: 150px"></textarea>
                                             <label for="message">Message</label>
                                         </div>
                                     </div>
