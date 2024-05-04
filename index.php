@@ -125,7 +125,7 @@
                     <div class="col-md-10">
                     <form  method="GET">
                         <div class="row g-2">
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <select name="region" class="form-select border-0 py-3" required>
                                     <option selected>Region</option>
                                     <?php foreach ($regions as $region): ?>
@@ -133,7 +133,7 @@
                                 <?php endforeach; ?>
                                 </select>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <select name="ville" class="form-select border-0 py-3" required>
                                     <option selected>ville</option>
                                     <?php foreach ($villes as $ville): ?>
@@ -141,7 +141,23 @@
                                 <?php endforeach; ?>
                                 </select>
                             </div>
-                        <div class="col-md-3">
+                            <div class="col-md-2">
+                                <select name="ville" class="form-select border-0 py-3" required>
+                                    <option selected>Arrondissements</option>
+                                    <?php foreach ($arrondissements as $arrondissement): ?>
+                                    <option><?php echo $arrondissement; ?></option>
+                                <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <select name="ville" class="form-select border-0 py-3" required>
+                                    <option selected>departement</option>
+                                    <?php foreach ($departements as $departement): ?>
+                                    <option><?php echo $departement; ?></option>
+                                <?php endforeach; ?>
+                                </select>
+                            </div>
+                        <div class="col-md-2">
                                 <select name="quartier" class="form-select border-0 py-3" required>
                                     <option selected>quartier</option>
                                     <?php foreach ($quartiers as $quartier): ?>
@@ -149,9 +165,9 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <select name="logement" class="form-select border-0 py-3" required>
-                                    <option selected>Type de logement</option>
+                                    <option selected>Logement</option>
                                     <?php foreach ($types_logement as $type_logement): ?>
                                         <option><?php echo $type_logement; ?></option>
                                     <?php endforeach; ?>
@@ -189,6 +205,8 @@ $motCle = '';
 $typePropriete = '';
 $ville = '';
 $region = '';
+$arrondissement = '';
+$departement = '';
 
 // Vérifier si le formulaire de recherche a été soumis
 if (isset($_GET['submit'])) {
@@ -196,6 +214,8 @@ if (isset($_GET['submit'])) {
     $typePropriete = isset($_GET['type_propriete']) ? $_GET['type_propriete'] : '';
     $ville = isset($_GET['ville']) ? $_GET['ville'] : '';
     $region = isset($_GET['region']) ? $_GET['region'] : '';
+    $arrondissement = isset($_GET['arrondissement']) ? $_GET['arrondissement'] : '';
+    $departement = isset($_GET['departement']) ? $_GET['departement'] : '';
 }
 
 // Pagination
@@ -222,6 +242,12 @@ if (!empty($ville)) {
 if (!empty($region)) {
     $sql .= " AND region = '$region'";
 }
+if (!empty($arrondissement)) {
+    $sql .= " AND arrondissement = '$arrondissement'";
+}
+if (!empty($departement)) {
+    $sql .= " AND departement = '$departement'";
+}
 
 // Compter le nombre total de produits pour la pagination
 $totalCountSQL = "SELECT COUNT(*) AS total FROM produits WHERE statut = 'Accepté'  AND STATUS ='Present'";
@@ -236,6 +262,12 @@ if (!empty($ville)) {
 }
 if (!empty($region)) {
     $totalCountSQL .= " AND region = '$region'";
+}
+if (!empty($arrondissement)) {
+    $totalCountSQL .= " AND arrondissement = '$arrondissement'";
+}
+if (!empty($depatement)) {
+    $totalCountSQL .= " AND depatement = '$depatement'";
 }
 
 // Exécution de la requête SQL pour obtenir le nombre total de produits

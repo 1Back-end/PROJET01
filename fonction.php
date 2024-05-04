@@ -113,6 +113,48 @@ if ($result) {
 ?>
 
 <?php
+// Requête SQL pour récupérer toutes les régions uniques
+$sql = "SELECT DISTINCT departement FROM produits";
+
+// Exécutez la requête
+$result = $connexion->query($sql);
+
+// Initialise un tableau pour stocker les régions
+$departements = array();
+
+// Vérifiez si la requête a réussi
+if ($result) {
+    // Boucle sur les résultats pour récupérer les régions
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        $departements[] = $row['departement'];
+    }
+} else {
+    echo "Erreur de requête : " . $connexion->errorInfo()[2];
+}
+?>
+
+<?php
+// Requête SQL pour récupérer toutes les régions uniques
+$sql = "SELECT DISTINCT arrondissement FROM produits";
+
+// Exécutez la requête
+$result = $connexion->query($sql);
+
+// Initialise un tableau pour stocker les régions
+$arrondissements = array();
+
+// Vérifiez si la requête a réussi
+if ($result) {
+    // Boucle sur les résultats pour récupérer les régions
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        $arrondissements[] = $row['arrondissement'];
+    }
+} else {
+    echo "Erreur de requête : " . $connexion->errorInfo()[2];
+}
+?>
+
+<?php
 
    
     // Requête pour compter le nombre total de clients
