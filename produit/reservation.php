@@ -1,3 +1,6 @@
+
+
+
 <?php
 include_once("../include/menu.php");
 include_once("../database/db.php");
@@ -44,37 +47,40 @@ $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
 $stmt->bindParam(':records_per_page', $records_per_page, PDO::PARAM_INT);
 $stmt->execute();
 
-// Vérification s'il y a des données à afficher
-if ($stmt->rowCount() > 0) {
+?>
+
+<?php include_once("../include/menu.php"); ?>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="../style.css">
+
+<div class="main-container mt-2 pb-5">
+
+    <?php
+    // Vérifier le nombre de réservations
+    if ($total_records > 0) {
     ?>
-    <div class="main-container mt-2 pb-5">
         <div class="col-md-12 col-sm-12">
             <div class="card-box mb-30 py-3">
                 <h4 class="text-center">LISTE DES RESERVATIONS</h4>
             </div>
         </div>
         <div class="col-md-12 col-sm-12">
-        <?php
-        // Récupérer les messages de succès ou d'erreur de l'URL
-        $success = isset($_GET['success']) ? $_GET['success'] : "";
-        $erreur = isset($_GET['erreur']) ? $_GET['erreur'] : "";
+<!-- Dans votre fichier reservation.php -->
+<?php
+// Vérifier si le paramètre de succès est présent dans l'URL
+if (isset($_GET['success'])) {
+    // Afficher le message de succès dans une alerte Bootstrap
+    echo '<div id="success_message" class="text-center alert alert-success" role="alert">' . $_GET['success'] . '</div>';
+} elseif (isset($_GET['erreur'])) {
+    // Afficher le message d'erreur dans une alerte Bootstrap
+    echo '<div id="error_message" class="text-center alert alert-danger" role="alert">' . $_GET['erreur'] . '</div>';
+}
+?>
+</div>
 
-        // Afficher les messages avec des alertes Bootstrap
-        if(!empty($success)) {
-        echo "<div class='alert alert-success  text-center' role='alert'>$success</div>";
-        }
-        if(!empty($erreur)) {
-        echo "<div class='alert alert-danger text-center' role='alert'>$erreur</div>";
-        }
-        ?>
-
-     
-
-        </div>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="../style.css">
         <div class="col-md-12 col-sm-12">
-                <div class="pd-20 card-box mb-2 w-100">
+            <div class="pd-20 card-box mb-2 w-100">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped text-center table-striped table-hover ">
                         <thead class="text-center">
@@ -90,114 +96,92 @@ if ($stmt->rowCount() > 0) {
                         <tbody>
                             <?php
                             // Affichage des données
-                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                ?>
+                            foreach ($stmt as $row) {
+                            ?>
                                 <tr>
                                     <td><?php echo $row['interesse']; ?></td>
                                     <td><?php echo $row['type_logement']; ?></td>
                                     <td><?php echo $row['proprietaire']; ?></td>
                                     <td><?php echo date('Y/m/d H:i:s', strtotime($row['date_reservation'])); ?></td>
                                     <!-- Statut avec style conditionnel -->
-                                   
-                                        <?php 
-                                        if ($row['statut'] == 'en cours') {
-                                            echo "<td>";
-                                            $statut_class = 'text-warning';
-                                            echo "<a href='#' class='$statut_class'>en cours</a>";
-                                            echo "</td>";
-                                        } elseif ($row['statut'] == 'annulé') {
-                                            echo "<td>";
-                                            $statut_class = 'text-danger';
-                                            echo "<a href='#' class='$statut_class'>annulé</a>";
-                                            echo "</td>";
-                                        } elseif ($row['statut'] == 'validé') {
-                                            echo "<td>";
-                                            $statut_class = 'text-success';
-                                            echo "<a href='#' class='$statut_class'>validé</a>";
-                                            echo "</td>";
-                                        } else {
-                                            echo "<td>" . $row['statut'] . "</td>";
-                                        }
-                                        ?>
 
-                                  
-                                    <!-- Actions -->
                                     <?php
-                                if ($row['statut'] == 'annulé') {
-                                ?>
-                                    <td>
-                                        <a href="reservation_valider.php?id_reservation=<?= $row['id']; ?>" class="btn disabled btn-sm btn-xs btn-success">
-                                            valider
-                                        </a>
-                                        
-                                    </td>
-                                    <td>
-                                        <a href="reservation_annuler.php?id_reservation=<?= $row['id']; ?>" class="btn btn-sm btn-xs btn-danger disabled">
-                                            annuler 
-                                        </a>
-                                    </td>
-                                <?php
-                                } elseif ($row['statut'] == 'validé') {
-                                ?>
-                                    <td>
-                                        <a href="reservation_annuler.php?id_reservation=<?= $row['id']; ?>" class="btn btn-sm btn-xs btn-danger">
-                                            annuler 
-                                        </a>
-                                    </td>
+                                    if ($row['statut'] == 'en cours') {
+                                        echo "<td>";
+                                        $statut_class = 'text-warning';
+                                        echo "<a href='#' class='$statut_class'>en cours</a>";
+                                        echo "</td>";
+                                    } elseif ($row['statut'] == 'annulé') {
+                                        echo "<td>";
+                                        $statut_class = 'text-danger';
+                                        echo "<a href='#' class='$statut_class'>annulé</a>";
+                                        echo "</td>";
+                                    } elseif ($row['statut'] == 'validé') {
+                                        echo "<td>";
+                                        $statut_class = 'text-success';
+                                        echo "<a href='#' class='$statut_class'>validé</a>";
+                                        echo "</td>";
+                                    } else {
+                                        echo "<td>" . $row['statut'] . "</td>";
+                                    }
+                                    ?>
 
                                     <td>
-                                        <a href="reservation_valider.php?id_reservation=<?= $row['id']; ?>" class="btn disabled btn-sm btn-xs btn-success">
-                                            valider
-                                        </a>
-                                        
+                                        <div class="d-flex justify-content-center justify-content-md-center">
+                                            <?php $status = $row['statut']; ?>
+                                            
+                                            <?php if ($status == 'validé'): ?>
+                                                <a href="reservation_annuler.php?id_reservation=<?= $row['id']; ?>" class="mx-2 btn btn-sm btn-xs btn-danger" onclick="return confirm('Voulez-vous vraiment annuler cette réservation ?')">
+                                                    annuler
+                                                </a>
+                                            <?php elseif ($status == 'annulé'): ?>
+                                                <a href="reservation_valider.php?id_reservation=<?= $row['id']; ?>" class="mx-2 btn btn-sm btn-xs btn-success" onclick="return confirm('Voulez-vous vraiment valider cette réservation ?')">
+                                                    valider
+                                                </a>
+                                            <?php else: ?>
+                                                <a href="reservation_annuler.php?id_reservation=<?= $row['id']; ?>" class="mx-2 btn btn-sm btn-xs btn-danger" onclick="return confirm('Voulez-vous vraiment annuler cette réservation ?')">
+                                                    annuler
+                                                </a>
+
+                                                <a href="reservation_valider.php?id_reservation=<?= $row['id']; ?>" class="mx-2 btn btn-sm btn-xs btn-success" onclick="return confirm('Voulez-vous vraiment valider cette réservation ?')">
+                                                    valider
+                                                </a>
+                                            <?php endif; ?>
+                                        </div>
                                     </td>
 
-                                <?php
-                                } else {
-                                ?>
-                                    <td>
-                                        <a href="reservation_annuler.php?id_reservation=<?= $row['id']; ?>" class="btn btn-sm btn-xs btn-danger" onclick="return confirm('Voulez-vous vraiment annuler cette réservation ?')">
-                                            annuler 
-                                        </a>
-                                    </td>
 
-                                    <td>
-                                        <a href="reservation_valider.php?id_reservation=<?= $row['id']; ?>" class="btn btn-sm btn-xs btn-success" onclick="return confirm('Voulez-vous vraiment valider cette réservation ?')">
-                                            valider
-                                        </a>
-                                    </td>
-                                <?php
-                                }
-                                ?>
-
+                                </tr>
                             <?php
                             }
-                            
                             ?>
                         </tbody>
                     </table>
                 </div>
             </div>
             <nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-        <?php
-        // Affichage de la pagination
-        for ($i = 1; $i <= $total_pages; $i++) {
-            $active_class = ($i == $page) ? 'active' : ''; // Vérification de la page active
-            echo "<li class='page-item $active_class'><a class='page-link' href='?page=" . $i . "'>" . $i . "</a></li>";
-        }
-        ?>
-    </ul>
-</nav>
-
-       
+                <ul class="pagination justify-content-center">
+                    <?php
+                    // Affichage de la pagination
+                    for ($i = 1; $i <= $total_pages; $i++) {
+                        $active_class = ($i == $page) ? 'active' : ''; // Vérification de la page active
+                        echo "<li class='page-item $active_class'><a class='page-link' href='?page=" . $i . "'>" . $i . "</a></li>";
+                    }
+                    ?>
+                </ul>
+            </nav>
         </div>
-    </div>
-
-           
-
     <?php
-} else {
-    echo "<div class='alert alert-info' role='alert'>Aucune réservation trouvée.</div>";
-}
-?>
+    } else {
+        // Afficher un message d'erreur si aucune réservation n'est disponible
+        echo "<div class='col-md-12 col-sm-12'><div class='alert alert-danger text-center' role='alert'>Aucune réservation n'est disponible.</div></div>";
+    }
+    ?>
+</div>
+<script>
+    // Fonction pour masquer les messages après 3 secondes
+    setTimeout(function() {
+        document.getElementById("success_message").style.display = "none";
+        document.getElementById("error_message").style.display = "none";
+    }, 2000);
+</script>

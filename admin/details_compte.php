@@ -62,7 +62,6 @@ if(isset($_GET['id'])) {
                 <p class="mb-4"><strong>Ville:</strong> <?php echo $utilisateur['VILLE']; ?></p>
             </div>
             <div class="col-md-6 col-sm-12">
-                <p class="mb-4" ><strong>Quartier:</strong> <?php echo $utilisateur['QUARTIER']; ?></p>
                 <?php
                 // Déterminer la classe CSS en fonction de la valeur du statut
                 $class = ($utilisateur['STATUS'] == 'Actif') ? 'btn btn-info btn-sm btn-xs' : 'btn-danger';

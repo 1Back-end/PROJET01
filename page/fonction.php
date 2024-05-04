@@ -146,7 +146,7 @@ function getTotalProprietaires($connexion) {
 function getTotalAdmins($connexion) {
     try {
         // Requête SQL pour compter le nombre d'administrateurs avec le rôle 4
-        $sql = "SELECT COUNT(*) AS total_admins FROM utilisateurs WHERE ROLE = 4 AND STATUT = 'Present'";
+        $sql = "SELECT COUNT(*) AS total_admins FROM utilisateurs WHERE ROLE = 4 AND STATUT = 'Present' AND STATUS = 'Actif'";
         
         // Préparer la requête
         $stmt = $connexion->prepare($sql);

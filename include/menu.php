@@ -218,7 +218,7 @@
 					</a>
 				</li>
 				<li class="">
-					<a href="../page/mes_produits.php" class="dropdown-toggle no-arrow">
+					<a href="../page/mes_produits_loues.php" class="dropdown-toggle no-arrow">
 						<span class="micon bi bi-circle"></span><span class="mtext">Mes produits loués</span>
 					</a>
 				</li>

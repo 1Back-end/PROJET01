@@ -119,7 +119,7 @@ if (isset($_POST["enregistrer"])) {
             $stmt->bindValue(4, $email);
             $stmt->bindValue(5, $tel);
             // Utiliser password_hash() pour hacher le mot de passe avec bcrypt
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
             $stmt->bindValue(6, $hashedPassword);
             $stmt->bindValue(7, $photo);
             $stmt->bindValue(8, $code);

@@ -13,7 +13,7 @@ if (isset($_GET['error'])) {
 include_once("../database/db.php");
 
 // Nombre d'éléments par page
-$elements_par_page = 5;
+$elements_par_page = 3;
 
 // Récupération du numéro de page actuel à partir de l'URL
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -50,9 +50,14 @@ $total_pages = ceil($total_utilisateurs / $elements_par_page);
     </div>
     <?php else : ?>
     <div class="col-md-12 col-sm-12">
-        <div class="card-box mb-30 py-2">
-            <h4 class="text-center text-uppercase">LISTE DES AdministrateurS</h4>
-        </div>
+    <div class="card-box p-3 mb-3 d-flex justify-content-between align-items-center">
+     <div class="mr-auto">
+     <h5 class="text-uppercase">LISTE  Administrateurs</h5>
+     </div>
+       <div class="ml-auto">
+       <a href="ajouter.php" class="btn btn-dark btn-add btn-sm mt-2 mt-sm-0 order-sm-2"><i class="bi bi-plus-circle mr-2"></i>AJOUTER</a>
+       </div>
+    </div>
     </div>
     <div class="col-md-12 col-sm-12">
     <!-- Afficher le message de succès -->
@@ -118,7 +123,7 @@ $total_pages = ceil($total_utilisateurs / $elements_par_page);
                             </td>
 
                                <td> <a class="mx-2 btn btn-info btn-sm btn-xs btn-add" href="../admin/details_compte.php?id=<?= $utilisateur['ID'] ?>">Details</a></td>
-                            <td>
+                         <td>
                         <div class="justify-content-center justify-content-md-center align-items-center">
                             <?php 
                             $status = $utilisateur['STATUS'];

@@ -43,7 +43,7 @@
                         <!-- Ajout de l'attribut action -->
                             <div class="form-group">
                             <label>Adresse Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="todo@gmail.com">
+                            <input type="text" class="form-control" name="email" placeholder="todo@gmail.com">
                                 <?php if(isset($MessageErreurEmail)): ?>
                                     <small class="text-danger"><?= $MessageErreurEmail?></small>
                                 <?php endif; ?>

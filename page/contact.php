@@ -168,11 +168,22 @@
                                  pas à nous contacter en utilisant le formulaire ci-dessous. Nous nous engageons à vous
                                  répondre dans les plus brefs délais. Merci de nous faire confiance !
                             </p>
-                            <form action="envoi.php" name="form" method="POST" class="php-email" enctype="multipart/from-data">
+                            <?php include("envoi_message.php");?>
+                            <?php if (!empty($erreur)) : ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo $erreur; ?>
+                            </div>
+                        <?php elseif (!empty($succes)) : ?>
+                            <div class="alert alert-success" role="alert">
+                                <?php echo $succes; ?>
+                            </div>
+                        <?php endif; ?>
+
+                            <form action="" name="form" method="POST" class="php-email" enctype="multipart/from-data">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="Votre Nom">
+                                            <input type="text" class="form-control" name="nom" id="name" placeholder="Votre Nom">
                                             <label for="name">Votre Nom</label>
                                         </div>
                                     </div>
@@ -184,7 +195,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Objet">
+                                            <input type="text" class="form-control" name="sujet" id="subject" placeholder="Objet">
                                             <label for="subject">Objet</label>
                                         </div>
                                     </div>
@@ -195,7 +206,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Envoyer le message</button>
+                                        <button class="btn btn-primary w-100 py-3" name="valider" type="submit">Envoyer le message</button>
                                     </div>
                                 </div>
                             </form>
