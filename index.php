@@ -127,7 +127,7 @@
                         <div class="row g-2">
                             <div class="col-md-2">
                                 <select name="region" class="form-select border-0 py-3" required>
-                                    <option selected>Region</option>
+                                    <option selected>Regions</option>
                                     <?php foreach ($regions as $region): ?>
                                     <option><?php echo $region; ?></option>
                                 <?php endforeach; ?>
@@ -135,7 +135,7 @@
                             </div>
                             <div class="col-md-2">
                                 <select name="ville" class="form-select border-0 py-3" required>
-                                    <option selected>ville</option>
+                                    <option selected>villes</option>
                                     <?php foreach ($villes as $ville): ?>
                                     <option><?php echo $ville; ?></option>
                                 <?php endforeach; ?>
@@ -151,7 +151,7 @@
                             </div>
                             <div class="col-md-2">
                                 <select name="ville" class="form-select border-0 py-3" required>
-                                    <option selected>departement</option>
+                                    <option selected>departements</option>
                                     <?php foreach ($departements as $departement): ?>
                                     <option><?php echo $departement; ?></option>
                                 <?php endforeach; ?>
@@ -159,7 +159,7 @@
                             </div>
                         <div class="col-md-2">
                                 <select name="quartier" class="form-select border-0 py-3" required>
-                                    <option selected>quartier</option>
+                                    <option selected>quartiers</option>
                                     <?php foreach ($quartiers as $quartier): ?>
                                         <option><?php echo $quartier; ?></option>
                                     <?php endforeach; ?>
@@ -167,7 +167,7 @@
                             </div>
                             <div class="col-md-2">
                                 <select name="logement" class="form-select border-0 py-3" required>
-                                    <option selected>Logement</option>
+                                    <option selected>Logements</option>
                                     <?php foreach ($types_logement as $type_logement): ?>
                                         <option><?php echo $type_logement; ?></option>
                                     <?php endforeach; ?>
@@ -191,7 +191,7 @@
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-6">
                 <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                    <h1 class="mb-3">Liste des Logements</h1>
+                    <h1 class="mb-3">Nos Logements Disponibles</h1>
                     <p>Trouvez votre havre de paix avec notre sélection exclusive de biens immobiliers de qualité sur notre site web immobilier. Votre prochaine maison vous attend ici !</p>
                 </div>
             </div>
@@ -425,7 +425,7 @@ if ($result) {
                             Trouvez votre chez-vous idéal parmi notre sélection exclusive de biens immobiliers,
                             tout en découvrant des propriétés uniques qui correspondent à votre style de vie et à vos besoins.
                         </p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Accessibilité 24/7</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Accessibilité: 24h/24 - 7 jours/7</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Présentation détaillée des biens</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Économie de temps et d'efforts</p>
                         <a class="btn btn-primary py-3 px-5 mt-3" href="page/apropos.php">En savoir plus</a>

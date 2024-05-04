@@ -137,7 +137,7 @@
                             Trouvez votre chez-vous idéal parmi notre sélection exclusive de biens immobiliers,
                             tout en découvrant des propriétés uniques qui correspondent à votre style de vie et à vos besoins.
                         </p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Accessibilité 24/7</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Accessibilité: 24h/24 - 7 jours/7</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Présentation détaillée des biens</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Économie de temps et d'efforts</p>
                         <a class="btn btn-primary py-3 px-5 mt-3" href="">En savoir plus</a>
