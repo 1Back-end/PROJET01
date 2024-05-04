@@ -35,8 +35,8 @@ $mail->FromName = $name;
 $mail->addAddress('dilanenguemzi23@gmail.com', 'Dylan Marc');
 $mail->WordWrap = 50;
 $mail->IsHTML(true);
-$mail->Subject = 'Préocupation de M. '.$name.'';
+$mail->Subject = 'Message de M. '.$name.'';
 $mail->Body = $message;
 
 $mail->send();
-echo 'Message a été envoyer';
+header("Location: contact.php");

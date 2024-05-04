@@ -168,13 +168,6 @@
                                  pas à nous contacter en utilisant le formulaire ci-dessous. Nous nous engageons à vous
                                  répondre dans les plus brefs délais. Merci de nous faire confiance !
                             </p>
-    <div class="col-sm-12 col-md-12">
-    <?php
-    if(!empty($succes_message)) {
-            echo '<div id="success-message" class="alert alert-success text-center">' . $succes_message . '</div>';
-        }
-    ?>
-   </div>
                             <form action="envoi.php" name="form" method="POST" class="php-email" enctype="multipart/from-data">
                                 <div class="row g-3">
                                     <div class="col-md-6">
