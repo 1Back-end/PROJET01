@@ -62,6 +62,7 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
                             <th scope="col">Departement</th>
                             <th scope="col">Quartier</th>
                             <th scope="col">Prix</th>
+                            <th scope="col">Type Logement</th>
                             <th scope="col">Statut</th>
                             <th colspan="3">Actions</th>
                         </tr>
@@ -73,7 +74,8 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
                                 <td><?php echo $row['ville']; ?></td>
                                 <td><?php echo $row['departement']; ?></td>
                                 <td><?php echo $row['quartier']; ?></td>
-                                <td><?php echo $row['prix']; ?> FRCFA</td>
+                                <td><?php echo $row['prix']; ?>XAF</td>
+                                <td><?php echo $row['type_logement']; ?></td>
                                 <td>
                                     <?php 
                                     // Vérifier le statut et définir la classe CSS en conséquence
@@ -81,8 +83,8 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
                                         echo '<button class="btn btn-success btn-xs btn-sm">Accepté</button>';
                                     } elseif ($row['statut'] == "Rejeté") {
                                         echo '<button class="btn btn-danger btn-xs btn-sm">Rejeté</button>';
-                                    } elseif ($row['statut'] == "En Attente") {
-                                        echo '<button class="btn btn-warning text-white btn-xs btn-sm">En Attente</button>';
+                                    } elseif ($row['statut'] == "En attente") {
+                                        echo '<button class="btn btn-warning text-white btn-xs btn-sm">en attente</button>';
                                     } else {
                                         echo $row['statut']; // Afficher le statut tel quel s'il ne correspond à aucune des valeurs précédentes
                                     }
@@ -107,7 +109,12 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
                                 <?php
                                 }
                                 ?>
-                                    <a class="btn btn-success btn-sm btn-xs mx-2" href='../produit/modifier.php?id=<?php echo $row['id']; ?>'>Modifier</a>
+                                <?php if ($row['statut'] == 'Accepté' || $row['statut'] == 'Rejeté'): ?>
+                                <a class="btn btn-info btn-sm disabled btn-xs mx-2" href='../produit/modifier.php?id=<?php echo $row['id']; ?>'>Modifier</a>
+                                <?php else: ?>
+                                <a class="btn btn-info btn-sm btn-xs mx-2" href='../produit/modifier.php?id=<?php echo $row['id']; ?>'>Modifier</a>
+                                <?php endif; ?>
+
                                     </div>
                                 </td>
                                

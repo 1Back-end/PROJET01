@@ -19,13 +19,17 @@ font-size: 12px;
 
   </style>
 
-<div class="main-container  pb-5">
-    <div class="pd-ltr-10 xs-pd-5-5 p-2">
-	<div class="col-md-12 col-sm-12">
-        <div class="pd-10 card-box mb-3 p-3">
-            <h4 class="text-center">PUBLIER UNE NOUVELLE PROPRIÉTÉ</h4>
-        </div>
-		</div>
+<div class="main-container mt-3 pb-5">
+<div class="col-md-12 col-sm-12 ">
+  
+  <div class="card-box p-3 mb-3 text-center lign-items-center">
+ 
+   <h5 class="text-uppercase">PUBLIER UNE NOUVELLE PROPRIÉTÉ</h5>
+   
+ 
+</div>
+</div>
+
 
 
 		<!-- Structure HTML pour le conteneur des alertes -->
@@ -54,7 +58,7 @@ font-size: 12px;
 				
                         <div class="form-group">
                             <label for="region">Region</label>
-							<input type="text" id="searchRegions" class="form-control" placeholder="Sud" name="region">
+							<input type="text" id="searchRegions" value="<?php echo isset($_POST['region']) ? htmlspecialchars($_POST['region']) : ''; ?>" class="form-control" placeholder="Sud" name="region">
 						    <div id="typeRegionsSuggestions" class="list-group-shadow"></div>
                         </div>
                     
@@ -62,7 +66,7 @@ font-size: 12px;
 
                             <div class="form-group">
                             <label for="ville">Ville</label>
-                            <input type="text" id="searchVille" autocomplete="off" class="form-control" placeholder="Yaoundé" name="ville">
+                            <input type="text" id="searchVille" autocomplete="off" class="form-control" value="<?php echo isset($_POST['ville']) ? htmlspecialchars($_POST['ville']) : ''; ?>" placeholder="Yaoundé" name="ville">
                             <div id="villeSuggestions" class="list-group"></div>
                         </div>
 
@@ -70,21 +74,21 @@ font-size: 12px;
                    
                         <div class="form-group">
                             <label for="departement">Département</label>
-                            <input type="text" id="searchDepartements" class="form-control" placeholder="Mfoundi" name="departement">
+                            <input type="text" id="searchDepartements" value="<?php echo isset($_POST['departement']) ? htmlspecialchars($_POST['departement']) : ''; ?>" class="form-control" placeholder="Mfoundi" name="departement">
 						    <div id="typeDepartmentsSuggestions" class="list-group"></div>
                         </div>
                     
 					
                         <div class="form-group">
                             <label for="arrondissement">Arrondissement</label>
-							<input type="text" id="searchArrondissement" class="form-control" placeholder="Bafia" name="arrondissement">
+							<input type="text" id="searchArrondissement" class="form-control" value="<?php echo isset($_POST['departement']) ? htmlspecialchars($_POST['departement']) : ''; ?>" placeholder="Bafia" name="arrondissement">
 						    <div id="arrondissementsSuggestions" class="list-group"></div>
                         </div>
                         
                        
                         <div class="form-group">
                             <label for="quartier">Quartier</label>
-                            <input id="quartier" class="form-control" type="text" name="quartier"  placeholder="Mbankolo">
+                            <input id="quartier" class="form-control" type="text" name="quartier" value="<?php echo isset($_POST['quartier']) ? htmlspecialchars($_POST['quartier']) : ''; ?>"  placeholder="Mbankolo">
                         </div>
                         </div>
                
@@ -93,28 +97,33 @@ font-size: 12px;
                         <div class="col-md-6 col-sm-12">
                         <div class="form-group">
 						<label for="type_logement">Type de logement</label>
-						<input type="text" id="searchInput" class="form-control" placeholder="Appartement Moderne..." name="type_logement">
-						<div id="typeLogementSuggestions" class="list-group"></div>
+						<select name="type_logement" class="form-control">
+                            <option value="" disabled>Choisir une option</option>
+                            <option value="Chambre Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Chambre Moderne") echo " selected"; ?>>Chambre Moderne</option>
+                            <option value="Studio Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Studio Moderne") echo " selected"; ?>>Studio Moderne</option>
+                            <option value="Appartement Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Appartement Moderne") echo " selected"; ?>>Appartement Moderne</option>
+                            <option value="Duplex"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Duplex") echo " selected"; ?>>Duplex</option>
+                        </select>
                         </div>
                     
                   
 
                         <div class="form-group">
                             <label for="prix">Prix de la location</label>
-                            <input id="prix" type="text" class="form-control" name="prix" min="0"  placeholder="150000">
+                            <input id="prix" type="text" class="form-control" value="<?php echo isset($_POST['prix']) ? htmlspecialchars($_POST['prix']) : ''; ?>" name="prix" min="0"  placeholder="150000">
                         </div>
                   
 
                     
                         <div class="form-group">
                             <label for="prix">Prix à l'adresse de destination</label>
-                            <input type="number" min="0" class="form-control" name="distance"  placeholder="200">
+                            <input type="number" min="0" class="form-control" name="distance" value="<?php echo isset($_POST['distance']) ? htmlspecialchars($_POST['distance']) : ''; ?>"  placeholder="200">
                         </div>
                 
 
                         <div class="form-group">
                             <label for="prix">Nombre de kilomètres par rapport à la route </label>
-                            <input type="text" class="form-control" name="destination" placeholder="2 Km">
+                            <input type="text" class="form-control" name="destination" value="<?php echo isset($_POST['destination']) ? htmlspecialchars($_POST['destination']) : ''; ?>" placeholder="2 Km">
                         </div>
                    
                    
@@ -128,7 +137,7 @@ font-size: 12px;
                         <div class="col-md-12 col-sm-12">
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea id="description" class="form-control" name="description"  placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit."></textarea>
+                            <textarea id="description" class="form-control" name="description"   placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit."><?php echo isset($_POST['description']) ? htmlspecialchars($_POST['description']) : ''; ?></textarea>
                         </div>
                   
 </div>

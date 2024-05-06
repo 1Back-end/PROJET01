@@ -14,7 +14,7 @@
                 $id_produit = $_GET['id'];
 
                 // Requête SQL pour récupérer les détails du produit spécifique et les informations du propriétaire
-                $sql = "SELECT p.*, u.nom, u.prenom, u.telephone FROM produits p INNER JOIN utilisateurs u ON p.proprietaire_id = u.id WHERE p.id = :id";
+                $sql = "SELECT p.*, u.nom, u.prenom, u.ville, u.telephone FROM produits p INNER JOIN utilisateurs u ON p.proprietaire_id = u.id WHERE p.id = :id";
                 $stmt = $connexion->prepare($sql);
                 $stmt->execute([':id' => $id_produit]);
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -38,7 +38,7 @@
             $id_produit = $_GET['id'];
 
             // Requête SQL pour récupérer les détails du produit spécifique et les informations du propriétaire
-            $sql = "SELECT p.*, u.nom, u.prenom, u.telephone FROM produits p INNER JOIN utilisateurs u ON p.proprietaire_id = u.id WHERE p.id = :id";
+            $sql = "SELECT p.*, u.nom, u.prenom,u.ville, u.telephone FROM produits p INNER JOIN utilisateurs u ON p.proprietaire_id = u.id WHERE p.id = :id";
             $stmt = $connexion->prepare($sql);
             $stmt->execute([':id' => $id_produit]);
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -66,6 +66,7 @@
                                 <!-- Informations du propriétaire -->
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Propriétaire : <?php echo $row['prenom'] . ' ' . $row['nom']; ?></p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Téléphone : <?php echo $row['telephone']; ?></p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Adresse : <?php echo $row['ville']; ?></p>
                                 <!-- Boutons Accepté / Refusé -->
                                 <?php
                                 // Récupérer le statut du produit

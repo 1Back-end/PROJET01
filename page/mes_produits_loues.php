@@ -37,7 +37,7 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
   
   <div class="card-box p-3 mb-3 text-center lign-items-center">
  
-   <h5 class="text-uppercase">MES PRODUITS LOUES</h5>
+   <h5 class="text-uppercase">MES PRODUITS LOUéS</h5>
    
  
 </div>
@@ -60,6 +60,7 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
                             <th scope="col">Departement</th>
                             <th scope="col">Quartier</th>
                             <th scope="col">Prix</th>
+                            <th scope="col">Type Logement</th>
                             <th scope="col">Statut</th>
                            
                         </tr>
@@ -72,6 +73,7 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
                                 <td><?php echo $row['departement']; ?></td>
                                 <td><?php echo $row['quartier']; ?></td>
                                 <td><?php echo $row['prix']; ?>XAF</td>
+                                <td><?php echo $row['type_logement']; ?></td>
                                 <td><a class="btn btn-add btn-sm btn-info btn-xs" href="#"><?php echo $row['status']; ?></a></td>
 
 

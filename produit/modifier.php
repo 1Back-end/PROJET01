@@ -128,15 +128,21 @@ try {
                         <div class="col-md-6 col-sm-12">
                         <div class="form-group">
 						<label for="type_logement">Type de logement</label>
-						<input type="text" value="<?php echo $type_logement; ?>" id="searchInput" class="form-control" placeholder="Appartement Moderne..." name="type_logement">
-						<div id="typeLogementSuggestions" class="list-group"></div>
+						<select name="type_logement" id="type_logement" class="form-control">
+                            <option value="" disabled>Choisir une option</option>
+                            <option value="Chambre Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Chambre Moderne") echo " selected"; ?>>Chambre Moderne</option>
+                            <option value="Studio Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Studio Moderne") echo " selected"; ?>>Studio Moderne</option>
+                            <option value="Appartement Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Appartement Moderne") echo " selected"; ?>>Appartement Moderne</option>
+                            <option value="Duplex"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Duplex") echo " selected"; ?>>Duplex</option>
+                        </select>
+
                         </div>
                     
                   
 
                         <div class="form-group">
                             <label for="prix">Prix de la location</label>
-                            <input id="prix" value="<?php echo $prix; ?>" type="text" class="form-control" name="prix" min="0"  placeholder="150000 / Mois">
+                            <input id="prix" value="<?php echo $prix; ?>" type="text" class="form-control" name="prix" min="0"  placeholder="150000">
                         </div>
                   
 
@@ -154,7 +160,7 @@ try {
                    
                    
                         <div class="form-group">
-                            <label for="photo">Image du produit</label>
+                            <label for="photo">Image (04 chambre moderne , 06 studios moderne , 08 appartements , 12 duplex)</label>
                             <input type="file" value="<?php echo $photo; ?>" class="form-control" name="photo[]" multiple>
                         </div>
                
