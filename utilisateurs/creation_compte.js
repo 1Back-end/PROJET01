@@ -1,23 +1,4 @@
 
-function showLoader() {
-    // Cacher le bouton
-    document.getElementById("submitBtn").style.display = "none";
-    // Afficher le loader
-    document.getElementById("loader").style.display = "inline-block";
-
-    // Utiliser setTimeout pour exécuter une fonction après 2 secondes
-    setTimeout(function() {
-        // Cacher le loader
-        document.getElementById("loader").style.display = "none";
-        // Afficher à nouveau le bouton
-        document.getElementById("submitBtn").style.display = "inline-block";
-        
-        // Vous pouvez également soumettre le formulaire ici si nécessaire
-        // document.getElementById("votreFormulaire").submit();
-    }, 2000); // 2000 millisecondes = 2 secondes
-}
-
-
     function togglePassword() {
         var passwordField = document.getElementById("cpassword");
         if (passwordField.type === "password") {

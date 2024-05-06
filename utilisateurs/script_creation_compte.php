@@ -29,7 +29,7 @@ if (isset($_POST["enregistrer"])) {
     $password = htmlspecialchars($_POST['password']);
     $cpassword = htmlspecialchars($_POST['cpassword']);
     $photo = $_FILES['photo']['name'];
-    $type_compte = htmlspecialchars($_POST['type_compte']);
+    $type_compte = isset($_POST['type_compte']) ? htmlspecialchars($_POST['type_compte']) : null; // Correction pour éviter l'erreur Undefined index: type_compte
     $statut = "Inactif";
     $role = null; // Initialiser le rôle
     $code = generateSixDigitCode();
@@ -99,7 +99,7 @@ if (isset($_POST["enregistrer"])) {
     }
             
     // Si aucune erreur n'est survenue, procéder à l'insertion dans la base de données
-    if (empty($erreur_nom)  && empty($erreur_email) && empty($erreur_tel) && empty($erreur_ville) && empty($erreur_quartier) && empty($erreur_password) && empty($erreur_cpassword) && empty($erreur_photo) && empty($erreur_type_compte)) {
+    if (empty($erreur_nom) && empty($erreur_email) && empty($erreur_tel) && empty($erreur_ville) && empty($erreur_quartier) && empty($erreur_password) && empty($erreur_cpassword) && empty($erreur_photo) && empty($erreur_type_compte)) {
        // Vérifier si l'e-mail existe déjà dans la base de données
         $query = "SELECT COUNT(*) AS count FROM utilisateurs WHERE EMAIL = :email";
         $stmt = $pdo->prepare($query);
@@ -107,8 +107,19 @@ if (isset($_POST["enregistrer"])) {
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $emailExists = $row['count'] > 0;
+        
+        // Vérifier si le numéro de téléphone existe déjà dans la base de données
+        $query = "SELECT COUNT(*) AS count FROM utilisateurs WHERE TELEPHONE = :tel";
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(":tel", $tel);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $telExists = $row['count'] > 0;
+
         if ($emailExists) {
             $erreur_message .= "Cette adresse e-mail est déjà enregistrée.";
+        } elseif ($telExists) {
+            $erreur_message .= "Ce numéro de téléphone est déjà enregistré.";
         } else {
             // Insérer les données dans la base de données
             $query = "INSERT INTO utilisateurs (TOKEN,NOM,PRENOM,  EMAIL, TELEPHONE, PASSWORD, PHOTO, CODE, STATUS, VILLE, QUARTIER, ROLE) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -119,7 +130,7 @@ if (isset($_POST["enregistrer"])) {
             $stmt->bindValue(4, $email);
             $stmt->bindValue(5, $tel);
             // Utiliser password_hash() pour hacher le mot de passe avec bcrypt
-            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             $stmt->bindValue(6, $hashedPassword);
             $stmt->bindValue(7, $photo);
             $stmt->bindValue(8, $code);
@@ -137,10 +148,7 @@ if (isset($_POST["enregistrer"])) {
 
             // Envoyer le code généré à l'utilisateur par e-mail
             sendVerificationCode($email, $code);
-         $succes_message = "Votre compte a été créé avec succès. Un e-mail contenant un code de vérification a été envoyé à votre adresse e-mail. <a href='code_verification.php?user_id=$user_id' class='text-danger'>Cliquez ici</a> pour entrer votre code de validation.";
-           
- 
-
+            $succes_message = "Votre compte a été créé avec succès. Un e-mail contenant un code de vérification a été envoyé à votre adresse e-mail. <a href='code_verification.php?user_id=$user_id'>Cliquez ici</a> pour entrer votre code de validation.";
         }
     } else {
         // Si des erreurs sont survenues, construire le message d'erreur
@@ -179,10 +187,7 @@ function genererCode() {
 }
 
 
-// Exemple d'utilisation
-
-
-
+// Fonction pour envoyer le code de vérification par e-mail
 function sendVerificationCode($email, $code) {
     // Envoyer le code de vérification par e-mail
     // Utilisez PHPMailer ou une autre bibliothèque pour envoyer l'e-mail
@@ -205,7 +210,6 @@ function sendVerificationCode($email, $code) {
         // Contenu
         $mail->isHTML(true);
         $mail->Subject = 'Code de vérification';
-        $mail->CharSet = 'UTF-8'; // Définir l'encodage des caractères
         $mail->Body    = 'Votre code de vérification est : ' . $code;
 
         $mail->send();

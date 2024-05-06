@@ -341,7 +341,7 @@ if ($IsSuperAdmin) {
 <?php
 } else {
     // Si l'utilisateur n'est pas administrateur, redirigez-le vers une page d'erreur
-    header("Location:../login/login.php");
+    header("Location:error.php");
     exit(); // Assure que le script s'arrête après la redirection
 }
 ?>

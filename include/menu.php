@@ -3,8 +3,9 @@
 	<meta charset="utf-8">
 	<title>
 	<?php
-        echo ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF'])));
-    ?>
+    echo strtoupper(ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF']))));
+      ?>
+
 	</title>
 
 	<!-- Site favicon -->

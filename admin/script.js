@@ -1,15 +1,32 @@
 
-$(document).ready(function(){
-    // Initialisez le plugin intl-tel-input avec le Cameroun comme pays par défaut
-    var input = document.querySelector("#phone");
-    var iti = window.intlTelInput(input, {
-        separateDialCode: false, // Ne pas afficher le préfixe à côté du champ de saisie
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-        initialCountry: "cm" // Cameroun comme pays par défaut
+document.addEventListener('DOMContentLoaded', function () {
+    // Sélectionner l'élément du numéro de téléphone
+    var phoneInput = document.getElementById('phone');
+    // Sélectionner l'élément du message
+    var phoneMessage = document.getElementById('phoneMessage');
+
+    // Sélectionner l'élément de sélection du drapeau
+    var countrySelect = document.getElementById('countrySelect');
+
+    // Ajouter un écouteur d'événements pour surveiller les changements dans la sélection du pays
+    countrySelect.addEventListener('change', function () {
+        // Afficher le message d'instruction
+        phoneMessage.textContent = 'Entrez votre numéro de téléphone (9 chiffres après +237 pour le Cameroun).';
     });
 
-    // Définir le numéro de téléphone par défaut avec le préfixe du Cameroun (+237)
-    iti.setNumber('+237');
+    // Ajouter un écouteur d'événements pour surveiller les changements dans le champ de saisie
+    phoneInput.addEventListener('input', function () {
+        // Récupérer la valeur du champ de saisie
+        var phoneNumber = phoneInput.value;
+
+        // Validation : Vérifier si le numéro de téléphone contient 9 chiffres après le préfixe +237 (pour le Cameroun)
+        if (phoneNumber.startsWith('+237') && phoneNumber.length !== 12) {
+            phoneMessage.textContent = 'Le numéro de téléphone pour le Cameroun doit contenir 9 chiffres après le préfixe +237.';
+        } else {
+            // Effacer le message d'erreur
+            phoneMessage.textContent = '';
+        }
+    });
 });
 
     // Récupérer l'élément input file

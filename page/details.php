@@ -171,7 +171,7 @@ if (isset($_GET['id'])) {
                                 <div class="row">
                                     <div class="col-md-6">
                                     <p class="mb-2"><i class="bi bi-house-lock-fill me-3"></i><?php echo $row['type_logement']; ?></p>
-                                    <p class="mb-2"><i class="bi bi-currency-dollar me-3"></i><?php echo $row['prix']; ?> XAF / Mois</p>
+                                    <p class="mb-2"><i class="bi bi-currency-dollar me-3"></i><?php echo $row['prix']; ?> Franc CFA / Mois</p>
                                     <p class="mb-2"><i class="bi bi-pin-map-fill  me-3"></i>Région : <?php echo $row['region']; ?></p>
                                     <p class="mb-2"><i class="bi bi-radar me-3"></i>Ville : <?php echo $row['ville']; ?></p>
 
@@ -181,7 +181,7 @@ if (isset($_GET['id'])) {
                                     <p class="mb-2"><i class="bi bi-geo-fill me-3"></i>Département : <?php echo $row['departement']; ?></p>
                                      <p class="mb-2"><i class="fas fa-map-marker-alt me-3"></i>Arrondissement : <?php echo $row['arrondissement']; ?></p>
 
-                                    <p class="mb-2"><i class='bx bxs-car me-3'></i><?php echo $row['distance']; ?> XAF par rapport à la route</p>
+                                    <p class="mb-2"><i class='bx bxs-car me-3'></i><?php echo $row['distance']; ?> Franc CFA par rapport à la route</p>
                                     <p class="mb-2"><i class="fas fa-walking me-3"></i><?php echo $row['destination']; ?>  par rapport à la route</p>
 
                                     </div>

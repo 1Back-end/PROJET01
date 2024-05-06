@@ -2,11 +2,13 @@
 include_once("../include/menu.php"); 
 include_once("../database/db.php");
 $identifiant = $_SESSION['id'];
-if (!isset($_SESSION['id'])) {
-    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-    header("Location: ../login/login.php");
+// Vérifier si l'utilisateur est connecté et s'il est soit un agent immobilier soit un propriétaire
+if (!isset($_SESSION['id']) || (!$IsAgentImmobilier && !$IsProprietaire)) {
+    // Rediriger vers la page d'erreur
+    header("Location: error.php");
     exit();
 }
+
 // Pagination
 $itemsPerPage = 5;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
@@ -72,7 +74,7 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
                                 <td><?php echo $row['ville']; ?></td>
                                 <td><?php echo $row['departement']; ?></td>
                                 <td><?php echo $row['quartier']; ?></td>
-                                <td><?php echo $row['prix']; ?>XAF</td>
+                                <td><?php echo $row['prix']; ?> Franc CFA</td>
                                 <td><?php echo $row['type_logement']; ?></td>
                                 <td><a class="btn btn-add btn-sm btn-info btn-xs" href="#"><?php echo $row['status']; ?></a></td>
 

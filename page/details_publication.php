@@ -73,7 +73,7 @@ if (isset($_GET['id'])) {
                         <div class="card-body">
                             <h5 class="card-title">Informations du produit</h5>
                             <p class="card-text text-justify">Description: <?php echo $row['description']; ?></p>
-                            <p class="card-text">Prix: <?php echo $row['prix']; ?> Frcfa</p>
+                            <p class="card-text">Prix: <?php echo $row['prix']; ?> Franc CFA</p>
                             <p class="card-text">Région: <?php echo $row['region']; ?></p>
                             <p class="card-text">Departement: <?php echo $row['departement']; ?></p>
                             <p class="card-text">Arrondissement: <?php echo $row['arrondissement']; ?></p>
