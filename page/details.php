@@ -4,7 +4,11 @@
 <?php include_once("../database/db.php"); ?>
 <head>
     <meta charset="utf-8">
-    <title>IMMO INVESMENT SCI</title>
+    <title>
+    <?php
+    echo strtoupper(ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF']))));
+      ?>
+    </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="shortcut icon" href="../package/img/logo.png" type="image/x-icon">
     <meta content="" name="keywords">
@@ -219,17 +223,17 @@ if (isset($_GET['id'])) {
                                 </div>
 
                                 <div class="mb-2">
-                                    <input type="text" class="form-control py-2" placeholder="Votre nom complet" name="nom">
+                                    <input type="text" value="<?php echo isset($_POST['nom']) ? htmlspecialchars($_POST['nom']) : ''; ?>" class="form-control py-2" placeholder="Votre nom complet" name="nom">
                                 </div>
                                 <div class="mb-2">
-                                    <input type="email" class="form-control py-2" placeholder="Votre adresse email" name="email">
+                                    <input type="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>" class="form-control py-2" placeholder="Votre adresse email" name="email">
 
                                 </div>
                                 <div class="mb-2">
-                                    <input type="tel" id="phone" class="form-control py-2" placeholder="Votre numéro de téléphone" name="tel">
+                                    <input type="tel" id="phone" class="form-control py-2" value="<?php echo isset($_POST['tel']) ? htmlspecialchars($_POST['tel']) : ''; ?>" placeholder="Votre numéro de téléphone" name="tel">
                                 </div>
                                 <div class="mb-2">
-                                    <textarea name="description" id="" cols="5" rows="5" class="form-control" placeholder="Hello ! je suis intéressé par ce Logement ..."></textarea>
+                                    <textarea name="description" id="" cols="5" rows="5" class="form-control" placeholder="Hello ! je suis intéressé par ce Logement ..."><?php echo isset($_POST['description']) ? htmlspecialchars($_POST['description']) : ''; ?></textarea>
                                 </div>
                                 <div class="mb-2">
                                 <button  class="btn btn-dark mb-2 btn-responsive"  name="envoyer" type="submit"><i class="fas fa-paper-plane"></i> Soumettre votre demande</button>
@@ -251,53 +255,7 @@ if (isset($_GET['id'])) {
 
         
          <!-- Footer Start -->
-         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-">
-                        <h5 class="text-white mb-4">Immo Investment SCI</h5>
-                        <img src="../src/images/logo_footer.png" alt="" width="180px" style="padding-left: 50px;">
-                    </div>
-                    <div class="col-lg-4 col-md-">
-                        <h5 class="text-white mb-4">Contact</h5>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Neptune Golf Bastos, Yaoundé</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 6 99 99 93 18</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>immoinvestmentsci@gmail.com</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-">
-                        <h5 class="text-white mb-4">Menu</h5>
-                        <a class="btn btn-link text-white-50" href="../index.php">Acceuil</a>
-                        <a class="btn btn-link text-white-50" href="apropos.php">A propos</a>
-                        <a class="btn btn-link text-white-50" href="contact.php">Contact</a>
-                        <a class="btn btn-link text-white-50" href="#">Politique de Confidentialité</a>
-                    </div>
-                   
-                    <div class="col-lg-3 col-md-">
-                        <h5 class="text-white mb-4">Newsletter</h5>
-                        <p>Inscrivez-vous dès maintenant pour recevoir nos prochaines actualités directement dans votre boîte de réception</p>
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre E-mail">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container" >
-                <div class="copyright" >
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0"  >
-                            &copy; <a class="border-bottom" href="#" >IMMO INVESTMENT SCI</a>, Tous droits réservés. 	
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
+         <?php include_once("footer.php");?>
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

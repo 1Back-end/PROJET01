@@ -4,7 +4,11 @@
 <?php include_once("../database/db.php"); ?>
 <head>
     <meta charset="utf-8">
-    <title>IMMO INVESMENT SCI</title>
+    <title>
+    <?php
+    echo strtoupper(ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF']))));
+      ?>
+    </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="shortcut icon" href="../package/img/logo.png" type="image/x-icon">
     <meta content="" name="keywords">
@@ -132,7 +136,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 p-md-5 p-3 wow fadeIn" data-wow-delay="0.5s">
-                        <h3 class="mb-4">N°1 pour trouver le logement idéale</h3>
+                        <h3 class="mb-4 text-uppercase">N°1 pour trouver le logement idéale</h3>
                         <p class="mb-4">
                             Trouvez votre chez-vous idéal parmi notre sélection exclusive de biens immobiliers,
                             tout en découvrant des propriétés uniques qui correspondent à votre style de vie et à vos besoins.
@@ -140,7 +144,7 @@
                         <p><i class="fa fa-check text-primary me-3"></i>Accessibilité: 24h/24 - 7 jours/7</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Présentation détaillée des biens</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Économie de temps et d'efforts</p>
-                        <a class="btn btn-primary py-3 px-5 mt-3" href="">En savoir plus</a>
+                       
                     </div>
                 </div>
             </div>
@@ -254,69 +258,34 @@
                             </div>
                         </a>
                  </div>
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="mb-3">pourcentages</h4>
-                    <p class="">Lors de la publication d'un produit par un acteur du système (Agent immobilier ou Propriétaire), lorsque le produit est validé par l'administrateur, si le logement est pris par un client, l'utilisateur bénéficiera d'un pourcentage sur son logement. Les pourcentages sont repartis comme suite:</p>
-                        <p><i class="fa fa-check text-primary me-3"></i><span class="text text-danger">Agent Immobilier:</span> Il bénéficiera de 30% sur chacun de ses produits pris pas les clients</p>
-                        <p><i class="fa fa-check text-primary me-3"></i><span class="text text-danger">Propriétaire:</span> Il bénéficiera de 20% sur chacun de ses produits pris pas les clients</p>
-                </div>
+               
                 </div>
             </div>
         </div>
+
+
         <!-- Category End -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h4 class="mb-3 text-uppercase">NOS pourcentages                 </h4>
+                    <p class="">Lorsqu'un produit immobilier est publié par un agent immobilier ou un propriétaire et validé par l'administrateur, une commission est répartie entre les différentes parties prenantes suite à la vente du bien à un client. La répartition de la commission se fera comme suite:</p>
+                    
+                    <p><i class="fa fa-check text-dark me-3"></i><span class="text text-primary">Agent Immobilier:</span> Il bénéficiera de 30% sur chacun de ses produits pris pas les clients</p>
+                        <p><i class="fa fa-check text-dark me-3"></i><span class="text text-primary">Propriétaire:</span> Il bénéficiera de 20% sur chacun de ses produits pris pas les clients</p>
+                </div>
+              
+                
 
-
-        
-
-        
-         <!-- Footer Start -->
-         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-3 col-md-">
-                        <h5 class="text-white mb-4">Immo Investment SCI</h5>
-                        <img src="../src/images/logo_footer.png" alt="" width="180px" style="padding-left: 50px;">
-                    </div>
-                    <div class="col-lg-4 col-md-">
-                        <h5 class="text-white mb-4">Contact</h5>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Neptune Golf Bastos, Yaoundé</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 6 99 99 93 18</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>immoinvestmentsci@gmail.com</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-">
-                        <h5 class="text-white mb-4">Menu</h5>
-                        <a class="btn btn-link text-white-50" href="../index.php">Acceuil</a>
-                        <a class="btn btn-link text-white-50" href="apropos.php">A propos</a>
-                        <a class="btn btn-link text-white-50" href="contact.php">Contact</a>
-                        <a class="btn btn-link text-white-50" href="#">Politique de Confidentialité</a>
-                    </div>
                    
-                    <div class="col-lg-3 col-md-">
-                        <h5 class="text-white mb-4">Newsletter</h5>
-                        <p>Inscrivez-vous dès maintenant pour recevoir nos prochaines actualités directement dans votre boîte de réception</p>
-                        <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre E-mail">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container" >
-                <div class="copyright" >
-                    <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0"  >
-                            &copy; <a class="border-bottom" href="#" >IMMO INVESTMENT SCI</a>, Tous droits réservés. 	
-                        </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
-        <!-- Footer End -->
+
+        
+
+        
+        <?php include_once("footer.php");?>
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

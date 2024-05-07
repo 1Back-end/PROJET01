@@ -4,7 +4,11 @@
 <?php include_once("fonction.php"); ?>
 <head>
     <meta charset="utf-8">
-    <title>IMMO INVESMENT SCI</title>
+    <title>
+    <?php
+    echo strtoupper(ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF']))));
+      ?>
+    </title>
     <link rel="shortcut icon" href="package/img/logo.png" type="image/x-icon">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -420,8 +424,8 @@ if ($result) {
                         </div>
                     </div>
                     <div class="col-lg-6 p-md-5 p-3 wow fadeIn" data-wow-delay="0.5s">
-                        <h3 class="mb-4">N°1 Pour trouver la propriété idéale</h3>
-                        <p class="mb-4"> 
+                        <h3 class="mb-4 text-uppercase">N°1 Pour trouver la propriété idéale</h3>
+                        <p class="mb-4 text-justify"> 
                             Trouvez votre chez-vous idéal parmi notre sélection exclusive de biens immobiliers,
                             tout en découvrant des propriétés uniques qui correspondent à votre style de vie et à vos besoins.
                         </p>
@@ -439,13 +443,10 @@ if ($result) {
         
          <!-- Footer Start -->
          <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5">
+            <div class="container py-3">
                 <div class="row g-5">
-                    <div class="col-lg-3 col-md-">
-                        <h5 class="text-white mb-4 text-uppercase">Immo <span class="text-primary">Investment SCI</span></h5>
-                        <img src="src/images/logo_footer.png" class="rounded-circle img-fluid" alt="" width="180px" style="padding-left: 50px;">
-                    </div>
-                    <div class="col-lg-4 col-md-">
+                    
+                    <div class="col-lg-4 col-md-12 col-sm-12">
                         <h5 class="text-white mb-4">Contact</h5>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Neptune Golf Bastos, Yaoundé</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 6 99 99 93 18</p>
@@ -456,15 +457,16 @@ if ($result) {
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
                         <h5 class="text-white mb-4">Menu</h5>
                         <a class="btn btn-link text-white-50" href="index.php">Acceuil</a>
                         <a class="btn btn-link text-white-50" href="page/apropos.php">A propos</a>
                         <a class="btn btn-link text-white-50" href="page/contact.php">Contact</a>
+                        <a class="btn btn-link text-white-50" href="page/chambres.php">Propriétés</a>
                         <a class="btn btn-link text-white-50" href="#">Politique de Confidentialité</a>
                     </div>
                    
-                    <div class="col-lg-3 col-md-">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
                         <h5 class="text-white mb-4">Newsletter</h5>
                         <p>Inscrivez-vous dès maintenant pour recevoir nos prochaines actualités directement dans votre boîte de réception</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
@@ -477,7 +479,7 @@ if ($result) {
             <div class="container" >
                 <div class="copyright" >
                     <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0"  >
+                        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0"  >
                             &copy; <a class="border-bottom" href="#" >IMMO INVESTMENT SCI</a>, Tous droits réservés. 	
                         </div>
                     </div>
