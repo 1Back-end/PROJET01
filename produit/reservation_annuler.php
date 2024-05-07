@@ -6,38 +6,47 @@ require_once "../database/db.php";
 $success = "";
 $erreur = "";
 
-// Vérifier si l'ID de la réservation est passé dans l'URL
-if(isset($_GET['id_reservation'])) {
-    $id_reservation = $_GET['id_reservation'];
-
-    try {
-        // Préparer la requête SQL pour mettre à jour le statut de la réservation
-        $sql = "UPDATE reservation SET statut = 'annulé' WHERE id = :id_reservation";
-
-        // Préparer la déclaration SQL
-        $stmt = $connexion->prepare($sql);
-
-        // Liaison des paramètres
-        $stmt->bindParam(':id_reservation', $id_reservation);
-
-        // Exécuter la requête
+try {
+    // Vérifier si l'identifiant de la réservation est spécifié dans la requête GET
+    if(isset($_GET['id_reservation'])) {
+        // Récupérer l'identifiant de la réservation à partir de la requête GET
+        $id_reservation = $_GET['id_reservation']; // Adapté selon votre méthode d'obtention de l'identifiant
+        
+        // Récupérer le produit_id associé à l'id_reservation dans la table reservation
+        $stmt = $connexion->prepare("SELECT produit_id FROM reservation WHERE id = :id_reservation");
+        $stmt->bindParam(':id_reservation', $id_reservation, PDO::PARAM_INT);
         $stmt->execute();
-
-        // Vérifier si la requête a réussi
-        if($stmt->rowCount() > 0) {
-            // Message de succès
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Vérifier si une ligne a été trouvée
+        if ($result) {
+            $produit_id = $result['produit_id'];
+            
+            // Mettre à jour le statut du produit dans la table produits
+            $sql = "UPDATE produits SET STATUS = 'Present' WHERE id = :produit_id";
+            $stmt = $connexion->prepare($sql);
+            $stmt->bindParam(':produit_id', $produit_id, PDO::PARAM_INT);
+            $stmt->execute();
+            
+            // Mettre à jour le statut de la réservation dans la table reservation
+            $sql_reservation = "UPDATE reservation SET statut = 'validé' WHERE id = :id_reservation";
+            $stmt_reservation = $connexion->prepare($sql_reservation);
+            $stmt_reservation->bindParam(':id_reservation', $id_reservation, PDO::PARAM_INT);
+            $stmt_reservation->execute();
+            
+            // Afficher un message de succès
             $success = "La réservation a été annulée avec succès";
         } else {
-            // Message d'erreur si aucun enregistrement n'a été mis à jour
+            // Si aucune ligne n'a été trouvée, afficher un message d'erreur
             $erreur = "Erreur lors de l'annulation de la réservation. Veuillez réessayer.";
         }
-    } catch(PDOException $e) {
-        // Gestion des exceptions PDO
-        $erreur = "Erreur : " . $e->getMessage();
+    } else {
+        // Si l'identifiant de la réservation n'est pas spécifié, afficher un message d'erreur
+        $erreur = "ID de réservation non spécifié.";
     }
-} else {
-    // Message d'erreur si l'ID de réservation n'est pas spécifié dans l'URL
-   $erreur = "ID de réservation non spécifié.";
+} catch(PDOException $e) {
+    // En cas d'erreur, afficher l'erreur
+    echo "Erreur : " . $e->getMessage();
 }
 
 // Redirection vers la page reservation.php avec les messages

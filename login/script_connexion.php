@@ -51,7 +51,7 @@ if(isset($_POST["connexion"])) {
         }
     } else {
         if(empty($_POST["email"])) {
-            $MessageErreurEmail = "Veuillez entrer votre adresse email !";
+            $MessageErreurEmail = "Veuillez entrer votre adresse email ou votre nom d'utilisateur !";
         }
         if(empty($_POST["mpd"])) {
             $MessageErreurMpd = "Veuillez entrer votre mot de passe !";

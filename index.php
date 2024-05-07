@@ -293,8 +293,8 @@ if ($result) {
                 ?>
                 <div class="col-md-4 col-sm-12 mb-4">
                     <div class="shadow-sm p-2 bg-white wow fadeInUp rounded text-center" data-wow-delay="0.5s">
-                        <div class="card-body text-dark">
-                            <div class="img-area mb-4 p-0">
+                        <div class="card-body text-dark p-1">
+                            <div class="img-area mb-4">
                                 <img src="uploads/<?php echo $row['photo_principale']; ?>" class="img-card" alt="Image du produit">
                             </div>
                             <?php

@@ -1,5 +1,9 @@
 
 Information of login
+
+
+
+
 SuperAdmin
 
 Username : laurentalphonsewilfried@gmail.com
@@ -14,6 +18,9 @@ Password :75667165
 Email : dificeiloli-5987@yopmail.com
 Password : 05438610 
 
+
+Email : backendlaurent@yopmail.com
+Password :  Pass@1d!
 
 
 Agent Immobilier 

@@ -207,6 +207,11 @@
 						<span class="micon bi bi-circle"></span><span class="mtext">Liste Réservations</span>
 					</a>
 				</li>
+				<li class="mt-2">
+					<a href="../produit/produit_occupée.php" class="dropdown-toggle no-arrow">
+						<span class="micon bi bi-circle"></span><span class="mtext">Produits Occupées</span>
+					</a>
+				</li>
 			<?php elseif ($IsAgentImmobilier || $IsProprietaire): ?>
 				<li class="mt-5">
 					<a href="../page/mes_publications.php" class="dropdown-toggle no-arrow">
