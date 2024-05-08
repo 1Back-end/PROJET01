@@ -1,34 +1,18 @@
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Sélectionner l'élément du numéro de téléphone
-    var phoneInput = document.getElementById('phone');
-    // Sélectionner l'élément du message
-    var phoneMessage = document.getElementById('phoneMessage');
 
-    // Sélectionner l'élément de sélection du drapeau
-    var countrySelect = document.getElementById('countrySelect');
-
-    // Ajouter un écouteur d'événements pour surveiller les changements dans la sélection du pays
-    countrySelect.addEventListener('change', function () {
-        // Afficher le message d'instruction
-        phoneMessage.textContent = 'Entrez votre numéro de téléphone (9 chiffres après +237 pour le Cameroun).';
-    });
-
-    // Ajouter un écouteur d'événements pour surveiller les changements dans le champ de saisie
-    phoneInput.addEventListener('input', function () {
-        // Récupérer la valeur du champ de saisie
-        var phoneNumber = phoneInput.value;
-
-        // Validation : Vérifier si le numéro de téléphone contient 9 chiffres après le préfixe +237 (pour le Cameroun)
-        if (phoneNumber.startsWith('+237') && phoneNumber.length !== 12) {
-            phoneMessage.textContent = 'Le numéro de téléphone pour le Cameroun doit contenir 9 chiffres après le préfixe +237.';
-        } else {
-            // Effacer le message d'erreur
-            phoneMessage.textContent = '';
-        }
-    });
+const input = document.querySelector("#phone");
+window.intlTelInput(input, {
+  initialCountry: "CM",
+  separateDialCode: true,
+  geoIpLookup: callback => {
+    fetch("https://ipapi.co/json")
+      .then(res => res.json())
+      .then(data => callback(data.country_code))
+      .catch(() => callback("us"));
+  },
+  utilsScript: "/intl-tel-input/js/utils.js?1714642302458" // just for formatting/placeholders etc
 });
-
+ 
     // Récupérer l'élément input file
     var uploadImageInput = document.getElementById("upload-image");
 

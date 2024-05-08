@@ -124,3 +124,16 @@ h6 {
     font-size: 15px;
   }
 }
+
+    /* Pour les écrans larges */
+    #phone {
+      width: 515px; /* Largeur fixe du champ de saisie pour les écrans larges */
+  }
+  
+ /* Pour les écrans plus petits (mode responsive) */
+@media (max-width: 768px) {
+  #phone {
+      width: 100%; /* Champ de saisie 100% de la largeur pour les écrans plus petits */
+  }
+}
+  

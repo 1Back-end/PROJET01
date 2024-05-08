@@ -97,42 +97,42 @@ if (!$user) {
                                    
                                     <input type="hidden" class="form-control" placeholder="Votre nom" name="id" value="<?php echo $user['ID']; ?>">
                                
-                                <div class="mb-2">
+                                <div class="mb-3">
                                     <label>Nom</label>
                                     <input type="text" class="form-control" placeholder="Votre nom" name="nom" value="<?php echo $user['NOM']; ?>">
                                 </div>
-                                <div class="mb-2">
+                                <div class="mb-3">
                                     <label>Prenom</label>
                                     <input type="text" class="form-control" placeholder="Votre prenom" name="prenom" value="<?php echo $user['PRENOM']; ?>">
                                 </div>
-                                <div class="mb-2">
+                                <div class="mb-3">
                                     <label>Ville</label>
                                     <input type="text" class="form-control" placeholder="Votre ville" name="ville" value="<?php echo $user['VILLE']; ?>">
                                 </div>
-                                <div class="mb-2">
+                                <div class="mb-3">
                                     <label>Quartier</label>
                                     <input type="text" class="form-control" placeholder="Votre quartier" name="quartier" value="<?php echo $user['QUARTIER']; ?>">
                                 </div>
-                                <div class="mb-2">
+                                <div class="mb-3">
                                     <label>N° Téléphone</label><br>
                                     <input type="text" id="telephone" class="form-control" placeholder="Votre numero de télephone" name="telephone" value="<?php echo $user['TELEPHONE']; ?>">
                                 </div>
                                 
                               
-                                <div class="mb-2">
+                                <div class="mb-3">
                                 <label for="ancien_mot_de_passe">Ancien mot de passe</label>
                                     <input type="password" class="form-control password-input mb-2" id="ancien_mot_de_passe" placeholder="Votre ancien mot de passe" name="ancien_password">
 
                                      <input type="checkbox" class="toggle-password"> Afficher mot de passe
                                       
                             </div>
-                            <div class="mb-2">
+                            <div class="mb-3">
                                 <label for="nouveau_mot_de_passe">Nouveau mot de passe</label>
                                     <input type="password" class="form-control password-input mb-2" id="nouveau_mot_de_passe" placeholder="Votre nouveau mot de passe" name="nouveau_password">
                                     <input type="checkbox" class="toggle-password"> Afficher mot de passe
                                       
                             </div>
-                            <div class="mb-2">
+                            <div class="mb-3">
                                 <label for="nouveau_mot_de_passe">Confirmer votre mot de passe</label>
                                     <input type="password" class="form-control password-input mb-2" id="confirm_nouveau_mot_de_passe" placeholder="Votre nouveau mot de passe" name="confirm_nouveau_password">
                                     <input type="checkbox" class="toggle-password"> Afficher mot de passe

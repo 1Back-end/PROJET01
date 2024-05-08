@@ -211,9 +211,7 @@ if (isset($_GET['id'])) {
                             }
                         }
                         ?>
-
-
-                        <div class="shadow-sm py-3 p-3 mt-3">
+                            <div class="shadow-sm py-3 p-3 mt-3">
                             <h5 class="font-12 text-uppercase">Nous Contacter</h5>
                             <p class="text-justify">Pour toute demande d'information ou pour manifester votre intérêt, veuillez remplir le formulaire ci-dessous et soumettre vos coordonnées.</p>
                             <form action="" method="post">
@@ -230,8 +228,8 @@ if (isset($_GET['id'])) {
 
                                 </div>
                                 <div class="mb-2">
-                                    <input type="tel" id="phone" class="form-control py-2" value="<?php echo isset($_POST['tel']) ? htmlspecialchars($_POST['tel']) : ''; ?>" placeholder="Votre numéro de téléphone" name="tel">
-                                </div>
+            <input type="tel" id="phone" class="form-control py-2" value="<?php echo isset($_POST['tel']) ? htmlspecialchars($_POST['tel']) : ''; ?>" placeholder="Votre numéro de téléphone" name="tel">
+        </div>
                                 <div class="mb-2">
                                     <textarea name="description" id="" cols="5" rows="5" class="form-control" placeholder="Hello ! je suis intéressé par ce Logement ..."><?php echo isset($_POST['description']) ? htmlspecialchars($_POST['description']) : ''; ?></textarea>
                                 </div>
@@ -262,36 +260,17 @@ if (isset($_GET['id'])) {
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var input = document.querySelector("#phone");
-    var iti = window.intlTelInput(input, {
-        initialCountry: "CM", // Définition du Cameroun comme pays initial
-        separateDialCode: false, // Ne pas séparer le code de pays
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-        autoPlaceholder: "polite", // Ajouter un espace réservé automatiquement
-        nationalMode: false, // Afficher le numéro complet sans le préfixe du pays
-        allowDropdown: true, // Permettre à l'utilisateur de choisir un autre pays
-        formatOnDisplay: true, // Formater le numéro lors de l'affichage
-        autoHideDialCode: false, // Ne pas cacher le code de pays lorsqu'il est détecté automatiquement
-        placeholderNumberType: "MOBILE", // Utiliser un espace réservé adapté aux numéros de téléphone mobile
-    });
 
-    // Préremplir le champ de saisie avec le préfixe du pays
-    input.value = "+" + iti.getSelectedCountryData().dialCode;
-
-    // Ajouter l'écouteur d'événement pour la vérification du numéro de téléphone lors de la saisie
-    input.addEventListener("input", function() {
-        var isValid = iti.isValidNumber();
-        if (isValid) {
-            input.classList.remove("error");
-        } else {
-            input.classList.add("error");
-        }
-    });
+    <script>
+       const input = document.querySelector("#phone");
+window.intlTelInput(input, {
+  initialCountry: "gb",
+  separateDialCode: true,
+  initialCountry :"CM",
+  utilsScript: "/intl-tel-input/js/utils.js?1714642302458"
+   // just for formatting/placeholders etc
 });
-</script>
-
+    </script>
 
 
     <!-- JavaScript Libraries -->

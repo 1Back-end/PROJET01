@@ -5,18 +5,7 @@
     object-fit: cover; /* Pour que l'image conserve ses proportions et remplisse le conteneur */
     cursor: pointer; /* Curseur pointer pour indiquer que l'image est cliquable */
 }
-.form-control::placeholder {
-  color: #6c757d;
-  opacity: 1;
-  font-size: 12px;
-}
-.mb-3, .my-3 {
-  margin-bottom: 1rem !important;
-  font-size: 12px;
-}
-#phone {
-    width: 680px; /* Largeur fixe du champ de saisie */
-}
-
-/* Pour les écrans larges */
-
+ /* CSS pour définir une largeur fixe pour le champ de saisie */
+ #phone {
+            width: 660px; /* Largeur fixe du champ de saisie */
+        }

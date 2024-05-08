@@ -5,17 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
-<style>
-    #profile-image {
-    width: 150px; /* Taille de l'image */
-    height: 150px; /* Taille de l'image */
-    border-radius: 50%; /* Pour arrondir l'image */
-    object-fit: cover; /* Pour que l'image conserve ses proportions et remplisse le conteneur */
-    cursor: pointer; /* Curseur pointer pour indiquer que l'image est cliquable */
-}
-
-</style>
-
+<link rel="stylesheet" href="style.css">
 
     <div class="mobile-menu-overlay"></div>
 
@@ -57,21 +47,21 @@
             <div class="card-box p-3 mb-3">
                
                 <div class="mb-3">
-                        <input type="text" class="form-control" value="<?php echo isset($_POST['nom']) ? htmlspecialchars($_POST['nom']) : ''; ?>"  placeholder="Nom" name="nom">
+                        <input type="text" class="form-control" value="<?php echo isset($_POST['nom']) ? htmlspecialchars($_POST['nom']) : ''; ?>"  placeholder="Entrer le nom" name="nom">
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Prénom" value="<?php echo isset($_POST['prenom']) ? htmlspecialchars($_POST['prenom']) : ''; ?>"  name="prenom">
+                        <input type="text" class="form-control" placeholder="Entrer le prénom" value="<?php echo isset($_POST['prenom']) ? htmlspecialchars($_POST['prenom']) : ''; ?>"  name="prenom">
                     </div>
                   
                     <div class="mb-3">
-                        <input type="email" class="form-control" placeholder="Adresse email" name="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>" >
+                        <input type="email" class="form-control" placeholder="Entrer l'adresse email" name="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>" >
                     </div>
                     <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Ville"  name="ville" value="<?php echo isset($_POST['ville']) ? htmlspecialchars($_POST['ville']) : ''; ?>">
+                        <input type="text" class="form-control" placeholder="Entrer la ville"  name="ville" value="<?php echo isset($_POST['ville']) ? htmlspecialchars($_POST['ville']) : ''; ?>">
                     </div>
                     <div class="mb-3">
-                    <input type="tel" name="tel" id="phone" class="form-control" placeholder="Numéro de téléphone" value="<?php echo isset($_POST['tel']) ? htmlspecialchars($_POST['tel']) : ''; ?>">
-                    <small id="phoneMessage" class="form-text text-muted">Entrez votre numéro de téléphone.</small>
+                    <input type="tel" name="tel" id="phone" class="form-control" placeholder="Entrer le numéro de téléphone" value="<?php echo isset($_POST['tel']) ? htmlspecialchars($_POST['tel']) : ''; ?>">
+                    
                 </div>
 
                     
@@ -83,7 +73,8 @@
                     <div class="mb-4 mt-3">
                        
                 <button type="submit" name="enregistrer" class="btn-add mb-2 btn btn-success btn-sm btn-responsive">Enregistrer</button>
-                <a href="liste employés.php" class="btn-add mb-2 btn btn-responsive btn-danger">Annuler</a>
+                <a href="#" onclick="history.back();" class="btn-add mb-2 btn btn-sm btn-responsive btn-danger">Annuler</a>
+
             </div>
                 </div>
 

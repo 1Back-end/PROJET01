@@ -85,7 +85,7 @@
                                     <?php foreach ($images as $image) : ?>
                                         <div class="col-md-6 mb-3">
                                             <!-- Agrandir les images -->
-                                            <img src="../uploads/<?php echo $image; ?>" class="img-card" alt="Image de la galerie">
+                                            <img src="../uploads/<?php echo $image; ?>" class="img-card">
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
