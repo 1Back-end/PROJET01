@@ -2,7 +2,7 @@
 include_once("../database/db.php");
 
 // Pagination
-$itemsPerPage = 5;
+$itemsPerPage = 10;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * $itemsPerPage;
 

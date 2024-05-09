@@ -59,6 +59,9 @@
    <h6 id="choose-image">Cliquez pour choisir une photo</h6>
    <!-- Input file caché pour le téléchargement de la nouvelle photo -->
    <input type="file" name="photo" value="<?php echo isset($_POST['photo']) ? htmlspecialchars($_POST['photo']) : ''; ?>"  id="upload-image"  style="display: none;" accept="image/*">
+   <?php if(isset($erreur_photo)): ?>
+                <small class="text-danger"><?=$erreur_photo?></small>
+            <?php endif; ?> 
 </div>
 </div>
        <div class="col-md-8 col-sm-12 p-1">  

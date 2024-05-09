@@ -118,7 +118,7 @@
                     </nav>
                 </div>
                 <div class="col-md-6 animated fadeIn">
-                    <img class="img-entete" src="../package/img/image1.jpg" alt="">
+                    <img class="img-entete" src="../package/img/baniere1.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -202,9 +202,9 @@ if (isset($_GET['id'])) {
                         // Après avoir vérifié les champs et effectué les opérations nécessaires
                         if (isset($_POST["envoyer"])) {
                             // Vérification si au moins une des erreurs n'est pas vide
-                            if (!empty($erreur_champ)) {
+                            if (!empty($MessageErreur)) {
                                 // Affichage du message d'erreur
-                                echo "<div class='alert alert-danger' role='alert'>$erreur_champ</div>";
+                                echo "<div class='alert alert-danger' role='alert'>$MessageErreur</div>";
                             } else {
                                 // Affichage du message de succès
                                 echo "<div class='alert alert-success' role='alert'>Votre demande a été soumise avec succès, Nous vous contacterons le plus tôt possible.</div>";
@@ -228,13 +228,14 @@ if (isset($_GET['id'])) {
 
                                 </div>
                                 <div class="mb-2">
-            <input type="tel" id="phone" class="form-control py-2" value="<?php echo isset($_POST['tel']) ? htmlspecialchars($_POST['tel']) : ''; ?>" placeholder="Votre numéro de téléphone" name="tel">
-        </div>
+                                    <input type="tel" id="phone" class="form-control py-2" value="<?php echo isset($_POST['tel']) ? htmlspecialchars($_POST['tel']) : ''; ?>" placeholder="Votre numéro de téléphone" name="tel">
+                                </div>
+
                                 <div class="mb-2">
                                     <textarea name="description" id="" cols="5" rows="5" class="form-control" placeholder="Hello ! je suis intéressé par ce Logement ..."><?php echo isset($_POST['description']) ? htmlspecialchars($_POST['description']) : ''; ?></textarea>
                                 </div>
                                 <div class="mb-2">
-                                <button  class="btn btn-dark mb-2 btn-responsive"  name="envoyer" type="submit"><i class="fas fa-paper-plane"></i> Soumettre votre demande</button>
+                                <button  class="btn btn-dark mb-2 btn-lg btn-responsive"  name="envoyer" type="submit"><i class="fas fa-paper-plane"></i> Soumettre votre demande</button>
                                     <!--<a href="#" class="btn btn-success mb-2 btn-responsive border-0" style="background-color: #25D366;"><i class="fab fa-whatsapp"></i> Nous contacter sur WhatsApp</a>-->
 
                                 </div>

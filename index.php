@@ -78,9 +78,9 @@
                     </div>
                     <!-- Pour les petits écrans -->
                     <div class="d-block d-lg-none">
-                        <a href="login/login.php" class="btn btn-dark text-white outline-none border-0 btn-sm">Se connecter</a>
+                        <a href="login/login.php" class="btn-add btn btn-dark text-white outline-none border-0 btn-sm">Se connecter</a>
                         <span class="mx-2"></span>
-                        <a href="utilisateurs/creation_compte.php" class="btn btn-success outline-none btn-sm text-white px-3">Inscription</a>
+                        <a href="utilisateurs/creation_compte.php" class="btn-add btn btn-success outline-none btn-sm text-white px-3">Inscription</a>
                     </div>
                      <br><br>
                     <!-- Pour les grands écrans -->
@@ -99,7 +99,7 @@
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 col-sm-12 p-md-5 p-3 mt-lg-5">
-                    <h5 style="font-size:30px;" class="fw-bold w-100   text-uppercase animated fadeIn mb-4">Votre recherche<span class="text-primary"> du logement idéale </span>commence ici</h5>
+                    <h5 style="font-size:30px;" class="fw-bold w-100  mt-4 text-uppercase animated fadeIn mb-4">Votre recherche<span class="text-primary"> du logement idéale </span>commence ici</h5>
                         <div class="container">
                         <p class="animated text-justify fadeIn mb-4 pb-2">Bienvenue chez <span class="text-primary">IMMO INVESTMENT SCI</span>, votre partenaire de confiance pour trouver la propriété parfaite. 
                         Découvrez des biens immobiliers exceptionnels qui répondent à vos besoins tout en explorant un monde de possibilités immobilières.</p>
@@ -110,10 +110,13 @@
                 <div class="col-md-6 animated fadeIn">
                     <div class="owl-carousel header-carousel">
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="package/img/image4.jpg" alt="">
+                            <img class="img-fluid" src="package/img/baniere1.jpg" alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="package/img/image3.jpg" alt="">
+                            <img class="img-fluid" src="package/img/baniere.jpg" alt="">
+                        </div>
+                        <div class="owl-carousel-item">
+                            <img class="img-fluid" src="package/img/baniere2.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -440,7 +443,7 @@ if ($result) {
         <!-- About End -->
 </div>
 </div>
-        
+
          <!-- Footer Start -->
          <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-3">

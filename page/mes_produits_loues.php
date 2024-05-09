@@ -35,6 +35,11 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <div class="main-container">
+<?php // Vérifier s'il existe des produits à afficher
+    if (empty($result)) {
+        echo "<div class='col-md-12 col-sm-12'><div class='alert alert-success text-center' role='alert'>Vous n'avez aucun produit loué.</div></div>";
+    } else {
+    ?>
 <div class="col-md-12 col-sm-12 ">
   
   <div class="card-box p-3 mb-3 text-center lign-items-center">
@@ -46,11 +51,7 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
 </div>
 
    
-    <?php // Vérifier s'il existe des produits à afficher
-    if (empty($result)) {
-        echo "<div class='col-md-12 col-sm-12'><div class='alert alert-success text-center' role='alert'>Vous n'avez aucun produit loué.</div></div>";
-    } else {
-    ?>
+    
     <div class="col-md-12 col-sm-12">
         <div class="pd-20 card-box mb-3 w-100">
             <div class="table-responsive">

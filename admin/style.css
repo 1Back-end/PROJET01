@@ -5,7 +5,13 @@
     object-fit: cover; /* Pour que l'image conserve ses proportions et remplisse le conteneur */
     cursor: pointer; /* Curseur pointer pour indiquer que l'image est cliquable */
 }
- /* CSS pour définir une largeur fixe pour le champ de saisie */
- #phone {
-            width: 660px; /* Largeur fixe du champ de saisie */
-        }
+#phone {
+    width: 655px; /* Largeur fixe du champ de saisie */
+}
+
+/* Pour les écrans larges */
+@media (max-width: 732px) {
+    #phone {
+      width: 100%;
+    }
+  }

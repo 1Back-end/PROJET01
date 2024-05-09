@@ -14,32 +14,7 @@
         });
     });
 
-    var input = document.querySelector("#telephone");
-    var iti = window.intlTelInput(input, {
-        initialCountry: "cm",
-        separateDialCode: false, // Ne pas séparer le préfixe
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-
-    // Mettre à jour le drapeau sélectionné
-    input.addEventListener('countrychange', function(event) {
-        var selectedCountryData = iti.getSelectedCountryData();
-        var flagElement = document.getElementById('selected-flag');
-        flagElement.innerHTML = '';
-        var flagIcon = document.createElement('div');
-        flagIcon.classList.add('iti__flag', 'iti__' + selectedCountryData.iso2);
-        flagElement.appendChild(flagIcon);
-    });
-
-    // Mettre à jour la saisie avec le préfixe
-    input.addEventListener('input', function(event) {
-        var selectedCountryData = iti.getSelectedCountryData();
-        var countryCode = selectedCountryData.dialCode;
-        var inputValue = input.value.replace('+' + countryCode, '');
-        var sanitizedValue = inputValue.replace(/[^\d]/g, ''); // Supprimer tout sauf les chiffres
-        input.value = '+' + countryCode + sanitizedValue;
-    });
-
+   
 
 
 
@@ -64,7 +39,6 @@
     document.querySelector('.edit-indicator').addEventListener('click', function() {
     document.getElementById('photo').click();
 });
-
 
 
 

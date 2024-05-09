@@ -33,3 +33,14 @@
   margin-bottom: 1rem !important;
   font-size: 12px;
 }
+#phone {
+    width: 620px; /* Largeur fixe du champ de saisie */
+}
+
+/* Pour les écrans larges */
+
+@media (max-width: 732px) {
+  #phone {
+      width: 100%; /* Champ de saisie 100% de la largeur pour les écrans plus petits */
+  }
+}

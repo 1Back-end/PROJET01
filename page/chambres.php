@@ -110,7 +110,7 @@
                     </nav>
                 </div>
                 <div class="col-md-6 animated fadeIn">
-                    <img class="img-entete" src="../package/img/image1.jpg" alt="">
+                    <img class="img-entete" src="../package/img/baniere1.jpg" alt="">
                 </div>
             </div>
         </div>

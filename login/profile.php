@@ -2,7 +2,7 @@
 // Inclure les fichiers nécessaires
 include_once("../include/menu.php");
 include_once("../database/db.php");
-include_once("script_edit_profile.php");
+
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['id'])) {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
@@ -55,23 +55,25 @@ if (!$user) {
                 <h4 class="text-center">MON PROFIL</h4>
             </div>
         </div>
-        
-        <div class="col-md-12">
-    <?php if (isset($_POST["modifier"])) : ?>
-        <?php if ($succes_message) : ?>
-            <div class="alert alert-success" role="alert">
-                <?php echo $succes_message; ?>
-            </div>
-        <?php endif; ?>
-        <?php if ($erreur_message) : ?>
-            <div class="alert alert-danger" role="alert">
-                <?php echo $erreur_message; ?>
-            </div>
-        <?php endif; ?>
-    <?php endif; ?>
-</div>
+
+       <div class="col-md-12 col-sm-12">
+        <?php include_once("script_edit_profile.php");?>
+        <?php
+        // Vérifier si le formulaire a été soumis avec succès
+        if (isset($_POST['modifier'])) {
+            // Vérifier s'il y a un message de succès ou d'erreur dans les variables
+            if (!empty($succes)) {
+                // Afficher l'alerte de succès
+                echo '<div class="alert alert-success text-center" role="alert">' . $succes . '</div>';
+            } elseif (!empty($erreur)) {
+                // Afficher l'alerte d'erreur
+                echo '<div class="alert alert-danger text-center" role="alert">' . $erreur . '</div>';
+            }
+        }
+        ?>
 
 
+       </div>
         <div class="col-md-12 col-sm-12">
             <div class="row">
                 <div class="col-md-4 col-sm-12 text-center">
@@ -115,7 +117,8 @@ if (!$user) {
                                 </div>
                                 <div class="mb-3">
                                     <label>N° Téléphone</label><br>
-                                    <input type="text" id="telephone" class="form-control" placeholder="Votre numero de télephone" name="telephone" value="<?php echo $user['TELEPHONE']; ?>">
+                                    <input type="tel" id="phone" class="form-control" placeholder="Votre numéro de téléphone" name="tel" value="<?php echo $user['TELEPHONE']; ?>">
+
                                 </div>
                                 
                               
@@ -151,6 +154,33 @@ if (!$user) {
         </div>
     </div>
 
+    <script>
+                
+                const input = document.querySelector("#phone");
+                window.intlTelInput(input, {
+                initialCountry: "CM",
+                separateDialCode: true,
+                geoIpLookup: callback => {
+                    fetch("https://ipapi.co/json")
+                    .then(res => res.json())
+                    .then(data => callback(data.country_code))
+                    .catch(() => callback("us"));
+                },
+                utilsScript: "/intl-tel-input/js/utils.js?1714642302458" // just for formatting/placeholders etc
+                });
+        
+            </script>
+
+
+
+
+
+
+
+
+
+
     <script src="profile.js"></script>
+   
 </body>
 </html>

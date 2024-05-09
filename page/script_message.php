@@ -18,7 +18,7 @@ if (isset($_POST["envoyer"])) {
     
     // Vérifier si les champs sont vides
     if (empty($nom) || empty($email) || empty($tel) || empty($description)) {
-        $erreur_champ = "Veuillez remplir tous les champs !";
+        $MessageErreur = "Veuillez remplir tous les champs !";
     } else {
         // Requête pour récupérer les informations du produit
         $stmt_produit = $connexion->prepare("SELECT * FROM produits WHERE id = :id_produit");
@@ -67,22 +67,25 @@ if (isset($_POST["envoyer"])) {
         // Envoyer l'e-mail
         $mail = new PHPMailer(true);
 
-        try {
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com'; // Remplacez par votre serveur SMTP
-            $mail->SMTPAuth = true;
-            $mail->Username = 'laurentalphonsewilfried@gmail.com'; // Remplacez par votre adresse e-mail
-            $mail->Password = 'rqak exlb rywc icdx'; // Remplacez par votre mot de passe e-mail
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
-
+        try {                                     
+            $mail->isSMTP();                                            
+            $mail->Host       = 'smtp.gmail.com'; 
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;                   
+            $mail->SMTPAuth   = true;                             
+            $mail->Username   = 'laurentalphonsewilfried@gmail.com';                 
+            $mail->Password   = 'rqak exlb rywc icdx';                        
+            $mail->SMTPSecure = 'tls';                              
+            $mail->Port       = 587;  
+            
             // Destinataire
-            $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse');
-            $mail->addAddress('laurentalphonsewilfried@gmail.com'); 
+            $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse'); // Votre adresse email et votre nom
+            $mail->addAddress($email); // Adresse email et nom du destinataire
+
 
             // Contenu de l'e-mail
             $mail->isHTML(true);
             $mail->Subject = 'Nouvelle demande de contact';
+            $mail->WordWrap = 50;
             $mail->Body = $message;
 
             // Envoyer l'e-mail

@@ -72,7 +72,7 @@
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="duplex.php" class="dropdown-item">Duplex</a>
                                 <a href="appartements.php" class="dropdown-item">Appartements Moderne</a>
-                                <a href="studois.php" class="dropdown-item">Studios Moderne</a>
+                                <a href="studios.php" class="dropdown-item">Studios Moderne</a>
                                 <a href="chambres.php" class="dropdown-item">Chambres Moderne</a>
                             </div>
                         </div>

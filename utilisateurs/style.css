@@ -20,3 +20,9 @@
 
 /* Pour les écrans larges */
 
+@media (max-width: 732px) {
+  #phone {
+      width: 100%; /* Champ de saisie 100% de la largeur pour les écrans plus petits */
+  }
+}
+ 
