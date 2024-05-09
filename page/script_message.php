@@ -78,7 +78,7 @@ if (isset($_POST["envoyer"])) {
 
             // Destinataire
             $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse');
-            $mail->addAddress('laurentalphonsewilfried@gmail.com'); 
+            $mail->addAddress('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse'); 
 
             // Contenu de l'e-mail
             $mail->isHTML(true);
