@@ -48,7 +48,7 @@ function sendEmail($nom, $email, $sujet, $message) {
 
         // Destinataire
         $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse'); // Votre adresse email et votre nom
-        $mail->addAddress($email, $nom); // Adresse email et nom du destinataire
+        $mail->addAddress('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse'); // Adresse email et nom du destinataire
 
         // Contenu de l'email
         $mail->isHTML(true);

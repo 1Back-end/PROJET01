@@ -78,9 +78,8 @@ if (isset($_POST["envoyer"])) {
             $mail->Port       = 587;  
             
             // Destinataire
-            $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse'); // Votre adresse email et votre nom
-            $mail->addAddress($email); // Adresse email et nom du destinataire
-
+            $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse');
+            $mail->addAddress('laurentalphonsewilfried@gmail.com'); 
 
             // Contenu de l'e-mail
             $mail->isHTML(true);
