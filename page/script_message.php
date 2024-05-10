@@ -54,12 +54,6 @@ if (isset($_POST["envoyer"])) {
             Arrondissement: {$produit['arrondissement']}<br>
             Ville: {$produit['ville']}<br>
             Description: {$produit['description']}<br><br><br>
-
-            <b>Informations sur le propriétaire du produit :</b><br>
-            Nom: {$proprietaire['NOM']}<br>
-            Email: {$proprietaire['EMAIL']}<br>
-            Téléphone: {$proprietaire['TELEPHONE']}<br>
-            Adresse: {$proprietaire['VILLE']}<br><br>
             Cordialement,<br>
             IMMO INVESTMENT SCI
         ";
