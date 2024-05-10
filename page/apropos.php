@@ -105,7 +105,7 @@
         <!-- Header Start -->
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-                <div class="col-md-6 p-5 mt-lg-5">
+                <div class="col-md-6 p-3 mt-lg-5">
                     <h1 class="display-5 animated fadeIn mt-5">À propos de nous</h1> 
                         <p>
                             Notre équipe expérimentée est composée d'experts du marché immobilier
@@ -123,28 +123,31 @@
         <!-- Header End -->
 
 
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 col-sm-12 wow fadeIn" data-wow-delay="0.1s">
-                        <div class="about-img position-relative overflow-hidden p-5 pe-0">
+         <!-- About Start -->
+         <div class="container-xxl py-5">           
+                <div class="container">
+                    <div class="row g-5 align-items-center">
+                    <div class="col-md-6 col-sm-12  p-3   wow fadeIn" data-wow-delay="0.1s">
+                        <div class="about-img  pe-0">
                             <img class="img-fluid w-100" src="../package/img/image1.jpg">
                         </div>
                     </div>
-                    <div class="col-lg-6 col-sm-12 p-md-5 p-3 wow fadeIn" data-wow-delay="0.5s">
-                        <h3 class="mb-4 text-uppercase">N°1 pour trouver le logement idéale</h3>
-                        <p class="mb-4">
-                            Trouvez votre chez-vous idéal parmi notre sélection exclusive de biens immobiliers,
-                            tout en découvrant des propriétés uniques qui correspondent à votre style de vie et à vos besoins.
-                        </p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Accessibilité: 24h/24 - 7 jours/7</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Présentation détaillée des biens</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Économie de temps et d'efforts</p>
-                       
+
+                        <div class="col-lg-6 p-md-5 p-3 wow fadeIn" data-wow-delay="0.5s">
+                            <h3 class="mb-4 text-uppercase">N°1 Pour trouver la propriété idéale</h3>
+                            <p class="mb-4 text-justify"> 
+                                Trouvez votre chez-vous idéal parmi notre sélection exclusive de biens immobiliers,
+                                tout en découvrant des propriétés uniques qui correspondent à votre style de vie et à vos besoins.
+                            </p>
+                            <p><i class="fa fa-check text-primary me-3"></i>Accessibilité: 24h/24 - 7 jours/7</p>
+                            <p><i class="fa fa-check text-primary me-3"></i>Présentation détaillée des biens</p>
+                            <p><i class="fa fa-check text-primary me-3"></i>Économie de temps et d'efforts</p>
+                           
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                </div>
+<!-- About End -->
         <!-- About End -->
 
         <div class="container-xxl py-5">
