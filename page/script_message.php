@@ -75,11 +75,11 @@ if (isset($_POST["envoyer"])) {
             $mail->Username   = 'laurentalphonsewilfried@gmail.com';                 
             $mail->Password   = 'rqak exlb rywc icdx';                        
             $mail->SMTPSecure = 'tls';                              
-            $mail->Port       = 587;  
+            $mail->Port       = 587;   
             
             // Destinataire
-            $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse');
-            $mail->addAddress('laurentalphonsewilfried@gmail.com'); 
+            $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse'); // Votre adresse email et votre nom
+            $mail->addAddress('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse');
 
             // Contenu de l'e-mail
             $mail->isHTML(true);
