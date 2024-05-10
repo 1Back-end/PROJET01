@@ -69,7 +69,7 @@ if (isset($_POST["envoyer"])) {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;                   
             $mail->SMTPAuth   = true;                             
             $mail->Username   = 'laurentalphonsewilfried@gmail.com';                 
-            $mail->Password   = 'rqak exlb rywc icdx';                        
+            $mail->Password   = 'rqakexlbrywcicdx';                        
             $mail->SMTPSecure = 'tls';                              
             $mail->Port       = 587;  
             
