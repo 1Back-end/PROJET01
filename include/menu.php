@@ -1,12 +1,7 @@
 
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>
-	<?php
-    echo strtoupper(ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF']))));
-      ?>
-
-	</title>
+	<title>IMMO INVESTMENT SCI</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="200x200" href="../vendors/images/logo.png">

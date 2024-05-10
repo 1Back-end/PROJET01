@@ -64,16 +64,14 @@ if (isset($_POST["envoyer"])) {
         $mail = new PHPMailer(true);
 
         try {                                     
-            // Paramètres SMTP pour Gmail
-            $mail->SMTPDebug = SMTP::DEBUG_OFF;
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'laurentalphonsewilfried@gmail.com'; // Adresse Gmail
-            $mail->Password = 'rqakexlbrywcicdx'; // Mot de passe Gmail
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 587;
-
+            $mail->isSMTP();                                            
+            $mail->Host       = 'smtp.gmail.com'; 
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;                   
+            $mail->SMTPAuth   = true;                             
+            $mail->Username   = 'laurentalphonsewilfried@gmail.com';                 
+            $mail->Password   = 'rqak exlb rywc icdx';                        
+            $mail->SMTPSecure = 'tls';                              
+            $mail->Port       = 587;  
             
             // Destinataire
             $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse'); // Votre adresse email et votre nom

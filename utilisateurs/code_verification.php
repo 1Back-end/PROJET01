@@ -8,25 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="64x64" href="../image/logo.png">
     <title>
-	<?php
-    echo strtoupper(str_replace(".php", "", basename($_SERVER['PHP_SELF'])));
-?>
+    <?php
+        echo ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF'])));
+        ?> 
+    </title> 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-	</title>
-
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="../vendors/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../package/img/logo.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../package/img/logo.png">
-
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-	<link rel="stylesheet" type="text/css" href="../vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="../vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="../vendors/styles/style.css">
-	<link rel="stylesheet" type="text/css" href="../style.css">
-	
 	<!-- Custom CSS Link -->
 	
 </head>

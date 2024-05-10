@@ -1,5 +1,5 @@
-
-<title><?php include_once("script_connexion.php");?>
+<?php include_once("script_connexion.php");?>
+	<title>
 	<?php
         echo ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF'])));
     ?>

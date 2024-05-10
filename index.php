@@ -4,11 +4,7 @@
 <?php include_once("fonction.php"); ?>
 <head>
     <meta charset="utf-8">
-    <title>
-    <?php
-    echo strtoupper(ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF']))));
-      ?>
-    </title>
+    <title>IMMO INVESTMENT SCI</title>
     <link rel="shortcut icon" href="package/img/logo.png" type="image/x-icon">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
