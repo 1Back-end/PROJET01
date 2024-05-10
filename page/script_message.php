@@ -1,9 +1,11 @@
 <?php
 include_once("../database/db.php");
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
-require '../vendor/autoload.php';
+require_once '../vendor/autoload.php'; // Assurez-vous que le chemin vers autoload.php de PHPMailer est correct
 
 $erreur_champ ="";
 $MessageSucces="";
@@ -54,12 +56,6 @@ if (isset($_POST["envoyer"])) {
             Arrondissement: {$produit['arrondissement']}<br>
             Ville: {$produit['ville']}<br>
             Description: {$produit['description']}<br><br><br>
-
-            <b>Informations sur le propriétaire du produit :</b><br>
-            Nom: {$proprietaire['NOM']}<br>
-            Email: {$proprietaire['EMAIL']}<br>
-            Téléphone: {$proprietaire['TELEPHONE']}<br>
-            Adresse: {$proprietaire['VILLE']}<br><br>
             Cordialement,<br>
             IMMO INVESTMENT SCI
         ";
@@ -68,22 +64,25 @@ if (isset($_POST["envoyer"])) {
         $mail = new PHPMailer(true);
 
         try {                                     
-            $mail->isSMTP();                                            
-            $mail->Host       = 'smtp.gmail.com'; 
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;                   
-            $mail->SMTPAuth   = true;                             
-            $mail->Username   = 'laurentalphonsewilfried@gmail.com';                 
-            $mail->Password   = 'rqak exlb rywc icdx';                        
-            $mail->SMTPSecure = 'tls';                              
-            $mail->Port       = 587;  
+            // Paramètres SMTP pour Gmail
+            $mail->SMTPDebug = SMTP::DEBUG_OFF;
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'laurentalphonsewilfried@gmail.com'; // Adresse Gmail
+            $mail->Password = 'rqakexlbrywcicdx'; // Mot de passe Gmail
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
+
             
             // Destinataire
-            $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse');
-            $mail->addAddress('laurentalphonsewilfried@gmail.com'); 
+            $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse'); // Votre adresse email et votre nom
+            $mail->addAddress('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse');
 
             // Contenu de l'e-mail
             $mail->isHTML(true);
             $mail->Subject = 'Nouvelle demande de contact';
+            $mail->CharSet = 'UTF-8'; // Définir l'encodage des caractères
             $mail->WordWrap = 50;
             $mail->Body = $message;
 
