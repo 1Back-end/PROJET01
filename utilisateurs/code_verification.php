@@ -7,12 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="64x64" href="../image/logo.png">
-    <title>
-   IMMO INVESTMENT SCI
-    </title> 
+  
+    <title>IMMO INVESTMENT SCI</title> 
+	<!-- Bootstrap 5 CDN Link -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Custom CSS Link -->
+
+	</title>
+
+	<!-- Site favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="../vendors/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../package/img/logo.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../package/img/logo.png">
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendors/styles/core.css">
+	<link rel="stylesheet" type="text/css" href="../vendors/styles/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendors/styles/style.css">
+	<link rel="stylesheet" type="text/css" href="../style.css">
 	
 </head>
 <body> 
@@ -36,7 +50,7 @@ if(isset($_POST["submit"])) {
 			<div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3 text-center">
 				
 				<form class="rounded bg-white card-box p-5" action="" method="POST">
-					<h6 class="text-dark fw-bolder fs-4 mb-2">Activation du compte</h6>
+					<h6 class="text-success fw-bolder fs-4 mb-2">Activation du compte</h6>
 
 					<div class="fw-normal text-muted mb-4">
                     Entrez le code de vérification que nous avons envoyé à

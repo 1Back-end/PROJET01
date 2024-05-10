@@ -57,8 +57,8 @@
                 Entrez votre e-mail pour réinitialiser votre mot de passe.
             </div>  
 
-            <div class="form-floating mb-3">
-                <input type="email" name="email" class="form-control" id="floatingInput" placeholder="todo@example.com">
+            <div class="mb-3">
+                <input type="email" name="email" class="form-control" placeholder="todo@example.com">
             
                 <?php if(isset($error_mail)): ?>
                 <small class="text-danger"><?=$error_mail?></small>
