@@ -39,7 +39,7 @@ if (!$user) {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon Profil</title>
+    <title>IMMO INVESTMENT SCI</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>

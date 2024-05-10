@@ -1,9 +1,5 @@
 <?php include_once("script_connexion.php");?>
-	<title>
-	<?php
-        echo ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF'])));
-    ?>
-	</title>
+	<title>IMMO INVESTMENT SCI</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="../vendors/images/apple-touch-icon.png">
