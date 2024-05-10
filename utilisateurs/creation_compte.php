@@ -3,12 +3,7 @@
 
 
     <link rel="icon" type="image/png" sizes="64x64" href="../image/logo.png">
-    <title>
-    <?php
-    echo strtoupper(ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF']))));
-?>
-
-    </title> 
+    <title>IMMO INVESTMENT SCI</title> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">

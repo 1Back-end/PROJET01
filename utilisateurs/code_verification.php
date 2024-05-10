@@ -7,11 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="64x64" href="../image/logo.png">
-    <title>
-    <?php
-        echo ucfirst(str_replace(".php", "", basename($_SERVER['PHP_SELF'])));
-        ?> 
-    </title> 
+    <title>IMMO INVESTMENT SCI</title> 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Custom CSS Link -->
