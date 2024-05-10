@@ -121,7 +121,6 @@ function sendVerificationCode($email, $motDePasse,$nom,$prenom) {
 
     try {
        // Paramètres SMTP pour Gmail
-       $mail->SMTPDebug = SMTP::DEBUG_OFF;
        $mail->isSMTP();
        $mail->Host = 'smtp.gmail.com';
        $mail->SMTPAuth = true;
