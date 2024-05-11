@@ -191,7 +191,7 @@ if (isset($_GET['id'])) {
                     </div>
                 
                     <!-- Colonne du formulaire -->
-                    <?php include_once("script_message.php");?>
+                    <?php include("script_message.php");?>
                    
                     <div class="col-md-6 col-sm-12 mt-3">
                     <?php 

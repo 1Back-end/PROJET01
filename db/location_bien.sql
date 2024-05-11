@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 06 mai 2024 à 16:24
+-- Généré le :  ven. 10 mai 2024 à 13:22
 -- Version du serveur :  10.4.8-MariaDB
 -- Version de PHP :  7.3.10
 
@@ -62,6 +62,20 @@ CREATE TABLE `mot_de_pass_oublie` (
   `MOIS_ACTUEL` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `mot_de_pass_oublie`
+--
+
+INSERT INTO `mot_de_pass_oublie` (`ID`, `ID_UTILISATEUR`, `PASSWORD`, `DATE_ENVOIE`, `MOIS_ACTUEL`) VALUES
+(6, 39, '$2y$10$FncgWyykovqOSzB.zv/ukuHyM.4oGfVHyxtXvCQEZ8Jc0GH/0ekFC', '2024-05-10 08:52:54', ''),
+(7, 39, '$2y$10$fcc19wmMJDqvrNOhjU/1GOqkWHmqnwbNJrihRadlNrWEQOZNQM8gm', '2024-05-10 08:53:24', ''),
+(8, 39, '$2y$10$xuScYONdcGLHJR/74gbxfOJdS5e/k8at7rh.kEcA7PZD2.iz37MOK', '2024-05-10 09:19:57', ''),
+(9, 39, '$2y$10$sgt4JgtvlBf/Sm2THsRQtudcbs5/HfoRzBEWN5pxDy/0CHJHjlaCG', '2024-05-10 10:26:50', ''),
+(10, 39, '$2y$10$Juh/MxYE3vEmqbL0oj4MieMrGdIUXlNt/lJM1KvDwb2ATNAOTufQG', '2024-05-10 10:50:26', ''),
+(11, 33, '$2y$10$iEFu/wo2hTvp5nmHHCh12eVUy9fIlajgunAv.ZWhfui7kMhM1ysTe', '2024-05-10 11:03:05', ''),
+(12, 33, '$2y$10$nLIjo./Jw9OzUSbP3R224O/Swa1LBANSHkAWR1eMIn6lTGN9qQXRy', '2024-05-10 11:03:51', ''),
+(13, 33, '$2y$10$y/mzjwLRf5VKrmKxqhq/JerC.evNjkx1JZKdJDIW558CeDNiynFUq', '2024-05-10 11:15:58', '');
+
 -- --------------------------------------------------------
 
 --
@@ -115,10 +129,12 @@ INSERT INTO `produits` (`id`, `region`, `ville`, `departement`, `arrondissement`
 (20, 'Centre', 'Yaoundé', 'Logone-et-Chari', 'Atok (Cameroun)', 'Cité verte', 20000, 'A001.jpg,A002.jpg,A003.jpg,A004.jpeg,A005.jpeg,A006.jpg,A007.jpg,images.jpeg', 'Appartement Moderne', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat tenetur fugiat animi asperiores reiciendis dicta saepe nihil, cumque facilis impedit iure rerum molestiae incidunt dolorem provident doloribus? Magni, tempora accusantium.\r\nSit, ut voluptates iusto autem repellendus nobis explicabo perferendis quasi tempora? Magnam ab a ad, harum iusto, impedit commodi eveniet aspernatur sed nihil adipisci quasi esse ratione, provident delectus doloremque.\r\nTotam, perferendis. Nisi, tempore fugiat sed eligendi repellendus optio incidunt ea, perferendis maiores porro iste id libero quos temporibus suscipit amet neque. Temporibus hic, quo voluptate at commodi ipsum consectetur!', 'Rejeté', 'DC27138D', '150', '2 kM', 19, '2024-04-15 17:52:33', '2024-04-17 18:21:33', '', NULL, 'Present'),
 (21, 'Sud', 'Bangem', 'Djérem', 'Abong-Mbang', 'Bonaberi', 25000, 'boxed-layout.jpg,compact-menu.jpg,dark-sidebar.jpg,horizontal-menu-light.jpg', 'Chambre Moderne', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eaque saepe, soluta vitae, voluptatibus perspiciatis nulla adipisci totam sunt, laboriosam quis accusamus repellendus fuga. Aliquam molestias vitae quo distinctio eligendi!\r\nSit, vel at, adipisci ducimus eius nesciunt sapiente quis corrupti impedit, esse debitis repudiandae! Harum, maiores omnis itaque sed unde corporis obcaecati aperiam officiis alias veritatis esse voluptates voluptatibus natus!\r\nPlaceat unde dolor ut magnam ratione quasi, minima qui, dolore quia fugiat reiciendis sit sapiente sed a. Quibusdam dolor magnam natus, ipsa suscipit aliquam, non ad illo dicta, rem adipisci?', 'Accepté', 'C1558938', '150', '400 M', 19, '2024-04-17 18:25:09', '2024-05-02 19:13:32', '', NULL, 'Present'),
 (22, 'Centre', 'Yaoundé ', 'Mfoundi', 'Akonolinga', 'Mbankomo', 3000, '271197df-e03d-49ff-927d-b3a964463250.jpeg,1b12d143-dd53-4b76-ad6e-907672ae4d0e.jpeg,IMG_0078.jpeg,IMG_0077.jpeg,IMG_0076.jpeg,IMG_0074.jpeg,IMG_0073.jpeg,IMG_0075.jpeg', 'Appartement Moderne', 'Très cool ', 'Accepté', '3077093A', '200', '2km', 23, '2024-04-22 12:45:29', '2024-05-04 16:59:25', '', '2024-05-04 16:59:25', 'Supprimé'),
-(23, 'Ouest', 'Bafang', 'Mayo-Sava', 'Belel', 'Bafang', 15000, '20231025_071743.jpg,20240325_133008.jpg,20240325_133039.jpg,20240325_133203.jpg', 'Chambre Moderne', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga architecto dignissimos aspernatur autem itaque commodi quis maiores esse libero consequatur quas reiciendis tenetur voluptatibus eaque eligendi, quos rem odio similique.', 'Accepté', '72D758B8', '250', '500M', 28, '2024-05-03 06:57:16', '2024-05-03 07:05:56', '', NULL, 'Present'),
+(23, 'Ouest', 'Bafang', 'Mayo-Sava', 'Belel', 'Bafang', 15000, '20231025_071743.jpg,20240325_133008.jpg,20240325_133039.jpg,20240325_133203.jpg', 'Chambre Moderne', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga architecto dignissimos aspernatur autem itaque commodi quis maiores esse libero consequatur quas reiciendis tenetur voluptatibus eaque eligendi, quos rem odio similique.', 'Accepté', '72D758B8', '250', '500M', 28, '2024-05-03 06:57:16', '2024-05-10 10:40:00', '', NULL, 'Occupé'),
 (24, 'Centre', 'Yaoundé', 'Mfoundi', 'Obala (Cameroun)', 'TKC', 75000, 'IMG_05491.jpg,IMG_05511.jpg,IMG_05541.jpg,IMG_05551.jpg,IMG_05561.jpg,IMG_014011.jpg', 'Studio Moderne', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga architecto dignissimos aspernatur autem itaque commodi quis maiores esse libero consequatur quas reiciendis tenetur voluptatibus eaque eligendi, quos rem odio similique.', 'Rejeté', 'D9D72D6C', '150', '1KM', 28, '2024-05-03 07:01:11', '2024-05-03 07:05:19', '', NULL, 'Present'),
-(25, 'Centre', 'Yaoundé', 'Mfoundi', 'Lobo (Cameroun)', 'Mbankolo', 25000, 'IMG_05511.jpg,IMG_05541.jpg,IMG_05551.jpg,IMG_05561.jpg', 'Chambre Moderne', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti repellendus ut perspiciatis tenetur rem recusandae sed suscipit nostrum! Quisquam iure aliquid quis perferendis nisi praesentium enim molestias voluptatum eveniet veritatis.', 'Accepté', '18B07590', '150', '100M', 33, '2024-05-04 15:42:49', '2024-05-04 15:45:32', '', NULL, 'Occupé'),
-(26, 'Sud', 'Sangmélima', 'Mayo-Sava', 'Mayo-Sava', 'Sangmelima', 195000, '20230210_1746511.jpg,20230321_1233551.jpg,20231025_071743.jpg,20240325_133008.jpg', 'Chambre Moderne', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quidem hic nobis, perspiciatis itaque tenetur modi illum maxime aliquid explicabo fugit, asperiores quos earum officia consequuntur molestiae aspernatur quia quam.', 'Rejeté', 'C305D57A', '150', '500M', 33, '2024-05-06 07:59:27', '2024-05-06 10:12:42', '', NULL, 'Present');
+(25, 'Centre', 'Yaoundé', 'Mfoundi', 'Lobo (Cameroun)', 'Mbankolo', 25000, 'IMG_05511.jpg,IMG_05541.jpg,IMG_05551.jpg,IMG_05561.jpg', 'Chambre Moderne', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti repellendus ut perspiciatis tenetur rem recusandae sed suscipit nostrum! Quisquam iure aliquid quis perferendis nisi praesentium enim molestias voluptatum eveniet veritatis.', 'Accepté', '18B07590', '150', '100M', 33, '2024-05-04 15:42:49', '2024-05-06 16:01:10', '', NULL, 'Present'),
+(26, 'Sud', 'Sangmélima', 'Mayo-Sava', 'Mayo-Sava', 'Sangmelima', 195000, '20230210_1746511.jpg,20230321_1233551.jpg,20231025_071743.jpg,20240325_133008.jpg', 'Chambre Moderne', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quidem hic nobis, perspiciatis itaque tenetur modi illum maxime aliquid explicabo fugit, asperiores quos earum officia consequuntur molestiae aspernatur quia quam.', 'Rejeté', 'C305D57A', '150', '500M', 33, '2024-05-06 07:59:27', '2024-05-06 10:12:42', '', NULL, 'Present'),
+(27, 'Centre', 'Yaoundé', 'Lekié', 'Elig-Mfomo', 'carrefour usine matelas', 3000000, '436120997_1200045927647418_3751047649576468115_n.jpg,436200331_1200045987647412_2589923813163921232_n.jpg,436351257_1200045827647428_8098041959540937947_n.jpg,436367395_1200045960980748_6277150848017283837_n.jpg,440930656_393803526971645_52269280431596109', 'Appartement Moderne', 'Hamdalaye vers carrefour usine matelas \r\nUn luxueux appartement composé de:\r\n02 chambres \r\n02 douches, \r\nCuisine, \r\nSalle à manger \r\n03 terrasse \r\nMensualités : 3.000.000\r\nAvance : 06 mois\r\nAgence : 01 mois', 'Rejeté', '3134D868', '150', '500M', 19, '2024-05-08 09:06:22', '2024-05-08 09:10:09', '', NULL, 'Present'),
+(28, 'Centre', 'Bafoussam', 'Lom-et-Djérem', 'Datcheka', 'Limbé', 280000, 'IMG-20240508-WA0027.jpg,IMG-20240508-WA0028.jpg,IMG-20240508-WA0029.jpg,IMG-20240508-WA0030.jpg,IMG-20240508-WA0031.jpg,IMG-20240508-WA0033.jpg', 'Studio Moderne', '       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita eveniet illum culpa sed, debitis hic facilis maxime quam excepturi quas necessitatibus quaerat, tempore nesciunt provident? Distinctio laborum non natus quaerat!', 'Accepté', '96650C49', '150', '900M', 19, '2024-05-08 18:15:00', '2024-05-08 18:17:54', '', NULL, 'Present');
 
 -- --------------------------------------------------------
 
@@ -153,7 +169,10 @@ INSERT INTO `reservation` (`id`, `interesse`, `email`, `telephone`, `produit_id`
 (7, 'Francois', 'frapougonoffe-6497@yopmail.com', '+237652145678', 14, 15, '2024-04-25 08:45:58', '2024-04-25 08:45:58', '2024-05-06 14:23:46', 'annulé'),
 (8, 'wagoutrohefa', 'wagoutrohefa-3921@yopmail.com', '+237', 15, 13, '2024-04-27 11:12:12', '2024-04-27 11:12:12', '2024-05-04 15:20:31', 'validé'),
 (9, 'ETOUDI BODO', 'laurentalphonsewilfried@gmail.com', '+237650123489', 25, 33, '2024-05-04 15:45:12', '2024-05-04 15:45:12', '2024-05-04 15:45:32', 'validé'),
-(10, 'ETOUDI BODO', 'laurentalphonsewilfried@gmail.com', '+237650123489', 25, 33, '2024-05-04 16:35:06', '2024-05-04 16:35:06', '2024-05-06 14:23:28', 'annulé');
+(10, 'ETOUDI BODO', 'laurentalphonsewilfried@gmail.com', '+237650123489', 25, 33, '2024-05-04 16:35:06', '2024-05-04 16:35:06', '2024-05-06 14:23:28', 'annulé'),
+(11, 'LAURENT ALPHONSE WILFRIED', 'laurentalphonsewilfried@gmail.com', '654123457', 28, 19, '2024-05-10 08:07:18', '2024-05-10 08:07:18', '2024-05-10 10:40:17', 'validé'),
+(12, 'LAURENT ALPHONSE WILFRIED', 'laurentalphonsewilfried@gmail.com', '654123457', 28, 19, '2024-05-10 08:08:33', '2024-05-10 08:08:33', '2024-05-10 10:39:51', 'validé'),
+(13, 'taviguffegrau-3961', 'taviguffegrau-3961@yopmail.com', '657 12 34 67', 23, 28, '2024-05-10 08:09:37', '2024-05-10 08:09:37', '2024-05-10 10:40:00', 'validé');
 
 -- --------------------------------------------------------
 
@@ -200,7 +219,7 @@ INSERT INTO `utilisateurs` (`ID`, `TOKEN`, `NOM`, `PRENOM`, `EMAIL`, `TELEPHONE`
 (16, 'U46258', 'backend', 'backend', 'backend@gmail.com', '+2376785329', 'fbcddbbe2bfcec67fce19d454ec9b05c6ad821a0', '1662798531033.jpg', 450478, 'Inactif', 'Yaoundé', 'Cité verte', '1', '2024-04-10 15:35:37', '2024-04-17 07:59:45', '', '2024-04-17 07:59:45', 'Supprimé'),
 (17, 'U79148', 'Mvondo', 'Mvondo', 'mvondofernando7777@gmail.com', '+2376785329', 'fbcddbbe2bfcec67fce19d454ec9b05c6ad821a0', '1663762741850.jpg', NULL, 'Actif', 'Yaoundé', 'carrefour Mek', '2', '2024-04-11 17:54:40', '2024-04-12 20:06:51', '', '2024-04-12 20:06:51', 'Supprimé'),
 (18, 'U69913', 'Geovane', 'Geovane', 'geo575mbeussi@gmail.com', '+2376785360', 'fbcddbbe2bfcec67fce19d454ec9b05c6ad821a0', 'Capture-d’écran-2021-02-02-à-17.00.31.webp', NULL, 'Actif', 'Yaoundé', 'Mbankolo', '1', '2024-04-15 14:52:59', '2024-04-17 08:02:51', '', '2024-04-17 08:02:51', 'Supprimé'),
-(19, 'U09867', 'Laurent ', 'Alphonse', 'laurentalphonsewilfried@gmail.com', '+2376785329', '$2y$10$5ywWPnbmszqnT/i.lJUXbu3OJa7GTl91r.EwrChHkVfSw/wQw0ZIy', '662bf84aefd71.jpg', NULL, 'Actif', 'Paris', 'Cité verte', '4', '2024-04-16 17:43:25', '2024-05-02 08:39:52', '', NULL, 'Present'),
+(19, 'U09867', 'Laurent ', 'Alphonse', 'laurentalphonsewilfried@gmail.com', '678 53 68 84', '$2y$10$5ywWPnbmszqnT/i.lJUXbu3OJa7GTl91r.EwrChHkVfSw/wQw0ZIy', '662bf84aefd71.jpg', NULL, 'Actif', 'Dubai', 'Limbé', '4', '2024-04-16 17:43:25', '2024-05-08 18:10:32', '', NULL, 'Present'),
 (20, 'U75999', 'Ngassi', 'Ngassi', 'ngassijordane2@gmail.com', '679120234', '$2y$10$DU5C2y8MyA8cB79QcDc8Duj6OsAGF.qOnkFG3D8YRT2uEelqJNSKi', 'IMG_20240415_174526.jpg', NULL, 'Actif', 'Yaoundé ', 'Yaoundé ', '2', '2024-04-19 13:07:14', '2024-05-02 15:07:09', '', '2024-05-02 15:07:09', 'Supprimé'),
 (21, 'U41738', 'nayullesezo', 'nayullesezo', 'nayullesezo-2321@yopmail.com', '+237692255090', '$2y$10$VBQwmL2SA/fhW7p49aooJekDLd.FezvG8ewaNjbyFBjR2gedyG0Ua', 'call-to-action.jpg', 630593, 'Inactif', 'Makoua', 'Damas', '2', '2024-04-20 18:20:01', '2024-05-03 10:41:34', '', '2024-05-03 10:41:34', 'Supprimé'),
 (22, 'U54491', 'nocoyasojo', 'nocoyasojo', 'nocoyasojo-2840@yopmail.com', '+237678536884', '$2y$10$JWmNeC6y9e4LHL8vKuOYyecHbHJVH.4tPOwdBAr5HiDwwgAMzwvXi', 'avatar15.jpg', NULL, 'Actif', 'Yaoundé', 'Carriere', '1', '2024-04-20 18:30:38', '2024-05-03 10:41:49', '', '2024-05-03 10:41:49', 'Supprimé'),
@@ -209,16 +228,22 @@ INSERT INTO `utilisateurs` (`ID`, `TOKEN`, `NOM`, `PRENOM`, `EMAIL`, `TELEPHONE`
 (25, 'U46693', 'Fabiona', 'Fabiona', 'setinnileinnu-7571@yopmail.com', '+237678536884', '$2y$10$mnPZgSpoxstGcQMs23.vLeD3be6O8yDeD96afcfkaK8aUdYsr4x6u', 'face19.jpg', 721997, 'Inactif', 'Sangmelima', 'Cité verte', '2', '2024-04-25 07:48:51', '2024-05-03 10:40:08', '', '2024-05-03 10:40:08', 'Supprimé'),
 (26, 'U58876', 'jusapimeuka', 'jusapimeuka', 'jusapimeuka-5884@yopmail.com', '+237653129034', '$2y$10$ZrmUvMYhDyDQTc7.Bqw12.JTP88oV4Hj2OJT1WxZcAQ/iPB73.ijS', '1662798531033.jpg', 738433, 'Inactif', 'Yaoundé', 'Mbankolo', '2', '2024-05-02 12:43:10', '2024-05-03 10:29:29', '', '2024-05-03 10:29:29', 'Supprimé'),
 (27, 'U58865', 'luxuppiniwo', 'luxuppiniwo', 'luxuppiniwo-8836@yopmail.com', '+237690125689', '$2y$10$TdQqRQhPejtGcG8nwUtbxenM9KwR4rdkjji83yaoPBtUj2aciji8q', '1639861637056.jpg', 273978, 'Inactif', 'Yaoundé', 'carriere', '2', '2024-05-02 12:48:13', '2024-05-02 12:48:13', '', NULL, 'Present'),
-(28, 'U39145', '7044', '7044', 'broufaffuttuho-7044@yopmail.com', '+237698123457', '$2y$10$xSKCBb.McjoD6U.ArgevOeuzy7VoDgmAnE8W5XchrpaB3O6Qpj0dq', 'IMG-20230415-WA0022~3.jpg', NULL, 'Actif', 'Douala', 'Mora', '2', '2024-05-03 06:47:11', '2024-05-03 06:47:55', '', NULL, 'Present'),
+(28, 'U39145', 'Jean', 'Paul', 'broufaffuttuho-7044@yopmail.com', '+237698123457', '$2y$10$xSKCBb.McjoD6U.ArgevOeuzy7VoDgmAnE8W5XchrpaB3O6Qpj0dq', 'IMG-20230415-WA0022~3.jpg', NULL, 'Actif', 'Douala', 'Mora', '2', '2024-05-03 06:47:11', '2024-05-07 07:56:28', '', NULL, 'Present'),
 (29, 'U12345', 'groitijelenne', 'Luis', 'groitijelenne-1557@yopmail.com', '+237612904578', '$2y$10$pvCsPdAdczAeTvqSpf6E8uvqXtcAhOaKgxAJP92oKpZQySYu9XBVW', '1639861637056.jpg-1.png', 0, 'Inactif', 'Douala', NULL, '4', '2024-05-03 14:46:44', '2024-05-04 11:56:25', '', NULL, 'Present'),
 (30, 'U67890', 'yeigouddeteummo', 'Albert', 'yeigouddeteummo-8071@yopmail.com', '+237651890914', '$2y$10$7mZcJhCNaJYCjLN5sqaz4e7ykz5oBAo.jJiYdXv0oIwG4sLuaYzIW', '1663764788581.jpg', 0, 'Actif', 'Limbé', NULL, '4', '2024-05-03 14:55:40', '2024-05-04 11:56:34', '', NULL, 'Present'),
 (31, 'U24680', 'grafarotteucou', 'Paul', 'grafarotteucou-1809@yopmail.com', '+237612903345', '$2y$10$D0dwhqYhUoANihRHkV044uqVLcHODeb94tBIEJVtGTWGQ5HI0lXNm', '1661538962990.jpg', 0, 'Actif', 'Edéa', NULL, '4', '2024-05-03 15:05:21', '2024-05-04 11:56:54', '', NULL, 'Present'),
 (32, 'U17894', 'preffoleuloume-3536', '3536', 'preffoleuloume-3536@yopmail.com', '+237654123409', '$2y$10$NP9L/IcfYtmYplLyBOzuOuCt9yUQGTH1FvqoaoddbvOMuduVsAd2.', '1639861637056.jpg-1.png', 0, 'Actif', 'Douala', NULL, '4', '2024-05-04 12:43:08', '2024-05-04 12:46:08', '', NULL, 'Present'),
-(33, 'U15454', '8709', '8709', 'hoddehesufau-8709@yopmail.com', '+237652890012', '$2y$10$vWACWkx0dNwLeXpM/J5lb.5MqyySHKIFUZnoQDg7wzSBvzYbiFvDu', '1640717540701.jpg', NULL, 'Actif', 'Yaoundé', 'Mbankolo', '2', '2024-05-04 14:00:41', '2024-05-04 14:01:19', '', NULL, 'Present'),
+(33, 'U15454', 'Damso', 'Alonzo', 'hoddehesufau-8709@yopmail.com', NULL, '$2y$10$vWACWkx0dNwLeXpM/J5lb.5MqyySHKIFUZnoQDg7wzSBvzYbiFvDu', '663ba8d0474b2.jpg', NULL, 'Actif', 'Dubai', 'TKC', '2', '2024-05-04 14:00:41', '2024-05-08 16:31:12', '', NULL, 'Present'),
 (34, 'U47322', '5039', 'lauffebepreudoi', 'lauffebepreudoi-5039@yopmail.com', '+237634901275', '$2y$10$//zphxbXK0xDq.H4btkyief674F9CTkfyc66a.BFQhguWprWPBVW2', '1663763272704.jpg', 0, 'Actif', 'bastos', NULL, '4', '2024-05-04 14:04:08', '2024-05-04 14:04:49', '', NULL, 'Present'),
 (35, 'U99855', 'Francois', 'Alain', 'dificeiloli-5987@yopmail.com', '+237678125678', '$2y$10$EkP7EmqRrJnt/kdm2Pb2r.E/gW956NYh9UkveDxH/Y/lVRkAS2Dnm', 'call-to-action.jpg', 0, 'Actif', 'Yaoundé', NULL, '4', '2024-05-06 09:15:29', '2024-05-06 09:17:20', '', NULL, 'Present'),
 (36, 'U68355', 'Jean', 'Arnold', 'xovauwemmaga-2611@yopmail.com', '+237', '$2y$10$W2xGkdGp09TlJ5bMagcqSuwlUsdjXxmdzzc9Pwwf/wm/pAF7ewZw2', 'my-picture.jpg', 0, 'Inactif', 'Damas', NULL, '4', '2024-05-06 09:28:00', '2024-05-06 09:28:00', '', NULL, 'Present'),
-(37, 'U96348', 'Jean Paul', 'Jean Paul', 'pratofroittaunneu-3942@yopmail.com', '+237650127810', '$2y$10$5MfHboyGx4nnqopeCLgNEujdCL8m1nUNiU7bV7Ecea1t79UuiPvRe', 'account.png', NULL, 'Actif', 'Dubai', 'Carriere', '1', '2024-05-06 09:49:03', '2024-05-06 09:50:14', '', NULL, 'Present');
+(37, 'U96348', 'Jean Paul', 'Jean Paul', 'pratofroittaunneu-3942@yopmail.com', '+237650127810', '$2y$10$5MfHboyGx4nnqopeCLgNEujdCL8m1nUNiU7bV7Ecea1t79UuiPvRe', 'account.png', NULL, 'Actif', 'Dubai', 'Carriere', '1', '2024-05-06 09:49:03', '2024-05-07 07:47:20', '', NULL, 'Present'),
+(38, 'U88325', 'Laurent ', 'Laurent ', 'backendlaurent@yopmail.com', '+237654123400', '$2y$10$QC1fXtWUUU.sVIDUevnjw.EK/z/J9vUsS64wP/kvDH5p6Gi7SmvBa', '1639861637056.jpg-1.png', NULL, 'Actif', 'Damas', 'Bastos', '4', '2024-05-07 07:41:43', '2024-05-07 07:47:25', '', NULL, 'Present'),
+(39, 'U02538', 'taviguffegrau-3961', 'Alain', 'taviguffegrau-3961@yopmail.com', '678 12 45 13', '$2y$10$MqIDYyrtPAvW5hGRiBUP5eJnY.WmalxRJOY6CJEo9QQqf68X5qeFy', 'IMG-20240508-WA0033.jpg', 0, 'Inactif', 'Yaoundé', NULL, '4', '2024-05-09 07:33:38', '2024-05-09 07:33:38', '', NULL, 'Present'),
+(40, 'U46856', 'sefravammevau-5973', 'Paul Jean', 'sefravammevau-5973@yopmail.com', '678 12 45 78', '$2y$10$rp9/fRZcZcrtl1ka.Sqa1eWIejavkbhGZDCGeBKr5Dx4189AOQ4yy', 'IMG-20240508-WA0018.jpg', 0, 'Inactif', 'Yaoundé', NULL, '4', '2024-05-09 07:35:05', '2024-05-09 07:35:05', '', NULL, 'Present'),
+(41, 'U49231', 'sefravammevau-5973', 'sefravammevau-5973', 'faveddollove-8685@yopmail.com', '672 13 67 12', '$2y$10$FzOCwsBeEAD3FJrf7pvnB.MUR/.fPH02P5xXS/FwN/GoZ9Fjl3goi', 'IMG-20240508-WA0018.jpg', 389700, 'Inactif', 'Yaoundé', 'Cité verte', '1', '2024-05-09 11:48:43', '2024-05-09 11:48:43', '', NULL, 'Present'),
+(42, 'U69464', 'diyicreleugeu-3896', 'diyicreleugeu-3896', 'diyicreleugeu-3896@yopmail.com', '23 56 98 12', '$2y$10$7V0GsO63IGXMTBuBX4FeV.2yKjrW0jHGzQmBcBSVn9cGUo6NgyPo.', 'DC.png', 364623, 'Inactif', 'Yaoundé', 'Cité verte', '1', '2024-05-10 08:22:51', '2024-05-10 08:22:51', '', NULL, 'Present'),
+(43, 'U03603', 'diyicreleugeu-3896', 'diyicreleugeu-3896', 'treicrunnatroutu-7143@yopmail.com', '10 23 89 19', '$2y$10$489Y/k11q1BK8VzYT9yRP.0k5aBdcOU0ejM9qsLsqziHOnZfi978a', 'MCD.png', NULL, 'Actif', 'Yaoundé', 'Cité verte', '1', '2024-05-10 08:25:09', '2024-05-10 08:37:03', '', NULL, 'Present');
 
 --
 -- Index pour les tables déchargées
@@ -273,25 +298,25 @@ ALTER TABLE `commentaire`
 -- AUTO_INCREMENT pour la table `mot_de_pass_oublie`
 --
 ALTER TABLE `mot_de_pass_oublie`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT pour la table `produits`
 --
 ALTER TABLE `produits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT pour la table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- Contraintes pour les tables déchargées

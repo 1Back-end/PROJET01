@@ -1,9 +1,11 @@
 <?php
 include_once("../database/db.php");
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
-require '../vendor/autoload.php';
+require_once '../vendor/autoload.php'; // Assurez-vous que le chemin vers autoload.php de PHPMailer est correct
 
 $erreur_champ ="";
 $MessageSucces="";
@@ -67,9 +69,9 @@ if (isset($_POST["envoyer"])) {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;                   
             $mail->SMTPAuth   = true;                             
             $mail->Username   = 'laurentalphonsewilfried@gmail.com';                 
-            $mail->Password   = 'rqak exlb rywc icdx';                        
+            $mail->Password   = 'rqakexlbrywcicdx';                        
             $mail->SMTPSecure = 'tls';                              
-            $mail->Port       = 587;   
+            $mail->Port       = 587;  
             
             // Destinataire
             $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse'); // Votre adresse email et votre nom
@@ -78,6 +80,7 @@ if (isset($_POST["envoyer"])) {
             // Contenu de l'e-mail
             $mail->isHTML(true);
             $mail->Subject = 'Nouvelle demande de contact';
+            $mail->CharSet = 'UTF-8'; // Définir l'encodage des caractères
             $mail->WordWrap = 50;
             $mail->Body = $message;
 

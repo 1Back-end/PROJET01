@@ -73,21 +73,32 @@ if (isset($_POST["modifier"])) {
         }
     }
 
-   // Mettre à jour tous les champs de l'utilisateur dans la base de données
-    $query_update_user = "UPDATE utilisateurs SET NOM = :nom, PRENOM = :prenom, TELEPHONE = :tel, VILLE = :ville, QUARTIER = :quartier WHERE ID = :id";
+    // Mettre à jour tous les champs de l'utilisateur dans la base de données
+    $query_update_user = "UPDATE utilisateurs SET NOM = :nom, PRENOM = :prenom, VILLE = :ville, QUARTIER = :quartier";
+
+    // Si le numéro de téléphone est modifié, ajoutez-le à la requête de mise à jour
+    if ($new_tel !== null) {
+        $query_update_user .= ", TELEPHONE = :tel";
+    } else {
+        // Si le numéro de téléphone n'est pas modifié, inclure l'ancienne valeur dans la requête
+        $query_update_user .= ", TELEPHONE = TELEPHONE";
+    }
+
+    $query_update_user .= " WHERE ID = :id";
+
     $stmt_update_user = $connexion->prepare($query_update_user);
     $stmt_update_user->bindParam(':nom', $new_nom);
     $stmt_update_user->bindParam(':prenom', $new_prenom);
-    $stmt_update_user->bindParam(':tel', $new_tel, PDO::PARAM_STR); // Assurez-vous de lier le paramètre en tant que chaîne de caractères
+    // Si le numéro de téléphone est modifié, liez-le en tant que chaîne de caractères
+    if ($new_tel !== null) {
+        $stmt_update_user->bindParam(':tel', $new_tel, PDO::PARAM_STR);
+    }
     $stmt_update_user->bindParam(':ville', $new_ville);
     $stmt_update_user->bindParam(':quartier', $new_quartier);
     $stmt_update_user->bindParam(':id', $id);
     $stmt_update_user->execute();
 
-
-
     $succes = "Profil mis à jour avec succès.";
-    
 }
 
 ?>

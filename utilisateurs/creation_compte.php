@@ -136,12 +136,10 @@
         </div>
                
              
-        <div class="mb-4 mt-3">
-            <a href="#" onclick="history.go(-1)" class="btn-add mb-2 btn btn-sm btn-responsive btn-danger">Annuler <i class="bi bi-x"></i></a>
-
-            <button type="submit" name="enregistrer" class="btn-add mb-2 btn btn-success btn-sm btn-responsive">Continuer <i class="bi bi-arrow-right-short fs-1 mr-2"></i></button>
-          
-       </div>
+        <div class="d-flex mt-3 justify-content-between">
+					<button type="button" class="mx-2 btn btn-add btn-sm text-white btn-responsive btn-danger float-start" onclick="goBack()">Annuler <i class="bi bi-x-square"></i></button>
+                <button type="submit" name="enregistrer" class="mx-2 btn-sm btn btn-add text-white btn-responsive btn-primary float-end">Continuer <i class="bi bi-arrow-right-circle"></i></button>
+            </div>
 
            </div>
            </div> 
@@ -154,7 +152,11 @@
 
 
 </div>
-
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
                  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script src="creation_compte.js"></script>

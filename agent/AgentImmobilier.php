@@ -3,7 +3,7 @@
 include_once("../database/db.php");
 
 // Nombre d'éléments par page
-$elements_par_page = 5;
+$elements_par_page = 3;
 
 // Récupération du numéro de page actuel à partir de l'URL
 $page = isset($_GET['page']) ? $_GET['page'] : 1;

@@ -54,3 +54,7 @@
          document.getElementById("profile-image").src = imageURL;
      }
  });
+
+ function goBack() {
+    window.history.back();
+}

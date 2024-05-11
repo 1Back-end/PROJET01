@@ -128,49 +128,27 @@
                     <div class="col-md-10">
                     <form  method="GET">
                         <div class="row g-2">
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <select name="region" class="form-select border-0 py-3" required>
-                                    <option selected>Regions</option>
+                                    <option selected disabled>Liste des régions</option>
                                     <?php foreach ($regions as $region): ?>
                                     <option><?php echo $region; ?></option>
                                 <?php endforeach; ?>
                                 </select>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <select name="ville" class="form-select border-0 py-3" required>
-                                    <option selected>villes</option>
+                                    <option value="" selected disabled>Liste des villes</option>
                                     <?php foreach ($villes as $ville): ?>
                                     <option><?php echo $ville; ?></option>
                                 <?php endforeach; ?>
                                 </select>
                             </div>
-                            <div class="col-md-2">
-                                <select name="ville" class="form-select border-0 py-3" required>
-                                    <option selected>Arrondissements</option>
-                                    <?php foreach ($arrondissements as $arrondissement): ?>
-                                    <option><?php echo $arrondissement; ?></option>
-                                <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <div class="col-md-2">
-                                <select name="ville" class="form-select border-0 py-3" required>
-                                    <option selected>departements</option>
-                                    <?php foreach ($departements as $departement): ?>
-                                    <option><?php echo $departement; ?></option>
-                                <?php endforeach; ?>
-                                </select>
-                            </div>
-                        <div class="col-md-2">
-                                <select name="quartier" class="form-select border-0 py-3" required>
-                                    <option selected>quartiers</option>
-                                    <?php foreach ($quartiers as $quartier): ?>
-                                        <option><?php echo $quartier; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <div class="col-md-2">
+                           
+                          
+                            <div class="col-md-4">
                                 <select name="logement" class="form-select border-0 py-3" required>
-                                    <option selected>Logements</option>
+                                    <option selected disabled>Liste des logements</option>
                                     <?php foreach ($types_logement as $type_logement): ?>
                                         <option><?php echo $type_logement; ?></option>
                                     <?php endforeach; ?>
@@ -204,21 +182,18 @@
 
 <?php
 // Initialisation des variables de recherche
-$motCle = '';
+
 $typePropriete = '';
 $ville = '';
 $region = '';
-$arrondissement = '';
-$departement = '';
+
 
 // Vérifier si le formulaire de recherche a été soumis
 if (isset($_GET['submit'])) {
-    $quartier = isset($_GET['quartier']) ? $_GET['quartier'] : '';
     $typePropriete = isset($_GET['type_propriete']) ? $_GET['type_propriete'] : '';
     $ville = isset($_GET['ville']) ? $_GET['ville'] : '';
     $region = isset($_GET['region']) ? $_GET['region'] : '';
-    $arrondissement = isset($_GET['arrondissement']) ? $_GET['arrondissement'] : '';
-    $departement = isset($_GET['departement']) ? $_GET['departement'] : '';
+   
 }
 
 // Pagination
@@ -233,9 +208,7 @@ $totalCount = 0;
 $sql = "SELECT *, SUBSTRING_INDEX(photo, ',', 1) AS photo_principale FROM produits WHERE statut = 'Accepté' AND STATUS ='Present'";
 
 // Ajouter les conditions de recherche si des critères sont spécifiés
-if (!empty($quartier)) {
-    $sql .= " AND quartier LIKE '%$motCle%'";
-}
+
 if (!empty($typePropriete)) {
     $sql .= " AND type_logement = '$typePropriete'";
 }
@@ -245,12 +218,7 @@ if (!empty($ville)) {
 if (!empty($region)) {
     $sql .= " AND region = '$region'";
 }
-if (!empty($arrondissement)) {
-    $sql .= " AND arrondissement = '$arrondissement'";
-}
-if (!empty($departement)) {
-    $sql .= " AND departement = '$departement'";
-}
+
 
 // Compter le nombre total de produits pour la pagination
 $totalCountSQL = "SELECT COUNT(*) AS total FROM produits WHERE statut = 'Accepté'  AND STATUS ='Present'";
@@ -415,14 +383,17 @@ if ($result) {
             
         <!-- About Start -->
         <div class="container-xxl py-5">
+
+            
             <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                        <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                            <img class="img-fluid w-100" src="package/img/image1.jpg">
-                        </div>
+                <div class="col-md-6 col-sm-12  p-1 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img pe-0">
+                        <img class="img-fluid w-100" src="package/img/image1.jpg">
                     </div>
-                    <div class="col-lg-6 p-md-5 p-3 wow fadeIn" data-wow-delay="0.5s">
+                </div>
+
+                    <div class="col-lg-6 p-md-5 p-1 wow fadeIn" data-wow-delay="0.5s">
                         <h3 class="mb-4 text-uppercase">N°1 Pour trouver la propriété idéale</h3>
                         <p class="mb-4 text-justify"> 
                             Trouvez votre chez-vous idéal parmi notre sélection exclusive de biens immobiliers,

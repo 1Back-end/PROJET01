@@ -195,12 +195,13 @@ function sendVerificationCode($email, $code) {
     $mail = new PHPMailer(true);
 
     try {
+        // Paramètres SMTP pour Gmail
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com'; // Remplacez par votre serveur SMTP
+        $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'laurentalphonsewilfried@gmail.com'; // Remplacez par votre adresse e-mail
-        $mail->Password = 'rqak exlb rywc icdx'; // Remplacez par votre mot de passe e-mail
-        $mail->SMTPSecure = 'tls';
+        $mail->Username = 'laurentalphonsewilfried@gmail.com'; // Adresse Gmail
+        $mail->Password = 'rqakexlbrywcicdx'; // Mot de passe Gmail
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Destinataire
@@ -210,6 +211,7 @@ function sendVerificationCode($email, $code) {
         // Contenu
         $mail->isHTML(true);
         $mail->Subject = 'Code de vérification';
+        $mail->CharSet = 'UTF-8'; // Définir l'encodage des caractères
         $mail->Body    = 'Votre code de vérification est : ' . $code;
 
         $mail->send();

@@ -42,7 +42,7 @@ function sendEmail($nom, $email, $sujet, $message) {
         $mail->Host = 'smtp.gmail.com'; // Votre serveur SMTP
         $mail->SMTPAuth = true;
         $mail->Username = 'laurentalphonsewilfried@gmail.com'; // Remplacez par votre adresse e-mail
-        $mail->Password = 'rqak exlb rywc icdx'; // Remplacez par votre mot de passe e-mail
+        $mail->Password = 'rqakexlbrywcicdx'; // Remplacez par votre mot de passe e-mail
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
@@ -80,7 +80,6 @@ function sendEmail($nom, $email, $sujet, $message) {
 }
 
 ?>
-
 
 
 
