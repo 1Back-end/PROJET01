@@ -17,7 +17,7 @@ include_once 'fonction.php';
 
 <?php
 // Vérifier si l'utilisateur est administrateur
-if ($IsSuperAdmin) {
+if ($IsSuperAdmin || $IsAdmin) {
 ?>
 <div class="main-container mt-3">
 <div class="col-md-12">

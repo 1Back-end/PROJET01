@@ -96,9 +96,13 @@ $departement = $connexion->query($sql)->fetchAll();
      <div class="mr-auto">
      <h5 class="text-uppercase">LISTE  PRODUITS</h5>
      </div>
-       <div class="ml-auto">
-       <a href="ajouter.php" class="btn btn-dark btn-add btn-sm mt-2 mt-sm-0 order-sm-2"><i class="bi bi-plus-circle mr-2"></i>AJOUTER</a>
-       </div>
+     
+            <?php if ($IsProprietaire || $IsAgentImmobilier): ?>
+            <div class="ml-auto">
+                <a href="ajouter.php" class="btn btn-dark btn-add btn-sm mt-2 mt-sm-0 order-sm-2"><i class="bi bi-plus-circle mr-2"></i>AJOUTER</a>
+            </div>
+        <?php endif; ?>
+
     </div>
 </div>
 

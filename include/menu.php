@@ -115,45 +115,54 @@
 						</li>
 					<?php endif; ?>
 
-					<?php if ($IsAdmin || $IsSuperAdmin): ?>
-					<li class="dropdown mt-2">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon bi bi-circle"></span><span class="mtext">Utilisateurs</span>
-						</a>
-						<ul class="submenu">
-						<li>
-									<a href="../admin/liste_admins.php">
-										<span class="micon bi bi-circle  mr-3"></span>
-										Administrateurs
-									</a>
-								</li>
-
-								<li>
-									<a href="../agent/AgentImmobilier.php">
-										<span class="micon bi bi-circle  mr-3"></span>
-										Agents Immobiliers
-									</a>
-								</li>
-
-								<li>
-									<a href="../proprietaire/proprietaire.php">
-										<span class="micon bi bi-circle  mr-3"></span>
-										Propriétaires
-									</a>
-								</li>
-
-								<li>
-									<a href="../client/client.php">
-										<span class="micon bi bi-circle  mr-3"></span>
-										Clients
-									</a>
-								</li><br><br>
-								
-								
-								
-						</ul>
-					</li>
+					<?php if ($IsAdmin): ?>
+						<li class="mt-2">
+							<a href="../client/client.php" class="dropdown-toggle no-arrow">
+								<span class="micon bi bi-circle"></span><span class="mtext">Clients</span>
+							</a>
+						</li>
 					<?php endif; ?>
+
+
+
+					<?php if ($IsSuperAdmin): ?>
+				     <li class="dropdown mt-2">
+					<a href="javascript:;" class="dropdown-toggle">
+						<span class="micon bi bi-circle"></span><span class="mtext">Utilisateurs</span>
+					</a>
+					<ul class="submenu">
+          
+                <li>
+                    <a href="../admin/liste_admins.php">
+                        <span class="micon bi bi-circle  mr-3"></span>
+                        Administrateurs
+                    </a>
+                </li>
+           
+            <li>
+                <a href="../agent/AgentImmobilier.php">
+                    <span class="micon bi bi-circle  mr-3"></span>
+                    Agents Immobiliers
+                </a>
+            </li>
+
+            <li>
+                <a href="../proprietaire/proprietaire.php">
+                    <span class="micon bi bi-circle  mr-3"></span>
+                    Propriétaires
+                </a>
+            </li>
+
+            <li>
+                <a href="../client/client.php">
+                    <span class="micon bi bi-circle  mr-3"></span>
+                    Clients
+                </a>
+            </li><br><br>
+        </ul>
+    </li>
+<?php endif; ?>
+
 
 					
 

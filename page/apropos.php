@@ -126,13 +126,13 @@
         <div class="container-xxl py-5">         
 <div class="container">
     <div class="row g-5 align-items-center">
-    <div class="col-md-6 col-sm-12  p-1 wow fadeIn" data-wow-delay="0.1s">
+    <div class="col-md-6 col-sm-12  p-3 wow fadeIn" data-wow-delay="0.1s">
         <div class="about-img">
-            <img class="img-fluid w-100" src="../package/img/image1.jpg">
+            <img class="img-fluid w-100" src="../package/img/baniere2.jpg">
         </div>
     </div>
 
-        <div class="col-lg-6 p-md-5 p-1 wow fadeIn" data-wow-delay="0.5s">
+        <div class="col-lg-6 p-md-5 p-3 wow fadeIn" data-wow-delay="0.5s">
             <h3 class="mb-4 text-uppercase">N°1 Pour trouver la propriété idéale</h3>
             <p class="mb-4 text-justify"> 
                 Trouvez votre chez-vous idéal parmi notre sélection exclusive de biens immobiliers,

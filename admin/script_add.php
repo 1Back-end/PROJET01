@@ -17,7 +17,7 @@ if (isset($_POST["enregistrer"])) {
     $ville = $_POST["ville"];
     $motDePasse = genererMotDePasse();
     $code = genererCode();
-    $role = 4; // Administrateur
+    $role = 3; // Administrateur
     $status = "Inactif";
     $token= genererCode();
 

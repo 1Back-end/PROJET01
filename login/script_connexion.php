@@ -28,22 +28,19 @@ if(isset($_POST["connexion"])) {
 
             // Redirection en fonction du rôle de l'utilisateur
             switch ($user['ROLE']) {
-                case 0:
-                    header("Location:../page/mes_reservations.php");
-                    break;
                 case 1:
                 case 2:
                     header("Location:../page/mes_publications.php");
                     break;
                 case 3:
-                    header("Location:../page/produit.php");
+                    header("Location:../page/dashboard.php");
                     break;
                 case 4:
                     header("Location:../page/dashboard.php");
                     break;
                 default:
                     // Rediriger vers une page par défaut si le rôle n'est pas défini
-                    header("Location:../page/default_page.php");
+                    header("Location:../page/error.php");
             }
             exit(); // Assure que le script ne continue pas après la redirection        
         } else {

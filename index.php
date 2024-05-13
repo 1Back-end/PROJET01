@@ -389,7 +389,7 @@ if ($result) {
                 <div class="row g-5 align-items-center">
                 <div class="col-md-6 col-sm-12  p-1 wow fadeIn" data-wow-delay="0.1s">
                     <div class="about-img pe-0">
-                        <img class="img-fluid w-100" src="package/img/image1.jpg">
+                        <img class="img-fluid w-100" src="package/img/baniere.jpg">
                     </div>
                 </div>
 
