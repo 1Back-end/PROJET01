@@ -80,14 +80,14 @@
                     <div class="d-block d-lg-none">
                         <a href="../login/login.php" class="btn btn-dark text-white border-0 btn-sm">Se connecter</a>
                         <span class="mx-2"></span>
-                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success btn-sm text-white px-3">Inscription</a>
+                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success btn-sm text-white px-3">S'Inscrire</a>
                     </div>
                      <br><br>
                     <!-- Pour les grands écrans -->
                     <div class="d-none d-lg-block">
                         <a href="../login/login.php" class="btn btn-dark text-white border-0">Se connecter</a>
                         <span class="mx-2"></span>
-                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success text-white px-3">Inscription</a>
+                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success text-white px-3">S'Inscrire</a>
                     </div>
                 </div>
             </nav>
@@ -122,7 +122,9 @@
             <div class="col-lg-6">
                 <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
                     <h1 class="mb-3">Liste des Duplex</h1>
-                    <p class="">Découvrez notre assortiment de duplex modernes, où l'élégance s'associe à la fonctionnalité pour créer un espace de vie contemporain qui répond à vos besoins de confort. Chaque duplex est soigneusement pensé pour offrir une expérience harmonieuse, alliant design sophistiqué et praticité. Plongez dans un monde où le style et le bien-être s'unissent pour vous offrir le refuge idéal au quotidien.</p>
+                    <p class="">Découvrez notre assortiment de duplex modernes, 
+                        où l'élégance s'associe à la fonctionnalité pour créer un 
+                        espace de vie Satisfaisant qui répond à vos besoins de confort.</p>
                 </div>
             </div>
         </div>

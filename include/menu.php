@@ -63,7 +63,7 @@
 					</div>
 				</div>
 			</div>
-			
+			 
 			<?php include("../login/session_utilisateur.php");?>
 			<?php include("../login/droit_acces.php");?>
 			<div class="user-info-dropdown mt-4">
@@ -165,6 +165,25 @@
 
 
 					
+					<?php if ($IsAdmin): ?>
+					<li class="dropdown mt-2">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon bi bi-circle"></span><span class="mtext">Utilisateurs</span>
+						</a>
+						<ul class="submenu">
+
+								<li>
+									<a href="../client/client.php">
+										<span class="micon bi bi-circle  mr-3"></span>
+										Clients
+									</a>
+								</li><br><br>
+								
+								
+								
+						</ul>
+					</li>
+					<?php endif; ?>
 
 					<?php if ($IsAdmin || $IsSuperAdmin): ?>
 					<li class="dropdown mt-2">

@@ -54,9 +54,9 @@ $total_pages = ceil($total_utilisateurs / $elements_par_page);
      <div class="mr-auto">
      <h5 class="text-uppercase">LISTE  Administrateurs</h5>
      </div>
-       <div class="ml-auto">
-       <a href="ajouter.php" class="btn btn-dark btn-add btn-sm mt-2 mt-sm-0 order-sm-2"><i class="bi bi-plus-circle mr-2"></i>AJOUTER</a>
-       </div>
+            <div class="ml-auto">
+                <a href="ajouter.php" class="btn btn-dark btn-add btn-sm mt-2 mt-sm-0 order-sm-2"><i class="bi bi-plus-circle mr-2"></i>AJOUTER</a>
+            </div>
     </div>
     </div>
     <div class="col-md-12 col-sm-12">

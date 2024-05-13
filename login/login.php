@@ -66,7 +66,13 @@
                 <div class="d-flex mt-4 justify-content-between">
                     <button type="button" class="mx-2 btn btn-add btn-sm text-white btn-responsive btn-danger float-start" onclick="goBack()">Annuler <i class="bi bi-x-square"></i></button>
                         <button type="submit" name="connexion" class="mx-2 btn-sm btn btn-add text-white btn-responsive btn-primary float-end">Se connecter <i class="bi bi-arrow-right-circle"></i></button>
-            </div>
+         
+            
+                        </div><br>
+
+<a href="../index.php" class="text-primary text-decoration-none mt-2 mt-sm-2">Retour à l'acceuil</a>
+</div>
+        </div>
 
 				</form>
 			</div>

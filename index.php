@@ -47,7 +47,7 @@
         <!-- Navbar Start -->
         <div class="container-fluid nav-bar bg-transparent">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-                <a href="#" class="navbar-brand d-flex align-items-center text-center">
+                <a href="index.php" class="navbar-brand d-flex align-items-center text-center">
                     <div class="icon p-3 me-2">
                         <img class="img-fluid" src="package/img/logo.png" alt="Icon" style="width: 30px; height: 30px;">
                     </div>
@@ -76,18 +76,18 @@
                     <div class="d-block d-lg-none">
                         <a href="login/login.php" class="btn-add btn btn-dark text-white outline-none border-0 btn-sm">Se connecter</a>
                         <span class="mx-2"></span>
-                        <a href="utilisateurs/creation_compte.php" class="btn-add btn btn-success outline-none btn-sm text-white px-3">Inscription</a>
+                        <a href="utilisateurs/creation_compte.php" class="btn-add btn btn-success outline-none btn-sm text-white px-3">S'Inscrire</a>
                     </div>
                      <br><br>
                     <!-- Pour les grands écrans -->
                     <div class="d-none d-lg-block">
                         <a href="login/login.php" class="btn btn-dark outline-none text-white border-0">Se connecter</a>
                         <span class="mx-2"></span>
-                        <a href="utilisateurs/creation_compte.php" class="btn btn-success outline-none text-white px-3">Inscription</a>
+                        <a href="utilisateurs/creation_compte.php" class="btn btn-success outline-none text-white px-3">S'Inscrire</a>
                     </div>
                 </div>
             </nav>
-        </div>
+        </div><br>
         <!-- Navbar End -->
 
 

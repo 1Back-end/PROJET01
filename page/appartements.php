@@ -79,14 +79,14 @@
                     <div class="d-block d-lg-none">
                         <a href="../login/login.php" class="btn btn-dark text-white border-0 btn-sm">Se connecter</a>
                         <span class="mx-2"></span>
-                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success btn-sm text-white px-3">Inscription</a>
+                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success btn-sm text-white px-3">S'Inscrire</a>
                     </div>
                      <br><br>
                     <!-- Pour les grands écrans -->
                     <div class="d-none d-lg-block">
                         <a href="../login/login.php" class="btn btn-dark text-white border-0">Se connecter</a>
                         <span class="mx-2"></span>
-                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success text-white px-3">Inscription</a>
+                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success text-white px-3">S'Inscrire</a>
                     </div>
 
                 </div>
@@ -121,7 +121,9 @@
             <div class="col-md-6 col-sm-12">
                 <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
                     <h1 class="mb-3 font-24">Liste des Appartements Moderne</h1>
-                    <p>Plongez dans notre collection d'appartements modernes, fusion parfaite entre élégance et praticité pour un style de vie contemporain. Offrez-vous le confort ultime dans des espaces conçus pour répondre à vos besoins, tout en exprimant votre personnalité et votre raffinement. Bienvenue dans votre nouveau foyer, où chaque détail incarne l'excellence du design et de la fonctionnalité.</p>
+                    <p>Plongez dans notre collection d'appartements modernes, 
+                        fusion parfaite entre élégance et praticité pour un style 
+                        de vie Satisfaisant.</p>
                 </div>
             </div>
         </div>
