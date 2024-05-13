@@ -121,7 +121,9 @@
             <div class="col-md-6 col-sm-12">
                 <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
                     <h1 class="mb-3  mt-5">Liste des Chambres Moderne</h1>
-                    <p>Explorez notre sélection de chambres modernes, conçues pour offrir un mélange unique de confort contemporain et de style raffiné. Chaque espace est méticuleusement aménagé pour créer une atmosphère accueillante où vous pourrez vous détendre et vous ressourcer. Plongez dans une expérience de vie paisible et élégante, où chaque détail est pensé pour enrichir votre quotidien.</p>
+                    <p>Explorez notre sélection de chambres modernes, 
+                        conçues pour offrir un mélange unique de confort 
+                        Satisfaisant et de style raffiné.</p>
                 </div>
             </div>
         </div>

@@ -205,7 +205,7 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h4 class="mb-3">Nos Logements</h4>
-                    <p class="">Dans notre vaste sélection de propriétés, vous découvrirez une gamme variée répondant à tous les styles de vie. Des appartements modernes offrant un confort contemporain aux chambres élégantes créant une atmosphère apaisante, en passant par les studios modernes conçus pour une vie urbaine dynamique, chaque type de logement a été soigneusement sélectionné pour répondre à vos besoins uniques. Que vous recherchiez l'espace supplémentaire d'un duplex ou la simplicité d'un studio moderne, vous trouverez votre refuge idéal parmi nos options diverses.</p>
+                    <p>Explorez notre sélection diversifiée de propriétés : des appartements Modernes tendance aux duplex élégants, en passant par les chambres modernes et les studios modernes. Trouvez votre chez-vous idéal chez <span class="text-primary">IMMO INVESTMENT SCI</span>.</p>
                 </div>
                 <div class="row g-4">
                     
@@ -266,7 +266,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="mb-3 text-uppercase">NOS pourcentages                 </h4>
+                    <h4 class="mb-3 text-uppercase">Vos Pourcentages                 </h4>
                     <p class="">Lorsqu'un produit immobilier est publié par un agent immobilier ou un propriétaire et validé par l'administrateur, une commission est répartie entre les différentes parties prenantes suite à la vente du bien à un client. La répartition de la commission se fera comme suite:</p>
                     
                     <p><i class="fa fa-check text-dark me-3"></i><span class="text text-primary">Agent Immobilier:</span> Il bénéficiera de 30% sur chacun de ses produits pris pas les clients</p>

@@ -47,7 +47,7 @@
         <!-- Navbar Start -->
         <div class="container-fluid nav-bar bg-transparent">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-                <a href="#" class="navbar-brand d-flex align-items-center text-center">
+                <a href="index.php" class="navbar-brand d-flex align-items-center text-center">
                     <div class="icon p-3 me-2">
                         <img class="img-fluid" src="package/img/logo.png" alt="Icon" style="width: 30px; height: 30px;">
                     </div>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </nav>
-        </div>
+        </div><br>
         <!-- Navbar End -->
 
 
