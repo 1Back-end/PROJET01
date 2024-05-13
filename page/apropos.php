@@ -78,14 +78,14 @@
                    <div class="d-block d-lg-none">
                         <a href="../login/login.php" class="btn btn-dark text-white border-0 btn-sm">Se connecter</a>
                         <span class="mx-2"></span>
-                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success btn-sm text-white px-3">Inscription</a>
+                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success btn-sm text-white px-3">S'Inscrire</a>
                     </div>
                      <br><br>
                     <!-- Pour les grands écrans -->
                     <div class="d-none d-lg-block">
                         <a href="../login/login.php" class="btn btn-dark text-white border-0">Se connecter</a>
                         <span class="mx-2"></span>
-                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success text-white px-3">Inscription</a>
+                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success text-white px-3">S'Inscrire</a>
                     </div>
                 </div>
             </nav>
