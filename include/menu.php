@@ -115,7 +115,7 @@
 						</li>
 					<?php endif; ?>
 
-					<?php if ($IsAdmin || $IsSuperAdmin): ?>
+					<?php if ($IsSuperAdmin): ?>
 					<li class="dropdown mt-2">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="micon bi bi-circle"></span><span class="mtext">Utilisateurs</span>
@@ -154,6 +154,26 @@
 						</ul>
 					</li>
 					<?php endif; ?>
+
+<?php if ($IsAdmin): ?>
+<li class="dropdown mt-2">
+	<a href="javascript:;" class="dropdown-toggle">
+		<span class="micon bi bi-circle"></span><span class="mtext">Utilisateurs</span>
+	</a>
+	<ul class="submenu">
+
+			<li>
+				<a href="../client/client.php">
+					<span class="micon bi bi-circle  mr-3"></span>
+					Clients
+				</a>
+			</li><br><br>
+			
+			
+			
+	</ul>
+</li>
+<?php endif; ?>
 
 					
 
