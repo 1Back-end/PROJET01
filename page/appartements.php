@@ -62,16 +62,16 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="../index.php" class="nav-item nav-link active">Acceuil</a>
-                        <a href="apropos.php" class="nav-item nav-link">À propos</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Propriétés</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="duplex.php" class="dropdown-item">Duplex</a>
-                                <a href="appartements.php" class="dropdown-item">Appartements Moderne</a>
-                                <a href="studios.php" class="dropdown-item">Studios Moderne</a>
                                 <a href="chambres.php" class="dropdown-item">Chambres Moderne</a>
+                                <a href="studios.php" class="dropdown-item">Studios Moderne</a>
+                                <a href="appartements.php" class="dropdown-item">Appartements Moderne</a>
+                                <a href="duplex.php" class="dropdown-item">Duplex</a>
                             </div>
                         </div>
+                        <a href="apropos.php" class="nav-item nav-link">À propos</a>
                         
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
                     </div>
@@ -98,13 +98,7 @@
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
                 <div class="col-md-6 p-5 mt-lg-5">
-                    <h1 class="display-5 animated fadeIn mt-5">Appartements Moderne</h1> 
-                        <nav aria-label="breadcrumb animated fadeIn">
-                        <ol class="breadcrumb text-uppercase">
-                            <li class="breadcrumb-item"><a href="../index.php">Acceuil</a></li>
-                            <li class="breadcrumb-item text-body active" aria-current="page">Appartements Moderne</li>
-                        </ol>
-                    </nav>
+                    <h1 class="display-5 animated fadeIn mt-5">Appartements Moderne</h1>
                 </div>
                 <div class="col-md-6 animated fadeIn">
                     <img class="img-entete" src="../package/img/baniere1.jpg" alt="">

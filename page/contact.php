@@ -61,17 +61,17 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="../index.php" class="nav-item nav-link active">Acceuil</a>
-                        <a href="apropos.php" class="nav-item nav-link">À propos</a>
                        
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Propriétés</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="duplex.php" class="dropdown-item">Duplex</a>
-                                <a href="appartements.php" class="dropdown-item">Appartements Moderne</a>
-                                <a href="studios.php" class="dropdown-item">Studios Moderne</a>
                                 <a href="chambres.php" class="dropdown-item">Chambres Moderne</a>
+                                <a href="studios.php" class="dropdown-item">Studios Moderne</a>
+                                <a href="appartements.php" class="dropdown-item">Appartements Moderne</a>
+                                <a href="duplex.php" class="dropdown-item">Duplex</a>
                             </div>
                         </div>
+                        <a href="apropos.php" class="nav-item nav-link">À propos</a>
                         
                         <a href="#" class="nav-item nav-link">Contact</a>
                     </div>
@@ -138,7 +138,7 @@
                                         <div class="icon me-3" style="width: 45px; height: 45px;">
                                             <i class="fa fa-envelope-open text-primary"></i>
                                         </div>
-                                        <span>immoinvestmentsci@gmail.com</span>
+                                        <span>investmentimmo425@gmail.com</span>
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
                                         <div class="icon me-3" style="width: 45px; height: 45px;">
                                             <i class="fa fa-phone-alt text-primary"></i>
                                         </div>
-                                        <span>+237 6 99 99 93 18</span>
+                                        <span>+237 699 999 318</span>
                                     </div>
                                 </div>
                             </div>

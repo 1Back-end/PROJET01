@@ -47,8 +47,8 @@ function sendEmail($nom, $email, $sujet, $message) {
         $mail->Port = 587;
 
         // Destinataire
-        $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse'); // Votre adresse email et votre nom
-        $mail->addAddress('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse'); // Adresse email et nom du destinataire
+        $mail->setFrom('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI'); // Votre adresse email et votre nom
+        $mail->addAddress('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI'); // Adresse email et nom du destinataire
 
         // Contenu de l'email
         $mail->isHTML(true);

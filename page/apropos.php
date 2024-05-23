@@ -61,16 +61,16 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="../index.php" class="nav-item nav-link active">Acceuil</a>
-                        <a href="apropos.php" class="nav-item nav-link">À propos</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Propriétés</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="duplex.php" class="dropdown-item">Duplex</a>
-                                <a href="appartements.php" class="dropdown-item">Appartements Moderne</a>
-                                <a href="studios.php" class="dropdown-item">Studios Moderne</a>
                                 <a href="chambres.php" class="dropdown-item">Chambres Moderne</a>
+                                <a href="studios.php" class="dropdown-item">Studios Moderne</a>
+                                <a href="appartements.php" class="dropdown-item">Appartements Moderne</a>
+                                <a href="duplex.php" class="dropdown-item">Duplex</a>
                             </div>
                         </div>
+                        <a href="apropos.php" class="nav-item nav-link">À propos</a>
                         
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
                     </div>
@@ -269,8 +269,8 @@
                     <h4 class="mb-3 text-uppercase">Vos Pourcentages                 </h4>
                     <p class="">Lorsqu'un produit immobilier est publié par un agent immobilier ou un propriétaire et validé par l'administrateur, une commission est répartie entre les différentes parties prenantes suite à la vente du bien à un client. La répartition de la commission se fera comme suite:</p>
                     
-                    <p><i class="fa fa-check text-dark me-3"></i><span class="text text-primary">Agent Immobilier:</span> Il bénéficiera de 30% sur chacun de ses produits pris pas les clients</p>
-                        <p><i class="fa fa-check text-dark me-3"></i><span class="text text-primary">Propriétaire:</span> Il bénéficiera de 20% sur chacun de ses produits pris pas les clients</p>
+                    <p><i class="fa fa-check text-dark me-3"></i><span class="text text-primary">Agent Immobilier:</span> Il bénéficiera de 50% sur chacun de ses produits pris par les clients</p>
+                        <p><i class="fa fa-check text-dark me-3"></i><span class="text text-primary">Propriétaire:</span> Il bénéficiera de 30% sur chacun de ses produits pris par les clients</p>
                 </div>
               
                 

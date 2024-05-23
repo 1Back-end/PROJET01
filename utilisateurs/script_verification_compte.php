@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 
     // Vérifier si les champs sont vides
     if (empty($code)) {
-        $ErreurMessage = "Veuillez votre code de validation !";
+        $ErreurMessage = "Veuillez entrer votre code de validation !";
     } else {
         // Requête SQL pour vérifier si le code saisi correspond à celui enregistré en base de données
         $query = "SELECT COUNT(*) AS count FROM utilisateurs WHERE ID = :user_id AND CODE = :code";
@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
             $stmt_delete->execute();
 
             // Message de succès
-            $SuccesMessage = "Votre compte a été activé avec succès. <a href='../login/login.php'>Cliquez ici</a> pour vous connecter.";
+            $SuccesMessage = "Votre compte a été activé avec succès. <a href='../login/login.php' class='text-info'>Cliquez ici</a> pour vous connecter.";
 
         } else {
             // Message d'erreur si le code saisi ne correspond pas à celui enregistré

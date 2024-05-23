@@ -59,16 +59,16 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="index.php" class="nav-item nav-link active">Acceuil</a>
-                        <a href="page/apropos.php" class="nav-item nav-link">À propos</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown">Propriétés</a>
                             <div class="dropdown-menu rounded-0 m-0 ">
-                                <a href="page/duplex.php" class="dropdown-item">Duplex</a>
-                                <a href="page/appartements.php" class="dropdown-item">Appartements Moderne</a>
-                                <a href="page/studios.php" class="dropdown-item">Studios Moderne</a>
                                 <a href="page/chambres.php" class="dropdown-item">Chambres Moderne</a>
+                                <a href="page/studios.php" class="dropdown-item">Studios Moderne</a>
+                                <a href="page/appartements.php" class="dropdown-item">Appartements Moderne</a>
+                                <a href="page/duplex.php" class="dropdown-item">Duplex</a>
                             </div>
                         </div>
+                        <a href="page/apropos.php" class="nav-item nav-link">À propos</a>
                         
                         <a href="page/contact.php" class="nav-item nav-link">Contact</a>
                     </div>
@@ -420,7 +420,7 @@ if ($result) {
                         <h5 class="text-white mb-4">Contact</h5>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Neptune Golf Bastos, Yaoundé</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 6 99 99 93 18</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>immoinvestmentsci@gmail.com</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>investmentimmo425@gmail.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>

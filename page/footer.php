@@ -6,8 +6,8 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <h5 class="text-white mb-4">Contact</h5>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Neptune Golf Bastos, Yaoundé</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 6 99 99 93 18</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>immoinvestmentsci@gmail.com</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 699 999 318</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>investmentimmo425@gmail.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href="##"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light btn-social" href="##"><i class="fab fa-whatsapp"></i></a>
