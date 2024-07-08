@@ -67,7 +67,7 @@
                     <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown">A Vendre</a>
                     <div class="dropdown-menu rounded-0 m-0 ">
                         <a href="../pages/Maison.php" class="dropdown-item">Maisons</a>
-                        <a href="../pages/mmeuble.php" class="dropdown-item">Immeubles</a>
+                        <a href="../pages/immeuble.php" class="dropdown-item">Immeubles</a>
                         <a href="../pages/appartements.php" class="dropdown-item">Appartements</a>
                         <a href="../pages/duplex.php" class="dropdown-item">Duplex</a>
                         <a href="../pages/villa.php" class="dropdown-item">Villas</a>

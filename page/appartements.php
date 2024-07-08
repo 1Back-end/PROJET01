@@ -142,7 +142,7 @@
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-md-6 col-sm-12">
                 <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                    <h1 class="mb-3 font-24">Liste des Appartements Moderne</h1>
+                    <h1 class="mb-3 font-24">Liste des appartements moderne à louer</h1>
                     <p>Plongez dans notre collection d'appartements modernes, 
                         fusion parfaite entre élégance et praticité pour un style 
                         de vie Satisfaisant.</p>
@@ -155,7 +155,7 @@
 $totalCount = 0;
 
 // Requête SQL pour récupérer tous les produits de type Duplex avec une seule image aléatoire
-$sql = "SELECT *, SUBSTRING_INDEX(photo, ',', 1) AS photo_principale FROM produits WHERE  statut = 'Accepté' AND STATUS = 'Present' AND type_logement = 'Appartement Moderne'";
+$sql = "SELECT *, SUBSTRING_INDEX(photo, ',', 1) AS photo_principale FROM produits WHERE  statut = 'Accepté' AND STATUS = 'Present' AND type_logement = 'Appartement Moderne' AND statut_Louer = 'A Louer'";
 
 // Pagination
 $itemsPerPage = 9;
@@ -163,7 +163,7 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($currentPage - 1) * $itemsPerPage;
 
 // Compter le nombre total de produits pour la pagination
-$totalCountSQL = "SELECT COUNT(*) AS total FROM produits WHERE statut = 'Accepté' AND STATUS = 'Present' AND type_logement = 'Appartement Moderne'";
+$totalCountSQL = "SELECT COUNT(*) AS total FROM produits WHERE statut = 'Accepté' AND STATUS = 'Present' AND type_logement = 'Appartement Moderne' AND statut_Louer = 'A Louer'";
 
 // Exécution de la requête SQL pour obtenir le nombre total de produits
 $totalCountResult = $connexion->query($totalCountSQL);
@@ -215,7 +215,7 @@ if ($result) {
             }
         } else {
             // Aucun résultat trouvé, afficher un message d'alerte
-            echo '<div class="alert alert-info" role="alert">Aucun  Appartement Moderne n\'a encore été enregistré.</div>';
+            echo '<div class="alert alert-info" role="alert">Aucun  appartement moderne à louer n\'a encore été enregistré.</div>';
 
         }
         ?>

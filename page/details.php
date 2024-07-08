@@ -12,7 +12,7 @@
 
     <!-- Favicon -->
    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
@@ -164,7 +164,7 @@ if (isset($_GET['id'])) {
                 <div class="row">
                     <!-- Colonne des images et des informations du produit -->
                     <div class="col-md-6 col-sm-12 shadow-sm py-3 p-3 mt-3">
-                        <h5 class="font-12 text-uppercase">Images du Logement</h5>
+                        <h5 class="font-12 text-uppercase">Images du Produit</h5>
                         <?php 
                         // Récupérer les images du produit
                         $images = explode(',', $row['photo']);
@@ -183,7 +183,7 @@ if (isset($_GET['id'])) {
                             </div>
                         <?php } ?>
                         <div class="mt-3">
-                            <h5 class="font-12 text-uppercase">Informations sur le Logement</h5>
+                            <h5 class="font-12 text-uppercase">Informations sur le Produit</h5>
                             <p class="text-justify w-100"><?php echo $row['description']; ?></p>
 
                             <div class="info">
@@ -201,7 +201,7 @@ if (isset($_GET['id'])) {
                                     <p class="mb-2"><i class="bi bi-geo-fill me-3"></i>Département : <?php echo $row['departement']; ?></p>
                                      <p class="mb-2"><i class="fas fa-map-marker-alt me-3"></i>Arrondissement : <?php echo $row['arrondissement']; ?></p>
 
-                                    <p class="mb-2"><i class='bx bxs-car me-3'></i><?php echo $row['distance']; ?> Franc CFA par rapport à la route</p>
+                                    <p class="mb-2"><i class='bx bxs-car me-3'></i><?php echo $row['distance']; ?> FCFA par rapport à la route</p>
                                     <p class="mb-2"><i class="fas fa-walking me-3"></i><?php echo $row['destination']; ?>  par rapport à la route</p>
 
                                     </div>
@@ -263,7 +263,7 @@ if (isset($_GET['id'])) {
         </div>
         <?php
     } else {
-        echo "<h4 class='text-center'>Aucune chambre trouvée avec cet ID.</h4>";
+        echo "<h4 class='text-center'>Aucun Produit trouvé avec cet ID.</h4>";
     }
 }
 ?>

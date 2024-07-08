@@ -44,7 +44,8 @@ if (isset($_POST['submit'])) {
             $stmt_delete->execute();
 
             // Message de succès
-            $SuccesMessage = "Votre compte a été activé avec succès. <a href='../login/login.php' class='text-info'>Cliquez ici</a> pour vous connecter.";
+            $SuccesMessage = "Votre compte a été activé avec succès.";
+            echo '<meta http-equiv="refresh" content="1;url=../login/login.php">';
 
         } else {
             // Message d'erreur si le code saisi ne correspond pas à celui enregistré

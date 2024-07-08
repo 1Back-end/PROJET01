@@ -131,7 +131,7 @@ function sendVerificationCode($email, $motDePasse,$nom,$prenom) {
 
         // Destinataire
         $mail->setFrom('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI');
-        $mail->addAddress($email);     // Add a recipient
+        $mail->addAddress($email, 'IMMO INVESTMENT SCI');     // Add a recipient
 
         // Contenu
         $mail->isHTML(true);

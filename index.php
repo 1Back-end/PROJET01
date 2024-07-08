@@ -147,7 +147,7 @@
                     <div class="col-md-10">
                     <form  method="GET">
                         <div class="row g-2">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <select name="region" class="form-select border-0 py-3" required>
                                     <option selected disabled> Régions</option>
                                     <?php foreach ($regions as $region): ?>
@@ -155,7 +155,7 @@
                                 <?php endforeach; ?>
                                 </select>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <select name="ville" class="form-select border-0 py-3" required>
                                     <option value="" selected disabled> Villes</option>
                                     <?php foreach ($villes as $ville): ?>
@@ -163,9 +163,17 @@
                                 <?php endforeach; ?>
                                 </select>
                             </div>
+                            <div class="col-md-3">
+                                <select name="quartier" class="form-select border-0 py-3" required>
+                                    <option value="" selected disabled> Quartiers</option>
+                                    <?php foreach ($quartiers as $quartier): ?>
+                                    <option><?php echo $quartier; ?></option>
+                                <?php endforeach; ?>
+                                </select>
+                            </div>
                            
                           
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <select name="logement" class="form-select border-0 py-3" required>
                                     <option selected disabled> Type de Produit</option>
                                     <?php foreach ($types_logement as $type_logement): ?>
@@ -207,6 +215,7 @@
 $typePropriete = '';
 $ville = '';
 $region = '';
+$quartier = '';
 
 
 // Vérifier si le formulaire de recherche a été soumis
@@ -214,6 +223,7 @@ if (isset($_GET['submit'])) {
     $typePropriete = isset($_GET['type_propriete']) ? $_GET['type_propriete'] : '';
     $ville = isset($_GET['ville']) ? $_GET['ville'] : '';
     $region = isset($_GET['region']) ? $_GET['region'] : '';
+    $quartier = isset($_GET['quartier']) ? $_GET['quartier'] : '';
    
 }
 
@@ -239,6 +249,9 @@ if (!empty($ville)) {
 if (!empty($region)) {
     $sql .= " AND region = '$region'";
 }
+if (!empty($quartier)) {
+    $sql .= " AND quartier = '$quartier'";
+}
 
 
 // Compter le nombre total de produits pour la pagination
@@ -254,6 +267,9 @@ if (!empty($ville)) {
 }
 if (!empty($region)) {
     $totalCountSQL .= " AND region = '$region'";
+}
+if (!empty($quartier)) {
+    $totalCountSQL .= " AND quartier = '$quartier'";
 }
 if (!empty($arrondissement)) {
     $totalCountSQL .= " AND arrondissement = '$arrondissement'";
@@ -481,8 +497,8 @@ if ($result) {
                     <div class="col-lg-4 col-md-">
                         <h5 class="text-white mb-4">Contact</h5>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Neptune Golf Bastos, Yaoundé</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 6 99 99 93 18</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>immoinvestmentsci425@gmail.com</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel: +237699999318">+237 699 999 318</a></p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto: immoinvestmentsci425@gmail.com">immoinvestmentsci425@gmail.com</a></p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>

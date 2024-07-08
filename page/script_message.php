@@ -74,8 +74,8 @@ if (isset($_POST["envoyer"])) {
             $mail->Port       = 587;  
             
             // Destinataire
-            $mail->setFrom('dilanenguemzi23@gmail.com', 'IMMO INVESTMENT SCI'); // Votre adresse email et votre nom
-            $mail->addAddress('dilanenguemzi23@gmail.com', 'IMMO INVESTMENT SCI');
+            $mail->setFrom('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI'); // Votre adresse email et votre nom
+            $mail->addAddress('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI');
 
             // Contenu de l'e-mail
             $mail->isHTML(true);
@@ -97,6 +97,7 @@ if (isset($_POST["envoyer"])) {
                 $stmt_reservation->execute();
 
                 $MessageSucces = "Votre demande a été envoyée avec succès !";
+            echo '<meta http-equiv="refresh" content="1;url=../index.php">';
             } catch (PDOException $e) {
                 // En cas d'erreur lors de l'insertion dans la table de réservation
                 $MessageErreur = "Erreur lors de l'envoi de l'e-mail : {$mail->ErrorInfo}";

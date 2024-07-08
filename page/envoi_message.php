@@ -24,6 +24,7 @@ if (isset($_POST["valider"])) {
         // Afficher un message en fonction du résultat de l'envoi
         if ($result === true) {
             $succes = 'Votre message a été envoyé avec succès !';
+            echo '<meta http-equiv="refresh" content="1;url=contact.php">';
         } else {
             $erreur = 'Une erreur s\'est produite lors de l\'envoi de votre message. Veuillez réessayer plus tard.';
         }
@@ -47,8 +48,8 @@ function sendEmail($nom, $email, $sujet, $message) {
         $mail->Port = 587;
 
         // Destinataire
-        $mail->setFrom('dilanenguemzi23@gmail.com', 'IMMO INVESTMENT SCI'); // Votre adresse email et votre nom
-        $mail->addAddress('dilanenguemzi23@gmail.com', 'IMMO INVESTMENT SCI'); // Adresse email et nom du destinataire
+        $mail->setFrom('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI'); // Votre adresse email et votre nom
+        $mail->addAddress('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI'); // Adresse email et nom du destinataire
 
         // Contenu de l'email
         $mail->isHTML(true);

@@ -130,7 +130,7 @@ try {
                         <div class="form-group">
 						<label for="type_logement">Type de logement</label>
 						<select name="type_logement" id="type_logement" class="form-control" id="type_logement">
-                            <option value="Choisir" selected> Choisir une option</option>
+                            <option value="" selected disabled> Choisir une option</option>
                             <option value="Chambre Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Chambre Moderne") echo " selected"; ?>> Chambre Moderne</option>
                             <option value="Studio Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Studio Moderne") echo " selected"; ?>> Studio Moderne</option>
                             <option value="Appartement Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Appartement Moderne") echo " selected"; ?>> Appartement Moderne</option>
@@ -172,7 +172,7 @@ try {
 <div class="form-group">
 <label for="type_logement">Statut</label>
 <select name="statut_Louer" class="form-control">
-    <option value="" selected> Choisir une option</option>
+    <option value="" selected disabled> Choisir une option</option>
     <option value="A Louer"<?php if(isset($_POST['statut_Louer']) && $_POST['statut_Louer'] == "A Louer") echo " selected"; ?>> A Louer</option>
     <option value="A Vendre"<?php if(isset($_POST['statut_Louer']) && $_POST['statut_Louer'] == "A Vendre") echo " selected"; ?>> A Vendre</option>
 </select>

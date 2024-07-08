@@ -149,6 +149,7 @@ if (isset($_POST["enregistrer"])) {
             // Envoyer le code généré à l'utilisateur par e-mail
             sendVerificationCode($email, $code);
             $succes_message = "Votre compte a été créé avec succès. Un e-mail contenant un code de vérification a été envoyé à votre adresse e-mail. <a href='code_verification.php?user_id=$user_id' class='text-info'>Cliquez ici</a> pour entrer votre code de validation.";
+            echo '<meta http-equiv="refresh" content="1;url=code_verification.php">';
         }
     } else {
         // Si des erreurs sont survenues, construire le message d'erreur
@@ -205,7 +206,7 @@ function sendVerificationCode($email, $code) {
         $mail->Port = 587;
 
         // Destinataire
-        $mail->setFrom('dilanenguemzi23@gmail.com', 'IMMO INVESTMENT SCI');
+        $mail->setFrom('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI');
         $mail->addAddress($email, 'IMMO INVESTMENT SCI');     // Add a recipient
 
         // Contenu

@@ -158,7 +158,7 @@
                                         <div class="icon me-3" style="width: 45px; height: 45px;">
                                             <i class="fa fa-envelope-open text-primary"></i>
                                         </div>
-                                        <span>investmentimmo425@gmail.com</span>
+                                        <span><a href="mailto: immoinvestmentsci425@gmail.com">immoinvestmentsci425@gmail.com</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@
                                         <div class="icon me-3" style="width: 45px; height: 45px;">
                                             <i class="fa fa-phone-alt text-primary"></i>
                                         </div>
-                                        <span>+237 699 999 318</span>
+                                        <span><a href="tel: +237699999318">+237 699 999 318</a></span>
                                     </div>
                                 </div>
                             </div>
