@@ -42,6 +42,7 @@ try {
     $quartier = $row['quartier'];
     $prix = $row['prix'];
     $type_logement = $row['type_logement'];
+    $statut_Louer = $row['statut_Louer'];
     $description = $row['description'];
     $distance = $row['distance'];
     $destination = $row['destination'];
@@ -57,7 +58,7 @@ try {
     <div class="pd-ltr-10 xs-pd-5-5 p-2">
 	<div class="col-md-12 col-sm-12">
         <div class="pd-10 card-box mb-3 p-3">
-            <h4 class="text-center">MODIFIER LA PROPRIÉTÉ</h4>
+            <h4 class="text-center">MODIFIER LE PRODUIT</h4>
         </div>
 		</div>
 
@@ -128,12 +129,16 @@ try {
                         <div class="col-md-6 col-sm-12">
                         <div class="form-group">
 						<label for="type_logement">Type de logement</label>
-						<select name="type_logement" id="type_logement" class="form-control">
-                            <option value="" disabled>Choisir une option</option>
-                            <option value="Chambre Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Chambre Moderne") echo " selected"; ?>>Chambre Moderne</option>
-                            <option value="Studio Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Studio Moderne") echo " selected"; ?>>Studio Moderne</option>
-                            <option value="Appartement Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Appartement Moderne") echo " selected"; ?>>Appartement Moderne</option>
-                            <option value="Duplex"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Duplex") echo " selected"; ?>>Duplex</option>
+						<select name="type_logement" id="type_logement" class="form-control" id="type_logement">
+                            <option value="Choisir" selected> Choisir une option</option>
+                            <option value="Chambre Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Chambre Moderne") echo " selected"; ?>> Chambre Moderne</option>
+                            <option value="Studio Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Studio Moderne") echo " selected"; ?>> Studio Moderne</option>
+                            <option value="Appartement Moderne"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Appartement Moderne") echo " selected"; ?>> Appartement Moderne</option>
+                            <option value="Duplex"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Duplex") echo " selected"; ?>> Duplex</option>
+                            <option value="Maison"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Maison") echo " selected"; ?>> Maison</option>
+                            <option value="Immeuble"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Immeuble") echo " selected"; ?>> Immeuble</option>
+                            <option value="Villa"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Villa") echo " selected"; ?>> Villa</option>
+                            <option value="Terrain"<?php if(isset($_POST['type_logement']) && $_POST['type_logement'] == "Terrain") echo " selected"; ?>> Terrain</option>
                         </select>
 
                         </div>
@@ -141,9 +146,9 @@ try {
                   
 
                         <div class="form-group">
-                            <label for="prix">Prix de la location</label>
-                            <input id="prix" value="<?php echo $prix; ?>" type="text" class="form-control" name="prix" min="0"  placeholder="150000">
-                        </div>
+                            <label for="prix">Prix (Veillez préciser " / Mois" pour les produits à louer et " / Mêtre Carré" pour les terrains)</label>
+                            <input id="prix" value="<?php echo $prix; ?>" type="text" class="form-control" name="prix" min="0"  placeholder="eg: 150000/ Mois">
+                        </div> 
                   
 
                     
@@ -163,6 +168,15 @@ try {
                             <label for="photo">Image (04 chambre moderne , 06 studios moderne , 08 appartements , 12 duplex)</label>
                             <input type="file" value="<?php echo $photo; ?>" class="form-control" name="photo[]" multiple>
                         </div>
+
+<div class="form-group">
+<label for="type_logement">Statut</label>
+<select name="statut_Louer" class="form-control">
+    <option value="" selected> Choisir une option</option>
+    <option value="A Louer"<?php if(isset($_POST['statut_Louer']) && $_POST['statut_Louer'] == "A Louer") echo " selected"; ?>> A Louer</option>
+    <option value="A Vendre"<?php if(isset($_POST['statut_Louer']) && $_POST['statut_Louer'] == "A Vendre") echo " selected"; ?>> A Vendre</option>
+</select>
+</div>
                
                         </div>
                 
@@ -191,6 +205,7 @@ try {
 </div>
 
 <script src="script.js"></script>
+
 <script>
     // Fonction pour fermer le message d'alerte
     function closeMessage(element) {

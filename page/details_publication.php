@@ -34,15 +34,23 @@ if (isset($_GET['id'])) {
             echo "DETAILS DE L'APPARTEMENT MODERNE";
         } elseif ($type_logement == "CHAMBRE MODERNE") {
             echo "DETAILS DE LA CHAMBRE MODERNE";
+        } elseif ($type_logement == "TERRAIN") {
+            echo "DETAILS DU TERRAIN";
+        } elseif ($type_logement == "MAISON") {
+            echo "DETAILS DE LA MAISON";
+        } elseif ($type_logement == "IMMEUBLE") {
+            echo "DETAILS DE L'IMMEUBLE";
+        } elseif ($type_logement == "VILLA") {
+            echo "DETAILS DE LA VILLA";
         } else {
             echo "DETAILS DU ".$type_logement;
         }
         echo " N° ".$row['code']."</h4>";
     } else {
-        echo "Aucune chambre trouvée avec cet ID.";
+        echo "Aucune Produit trouvée avec cet ID.";
     }
 } else {
-    echo "ID de chambre non spécifié.";
+    echo "ID du produit non spécifié.";
 }
 ?>
 
@@ -73,7 +81,8 @@ if (isset($_GET['id'])) {
                         <div class="card-body">
                             <h5 class="card-title">Informations du produit</h5>
                             <p class="card-text text-justify">Description: <?php echo $row['description']; ?></p>
-                            <p class="card-text">Prix: <?php echo $row['prix']; ?> Franc CFA</p>
+                            <p class="card-text">Statut: <?php echo $row['statut_Louer']; ?></p>
+                            <p class="card-text">Prix: <?php echo $row['prix']; ?> ( FCFA )</p>
                             <p class="card-text">Région: <?php echo $row['region']; ?></p>
                             <p class="card-text">Departement: <?php echo $row['departement']; ?></p>
                             <p class="card-text">Arrondissement: <?php echo $row['arrondissement']; ?></p>

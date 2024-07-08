@@ -18,7 +18,7 @@ if (isset($_POST["enregistrer"])) {
     $motDePasse = genererMotDePasse();
     $code = genererCode();
     $role = 3; // Administrateur
-    $status = "Inactif";
+    $status = "Actif";
     $token= genererCode();
 
     // Vérifier si tous les champs sont remplis
@@ -118,29 +118,30 @@ function sendVerificationCode($email, $motDePasse,$nom,$prenom) {
     // Utilisez PHPMailer ou une autre bibliothèque pour envoyer l'e-mail
     // Exemple avec PHPMailer :
     $mail = new PHPMailer(true);
-
+ 
     try {
        // Paramètres SMTP pour Gmail
        $mail->isSMTP();
        $mail->Host = 'smtp.gmail.com';
        $mail->SMTPAuth = true;
        $mail->Username = 'laurentalphonsewilfried@gmail.com'; // Adresse Gmail
-       $mail->Password = 'rqakexlbrywcicdx'; // Mot de passe Gmail
+       $mail->Password = 'xkue sail qegu hxbu'; // Mot de passe Gmail
        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
        $mail->Port = 587;
 
         // Destinataire
-        $mail->setFrom('laurentalphonsewilfried@gmail.com', 'Laurent Alphonse');
+        $mail->setFrom('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI');
         $mail->addAddress($email);     // Add a recipient
 
         // Contenu
         $mail->isHTML(true);
-        $mail->Subject = 'Code de vérification';
+        $mail->Subject = 'INFORMATIONS DE CONNEXION';
         $mail->CharSet = 'UTF-8'; // Définir l'encodage des caractères
         $mail->Body = 'Bonjour Monsieur ' . $prenom . ' ' . $nom . ',<br><br>
-        Nous avons le plaisir de vous informer que votre compte administrateur a été créé avec succès.<br><br>
-        Veuillez trouver ci-dessous les détails de votre compte :<br><br>
-        Votre mot de passe pour vous connecter à l\'application est : ' . $motDePasse;
+        Nous avons le plaisir de vous informer que votre compte administrateur a été créé avec succès chez IMMO INVESTMENT SCI via.<br><br>
+        Veuillez trouver ci-dessous les détails de votre compte :<br>
+        Votre adresse E-mail de commexion est: '.$email.'<br>
+        Votre mot de passe est : ' . $motDePasse.'<br> Merci de vous connecter sur la plateforme immoinvestmentsci.com pour accéder à votre compte';
 
         $mail->send();
     } catch (Exception $e) {

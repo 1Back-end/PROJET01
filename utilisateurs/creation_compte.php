@@ -62,7 +62,7 @@
        <div class="col-md-8 col-sm-12 p-1">  
        
        <div class="card-box p-3 mb-3">
-       <h6 class="text-uppercase text-success text-center ">Créer votre compte chez IMMO SCI </h6> 
+       <h6 class="text-uppercase text-success text-center ">Créer votre compte chez IMMO INVESTMENT SCI </h6> 
        <div class="col-md-12 col-sm-12 mt-3 p-1">
        <div class="mb-3">
                     <input type="text" class="form-control py-3" value="<?php echo isset($_POST['nom']) ? htmlspecialchars($_POST['nom']) : ''; ?>" name="nom" placeholder="Veuillez entrer votre nom">

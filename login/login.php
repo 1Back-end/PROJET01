@@ -35,7 +35,7 @@
                  </div>
 			<div class="col-sm-8 offset-sm-2 col-lg-6 p-1 offset-lg-3 col-xl-6 offset-xl-3 mx-auto">
 				<form class="rounded bg-white card-box py-5 px-3" action="" method="post">
-                <h4 class="text-center fw-bold  mb-3 text-uppercase text-success">Connectez-vous à IMMO SCI</h4>
+                <h4 class="text-center fw-bold  mb-3 text-uppercase text-success">Connectez-vous à IMMO INVESTMENT SCI</h4>
 					<div class=" text-center fw-normal text-muted mb-4"> Nouveau ici?
 						<a href="../utilisateurs/creation_compte.php" class="text-primary fw-bold text-decoration-none">Créer un compte</a>
 					</div>

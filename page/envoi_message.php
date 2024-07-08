@@ -42,13 +42,13 @@ function sendEmail($nom, $email, $sujet, $message) {
         $mail->Host = 'smtp.gmail.com'; // Votre serveur SMTP
         $mail->SMTPAuth = true;
         $mail->Username = 'laurentalphonsewilfried@gmail.com'; // Remplacez par votre adresse e-mail
-        $mail->Password = 'rqakexlbrywcicdx'; // Remplacez par votre mot de passe e-mail
+        $mail->Password = 'xkue sail qegu hxbu'; // Remplacez par votre mot de passe e-mail
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
         // Destinataire
-        $mail->setFrom('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI'); // Votre adresse email et votre nom
-        $mail->addAddress('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI'); // Adresse email et nom du destinataire
+        $mail->setFrom('dilanenguemzi23@gmail.com', 'IMMO INVESTMENT SCI'); // Votre adresse email et votre nom
+        $mail->addAddress('dilanenguemzi23@gmail.com', 'IMMO INVESTMENT SCI'); // Adresse email et nom du destinataire
 
         // Contenu de l'email
         $mail->isHTML(true);

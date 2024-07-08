@@ -76,7 +76,7 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
                                 <td><?php echo $row['ville']; ?></td>
                                 <td><?php echo $row['departement']; ?></td>
                                 <td><?php echo $row['quartier']; ?></td>
-                                <td><?php echo $row['prix']; ?>Franc CFA</td>
+                                <td><?php echo $row['prix']; ?> ( FCFA )</td>
                                 <td><?php echo $row['type_logement']; ?></td>
                                 <td>
                                     <?php 

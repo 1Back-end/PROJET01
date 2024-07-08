@@ -22,7 +22,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * $elements_par_page;
 
 // Requête SQL pour récupérer les utilisateurs avec un rôle d'agent immobilier et un statut "Présent"
-$sql = "SELECT * FROM utilisateurs WHERE ROLE = 4 AND STATUT = 'Present' LIMIT :limit OFFSET :offset";
+$sql = "SELECT * FROM utilisateurs WHERE ROLE = 3 AND STATUT = 'Present' LIMIT :limit OFFSET :offset";
 $stmt = $connexion->prepare($sql);
 $stmt->bindParam(':limit', $elements_par_page, PDO::PARAM_INT);
 $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
@@ -30,7 +30,7 @@ $stmt->execute();
 $utilisateurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Compter le nombre total d'agents immobiliers
-$stmt_count = $connexion->prepare("SELECT COUNT(*) FROM utilisateurs WHERE ROLE = 4 AND STATUT = 'Present'");
+$stmt_count = $connexion->prepare("SELECT COUNT(*) FROM utilisateurs WHERE ROLE = 3 AND STATUT = 'Present'");
 $stmt_count->execute();
 $total_utilisateurs = $stmt_count->fetchColumn();
 

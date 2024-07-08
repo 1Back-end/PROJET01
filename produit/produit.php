@@ -195,7 +195,7 @@ $departement = $connexion->query($sql)->fetchAll();
                             <tr>
                                <td class="font-12"><?php echo $row['proprietaire_nom']; ?></td>
                                 <td><?php echo $row['type_logement']; ?></td>
-                                <td><?php echo $row['prix']; ?> Franc CFA</td>
+                                <td><?php echo $row['prix']; ?> ( FCFA )</td>
                                 <td><?php echo date('d/m/Y H:i:s', strtotime($row['date_ajout'])); ?></td>
 
                                 <td>

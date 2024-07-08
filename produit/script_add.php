@@ -14,6 +14,7 @@ if (isset($_POST["enregistrer"])) {
     $description = $_POST["description"];
     $distance = $_POST["distance"];
     $destination = $_POST["destination"];
+    $statut_Louer = $_POST["statut_Louer"];
     $statut = "En attente";
     $identifiant = $_SESSION['id'];
     $code = generateRandomCode();
@@ -31,13 +32,25 @@ if (isset($_POST["enregistrer"])) {
         case "Duplex":
             $maxPhotos = 12;
             break;
+        case "Terrain":
+            $maxPhotos = 12;
+            break;
+        case "Villa":
+            $maxPhotos = 12;
+            break;
+        case "Maison":
+            $maxPhotos = 12;
+            break;
+        case "Immeuble":
+            $maxPhotos = 12;
+            break;
         default:
             $maxPhotos = 3;
             break;
     }
 
     // Vérifier si tous les champs sont remplis
-    if (!empty($_POST["ville"]) && !empty($_POST["destination"]) && !empty($_POST["distance"]) &&  !empty($_POST["departement"]) && !empty($_POST["region"]) && !empty($_POST["arrondissement"]) && !empty($_POST["quartier"]) && !empty($_POST["prix"]) && !empty($_POST["type_logement"]) && !empty($_POST["description"]) && isset($_FILES["photo"])) {
+    if (!empty($_POST["ville"]) && !empty($_POST["destination"]) && !empty($_POST["distance"]) &&  !empty($_POST["departement"]) && !empty($_POST["region"]) && !empty($_POST["arrondissement"]) && !empty($_POST["quartier"]) && !empty($_POST["prix"]) && !empty($_POST["type_logement"]) && !empty($_POST["description"]) && !empty($_POST["statut_Louer"]) && isset($_FILES["photo"])) {
         // Gérer l'upload de l'image
         $targetDir = "../uploads/";
         $uploadedFiles = [];
@@ -75,7 +88,7 @@ if (isset($_POST["enregistrer"])) {
                 $errorMessage = "Le nombre maximum de photos autorisées pour ce type de logement est $maxPhotos.";
             } else {
                 // Insérer les données dans la base de données
-                $sql = "INSERT INTO produits (ville, region, departement, arrondissement, quartier, prix, photo, type_logement, description, statut, code, distance, destination, proprietaire_id, date_ajout) VALUES (:ville, :region, :departement, :arrondissement, :quartier, :prix, :photo, :type_logement, :description, :statut, :code, :distance, :destination, :identifiant, NOW())";
+                $sql = "INSERT INTO produits (ville, region, departement, arrondissement, quartier, prix, photo, type_logement, description, statut, code, statut_Louer, distance, destination, proprietaire_id, date_ajout) VALUES (:ville, :region, :departement, :arrondissement, :quartier, :prix, :photo, :type_logement, :description, :statut, :code, :statut_Louer, :distance, :destination, :identifiant, NOW())";
                 $stmt = $connexion->prepare($sql);
 
                 // Concaténer les noms des fichiers images
@@ -92,6 +105,7 @@ if (isset($_POST["enregistrer"])) {
                     ":photo" => $photoNames,
                     ":type_logement" => $type_logement,
                     ":description" => $description,
+                    ":statut_Louer" => $statut_Louer,
                     ":statut" => $statut,
                     ":code" => $code,
                     ":distance" => $distance,

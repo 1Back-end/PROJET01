@@ -200,19 +200,19 @@ function sendVerificationCode($email, $code) {
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'laurentalphonsewilfried@gmail.com'; // Adresse Gmail
-        $mail->Password = 'rqakexlbrywcicdx'; // Mot de passe Gmail
+        $mail->Password = 'xkue sail qegu hxbu'; // Mot de passe Gmail
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Destinataire
-        $mail->setFrom('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI');
+        $mail->setFrom('dilanenguemzi23@gmail.com', 'IMMO INVESTMENT SCI');
         $mail->addAddress($email, 'IMMO INVESTMENT SCI');     // Add a recipient
 
         // Contenu
         $mail->isHTML(true);
         $mail->Subject = 'Code de vérification';
         $mail->CharSet = 'UTF-8'; // Définir l'encodage des caractères
-        $mail->Body    = 'Votre code de vérification est : ' . $code;
+        $mail->Body    = 'Votre compte a été créé avec succès chez IMMO INVESTMENT SCI.</br> Votre code de vérification est : ' . $code;
 
         $mail->send();
     } catch (Exception $e) {

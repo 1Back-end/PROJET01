@@ -95,6 +95,98 @@ function getTotalDuplexAcceptes($connexion) {
     }
 }
 
+function getTotalTerrainAcceptes($connexion) {
+    try {
+        // Requête SQL pour compter le nombre de studios avec le statut "Accepté"
+        $sql = "SELECT COUNT(*) AS total_Terrain FROM produits WHERE type_logement ='Terrain' AND statut = 'Accepté'  AND STATUS ='Present'";
+        
+        // Préparer la requête
+        $stmt = $connexion->prepare($sql);
+        
+        // Exécuter la requête
+        $stmt->execute();
+        
+        // Récupérer le résultat
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Nombre total de studios avec le statut "Accepté"
+        return $row['total_Terrain'];
+        
+    } catch(PDOException $e) {
+        // Gérer les erreurs ici (vous pouvez également les renvoyer)
+        return false;
+    }
+}
+
+function getTotalImmeubleAcceptes($connexion) {
+    try {
+        // Requête SQL pour compter le nombre de studios avec le statut "Accepté"
+        $sql = "SELECT COUNT(*) AS total_Immeuble FROM produits WHERE type_logement ='Immeuble' AND statut = 'Accepté'  AND STATUS ='Present'";
+        
+        // Préparer la requête
+        $stmt = $connexion->prepare($sql);
+        
+        // Exécuter la requête
+        $stmt->execute();
+        
+        // Récupérer le résultat
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Nombre total de studios avec le statut "Accepté"
+        return $row['total_Immeuble'];
+        
+    } catch(PDOException $e) {
+        // Gérer les erreurs ici (vous pouvez également les renvoyer)
+        return false;
+    }
+}
+
+function getTotalMaisonAcceptes($connexion) {
+    try {
+        // Requête SQL pour compter le nombre de studios avec le statut "Accepté"
+        $sql = "SELECT COUNT(*) AS total_Maison FROM produits WHERE type_logement ='Maison' AND statut = 'Accepté'  AND STATUS ='Present'";
+        
+        // Préparer la requête
+        $stmt = $connexion->prepare($sql);
+        
+        // Exécuter la requête
+        $stmt->execute();
+        
+        // Récupérer le résultat
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Nombre total de studios avec le statut "Accepté"
+        return $row['total_Maison'];
+        
+    } catch(PDOException $e) {
+        // Gérer les erreurs ici (vous pouvez également les renvoyer)
+        return false;
+    }
+}
+
+function getTotalVillaAcceptes($connexion) {
+    try {
+        // Requête SQL pour compter le nombre de studios avec le statut "Accepté"
+        $sql = "SELECT COUNT(*) AS total_studios FROM produits WHERE type_logement ='Villa' AND statut = 'Accepté'  AND STATUS ='Present'";
+        
+        // Préparer la requête
+        $stmt = $connexion->prepare($sql);
+        
+        // Exécuter la requête
+        $stmt->execute();
+        
+        // Récupérer le résultat
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Nombre total de studios avec le statut "Accepté"
+        return $row['total_Villa'];
+        
+    } catch(PDOException $e) {
+        // Gérer les erreurs ici (vous pouvez également les renvoyer)
+        return false;
+    }
+}
+
 
 function getTotalAgentsImmobiliers($connexion) {
     try {

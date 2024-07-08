@@ -43,35 +43,56 @@
             </div>
         </div>
 
+        
 
-        <!-- Navbar Start -->
-        <div class="container-fluid nav-bar bg-transparent">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-                <a href="index.php" class="navbar-brand d-flex align-items-center text-center">
-                    <div class="icon p-3 me-2">
-                        <img class="img-fluid" src="package/img/logo.png" alt="Icon" style="width: 30px; height: 30px;">
+
+<!-- Navbar Start -->
+<div class="container-fluid nav-bar bg-transparent">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+        <a href="index.php" class="navbar-brand d-flex align-items-center text-center">
+            <div >
+                <img class="img-fluid" src="package/img/logo.png" alt="Icon" style="width: 65px; height: 65px; margin-right: 10px;">
+            </div>
+            <h5 class="m-0 text-primary">IMMO INVESTMENT<span class="text-dark"> SCI</span></h5>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <a href="index.php" class="nav-item nav-link active">Acceuil</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown">A Vendre</a>
+                    <div class="dropdown-menu rounded-0 m-0 ">
+                        <a href="pages/Maison.php" class="dropdown-item">Maison</a>
+                        <a href="pages/immeuble.php" class="dropdown-item">Immeubles</a>
+                        <a href="pages/appartements.php" class="dropdown-item">Appartements</a>
+                        <a href="pages/duplex.php" class="dropdown-item">Duplex</a>
+                        <a href="pages/villa.php" class="dropdown-item">Villas</a>
+                        <a href="page/terrains.php" class="dropdown-item">Terrains</a>
                     </div>
-                    <h6 class="m-0 text-primary ">IMMO <span class="text-dark">INVESTMENT </span> SCI</h6>
-                </a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto">
-                        <a href="index.php" class="nav-item nav-link active">Acceuil</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown">Propriétés</a>
-                            <div class="dropdown-menu rounded-0 m-0 ">
-                                <a href="page/chambres.php" class="dropdown-item">Chambres Moderne</a>
-                                <a href="page/studios.php" class="dropdown-item">Studios Moderne</a>
-                                <a href="page/appartements.php" class="dropdown-item">Appartements Moderne</a>
-                                <a href="page/duplex.php" class="dropdown-item">Duplex</a>
-                            </div>
-                        </div>
-                        <a href="page/apropos.php" class="nav-item nav-link">À propos</a>
-                        
-                        <a href="page/contact.php" class="nav-item nav-link">Contact</a>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown">A Louer</a>
+                    <div class="dropdown-menu rounded-0 m-0 ">
+                        <a href="page/chambres.php" class="dropdown-item">Chambres Moderne</a>
+                        <a href="page/studios.php" class="dropdown-item">Studios Moderne</a>
+                        <a href="page/appartements.php" class="dropdown-item">Appartements Moderne</a>
+                        <a href="page/duplex.php" class="dropdown-item">Duplex</a>
+                        <a href="page/Maison.php" class="dropdown-item">Maisons</a>
+                        <a href="page/immeuble.php" class="dropdown-item">Immeubles</a>
+                        <a href="page/villa.php" class="dropdown-item">Villas</a>
+                        <a href="pages/terrains.php" class="dropdown-item">Terrains</a>
                     </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown">IMMO</a>
+                    <div class="dropdown-menu rounded-0 m-0 ">
+                        <a href="page/apropos.php" class="dropdown-item">A propos</a>
+                        <a href="page/contact.php" class="dropdown-item">Contact</a>
+                    </div>
+                </div>
+            </div>
                     <!-- Pour les petits écrans -->
                     <div class="d-block d-lg-none">
                         <a href="login/login.php" class="btn-add btn btn-dark text-white outline-none border-0 btn-sm">Se connecter</a>
@@ -85,34 +106,32 @@
                         <span class="mx-2"></span>
                         <a href="utilisateurs/creation_compte.php" class="btn btn-success outline-none text-white px-3">S'Inscrire</a>
                     </div>
-                </div>
-            </nav>
-        </div><br>
-        <!-- Navbar End -->
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
 
 
         <!-- Header Start -->
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-                <div class="col-md-6 col-sm-12 p-md-5 p-3 mt-lg-5">
-                    <h5 style="font-size:30px;" class="fw-bold w-100  mt-4 text-uppercase animated fadeIn mb-4">Votre recherche<span class="text-primary"> du logement idéale </span>commence ici</h5>
-                        <div class="container">
-                        <p class="animated text-justify fadeIn mb-4 pb-2">Bienvenue chez <span class="text-primary">IMMO INVESTMENT SCI</span>, votre partenaire de confiance pour trouver la propriété parfaite. 
-                        Découvrez des biens immobiliers exceptionnels qui répondent à vos besoins tout en explorant un monde de possibilités immobilières.</p>
-                        </div>
-
-                    <a href="#produit" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Nos Logements</a>
+            <div class="col-md-6 p-5 mt-lg-5">
+                    <h1 class="display-5 animated fadeIn mb-4">Votre recherche<span class="text-primary"> du logement idéale </span>commence ici</h1>
+                    <p class="animated fadeIn mb-4 pb-2">Bienvenue sur IMMO INVESTMENT SCI votre partenaire de confiance pour trouver la propriété parfaite. 
+                        Découvrez des biens immobiliers exceptionnels qui répondent à vos besoins tout en explorant un monde de possibilités immobilières.
+                    </p>
+                    <a href="#produit" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Nos Produits</a>
                 </div>
                 <div class="col-md-6 animated fadeIn">
                     <div class="owl-carousel header-carousel">
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="package/img/baniere1.jpg" alt="">
+                            <img class="img-fluid" src="img/3.png" alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="package/img/baniere.jpg" alt="">
+                            <img class="img-fluid" src="img/1.png" alt="">
                         </div>
                         <div class="owl-carousel-item">
-                            <img class="img-fluid" src="package/img/baniere2.jpg" alt="">
+                            <img class="img-fluid" src="img/2.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -130,7 +149,7 @@
                         <div class="row g-2">
                             <div class="col-md-4">
                                 <select name="region" class="form-select border-0 py-3" required>
-                                    <option selected disabled>Liste des régions</option>
+                                    <option selected disabled> Régions</option>
                                     <?php foreach ($regions as $region): ?>
                                     <option><?php echo $region; ?></option>
                                 <?php endforeach; ?>
@@ -138,7 +157,7 @@
                             </div>
                             <div class="col-md-4">
                                 <select name="ville" class="form-select border-0 py-3" required>
-                                    <option value="" selected disabled>Liste des villes</option>
+                                    <option value="" selected disabled> Villes</option>
                                     <?php foreach ($villes as $ville): ?>
                                     <option><?php echo $ville; ?></option>
                                 <?php endforeach; ?>
@@ -148,7 +167,7 @@
                           
                             <div class="col-md-4">
                                 <select name="logement" class="form-select border-0 py-3" required>
-                                    <option selected disabled>Liste des logements</option>
+                                    <option selected disabled> Type de Produit</option>
                                     <?php foreach ($types_logement as $type_logement): ?>
                                         <option><?php echo $type_logement; ?></option>
                                     <?php endforeach; ?>
@@ -172,8 +191,10 @@
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-lg-6">
                 <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                    <h1 class="mb-3">Nos Logements Disponibles</h1>
-                    <p>Trouvez votre havre de paix avec notre sélection exclusive de biens immobiliers de qualité sur notre site web immobilier. Votre prochaine maison vous attend ici !</p>
+                <h1 class="mb-3">Liste des propriétés</h1>
+                            <p>
+                                Trouvez la perle rare parmi notre collection de biens immobiliers soigneusement sélectionnés pour vous
+                            </p>
                 </div>
             </div>
         </div>
@@ -318,62 +339,100 @@ if ($result) {
  <div class="container-xxl py-5 ">
             <div class="container p-2">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h4 class="mb-3">Types de Logement                    </h4>
-                    <p>Explorez notre sélection diversifiée de propriétés : des appartements Modernes tendance aux duplex élégants, en passant par les chambres modernes et les studios modernes. Trouvez votre chez-vous idéal chez <span class="text-primary">IMMO INVESTMENT SCI</span>.</p>
+                    <h4 class="mb-3">Nos Produits</h4>
+                    <p>Trouvez votre havre de paix avec notre sélection exclusive de biens immobiliers de qualité sur notre site web immobilier. Votre prochaine maison vous attend ici !</p>
                 </div>
                 <div class="row g-4">
-                    
-                <div class="col-lg-3  col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <a class="card d-block shadow-sm p-3 text-center rounded p-3" href="page/duplex.php">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="img/icon-apartment.png" alt="Icon">
+                                </div>
+                                <h6>Duplex</h6>
+                                <span><?php echo $resultat['total_duplex'] ?></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                         <a class="card d-block shadow-sm  text-center rounded p-3" href="page/appartements.php">
-                            <div class="rounded">
-                                <div class="mb-3">
-                                <i class="fa fa-building fa-2x"></i>
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
                                 </div>
-                                <h6>Appartements Modernes</h6>
-                                <span style="font-size:25px;font-weight:700;"><?php echo $resultat['total_appartements_moderne'] ?></span>
+                                <h6>Appartement Moderne</h6>
+                                <span><?php echo $resultat['total_appartements_moderne'] ?></span>
                             </div>
                         </a>
                     </div>
-
-
-                    <div class="col-lg-3  col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <a class="card d-block shadow-sm p-3 text-center rounded p-3" href="page/studios.php">
-                            <div class="rounded">
-                                <div class="mb-3">
-                                <i class="fa fa-building fa-2x"></i>
-                                </div>
-                                <h6>Studios Modernes</h6>
-                                <span style="font-size:25px;font-weight:700;"><?php echo $resultat['total_studios_moderne'] ?></span>
-                            </div>
-                        </a>
-                    </div>
-
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <a class="card d-block shadow-sm p-3 text-center rounded p-3" href="page/chambres.php">
-                            <div class="rounded">
-                                <div class="mb-3">
-                                <i class="fa fa-building fa-2x"></i>
+                        <a class="card d-block shadow-sm p-3 text-center rounded p-3" href="page/studios.php">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="img/icon-house.png" alt="Icon">
                                 </div>
-                                <h6>Chambres Modernes</h6>
-                                <span style="font-size:25px;font-weight:700;"><?php echo $resultat['total_chambres_moderne'] ?></span>
+                                <h6>Studio Moderne</h6>
+                                <span><?php echo $resultat['total_studios_moderne'] ?></span>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <a class="card d-block shadow-sm p-3 text-center rounded p-3" href="page/duplex.php">
-                            <div class="rounded ">
-                                <div class="mb-3">
-                                <i class="fa fa-building fa-2x"></i>
+                        <a class="card d-block shadow-sm p-3 text-center rounded p-3" href="page/chambres.php">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="img/icon-housing.png" alt="Icon">
                                 </div>
-                                <h6>Duplex</h6>
-                                <span style="font-size:25px;font-weight:700;"><?php echo $resultat['total_duplex'] ?></span>
+                                <h6>Chambre Moderne</h6>
+                                <span><?php echo $resultat['total_chambres_moderne'] ?></span>
                             </div>
                         </a>
                     </div>
-                    
-                    
-                    
-                    
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <a class="card d-block shadow-sm p-3 text-center rounded p-3" href="page/terrains.php">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="img/icon-housing.png" alt="Icon">
+                                </div>
+                                <h6>Terrains</h6>
+                                <span><?php echo $resultat['total_terrain'] ?></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <a class="card d-block shadow-sm p-3 text-center rounded p-3" href="pages/Maison.php">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="img/icon-housing.png" alt="Icon">
+                                </div>
+                                <h6>Maisons</h6>
+                                <span><?php echo $resultat['total_Maison'] ?></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <a class="card d-block shadow-sm p-3 text-center rounded p-3" href="pages/immeuble.php">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="img/icon-housing.png" alt="Icon">
+                                </div>
+                                <h6>Immeubles</h6>
+                                <span><?php echo $resultat['total_Immeuble'] ?></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <a class="card d-block shadow-sm p-3 text-center rounded p-3" href="pages/villa.php">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="img/icon-housing.png" alt="Icon">
+                                </div>
+                                <h6>Villas</h6>
+                                <span><?php echo $resultat['total_Villa'] ?></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -381,28 +440,28 @@ if ($result) {
 
 
             
+        
+
+
         <!-- About Start -->
         <div class="container-xxl py-5">
-
-            
             <div class="container">
                 <div class="row g-5 align-items-center">
-                <div class="col-md-6 col-sm-12  p-1 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="about-img pe-0">
-                        <img class="img-fluid w-100" src="package/img/baniere.jpg">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                            <img class="img-fluid w-100" src="img/about.jpg">
+                        </div>
                     </div>
-                </div>
-
-                    <div class="col-lg-6 p-md-5 p-1 wow fadeIn" data-wow-delay="0.5s">
-                        <h3 class="mb-4 text-uppercase">N°1 Pour trouver la propriété idéale</h3>
-                        <p class="mb-4 text-justify"> 
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <h1 class="mb-4">N°1 Pour trouver la propriété idéale</h1>
+                        <p class="mb-4">
                             Trouvez votre chez-vous idéal parmi notre sélection exclusive de biens immobiliers,
                             tout en découvrant des propriétés uniques qui correspondent à votre style de vie et à vos besoins.
                         </p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Accessibilité: 24h/24 - 7 jours/7</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Accessibilité 24/7</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Présentation détaillée des biens</p>
                         <p><i class="fa fa-check text-primary me-3"></i>Économie de temps et d'efforts</p>
-                        <a class="btn btn-primary py-3 px-5 mt-3" href="page/apropos.php">En savoir plus</a>
+                        <a class="btn btn-primary py-3 px-5 mt-3" href="">En savoir plus</a>
                     </div>
                 </div>
             </div>
@@ -413,30 +472,31 @@ if ($result) {
 
          <!-- Footer Start -->
          <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-3">
+            <div class="container py-5">
                 <div class="row g-5">
-                    
-                    <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="col-lg-3 col-md-">
+                        <h5 class="text-white mb-4">Immo Investment SCI</h5>
+                        <img src="img/logo_footer.png" alt="" width="180px" style="padding-left: 50px;">
+                    </div>
+                    <div class="col-lg-4 col-md-">
                         <h5 class="text-white mb-4">Contact</h5>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Neptune Golf Bastos, Yaoundé</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 6 99 99 93 18</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>investmentimmo425@gmail.com</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>immoinvestmentsci425@gmail.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="col-lg-2 col-md-">
                         <h5 class="text-white mb-4">Menu</h5>
                         <a class="btn btn-link text-white-50" href="index.php">Acceuil</a>
                         <a class="btn btn-link text-white-50" href="page/apropos.php">A propos</a>
                         <a class="btn btn-link text-white-50" href="page/contact.php">Contact</a>
-                        <a class="btn btn-link text-white-50" href="page/chambres.php">Propriétés</a>
-                        <a class="btn btn-link text-white-50" href="#">Politique de Confidentialité</a>
                     </div>
                    
-                    <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="col-lg-3 col-md-">
                         <h5 class="text-white mb-4">Newsletter</h5>
                         <p>Inscrivez-vous dès maintenant pour recevoir nos prochaines actualités directement dans votre boîte de réception</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
@@ -449,7 +509,7 @@ if ($result) {
             <div class="container" >
                 <div class="copyright" >
                     <div class="row">
-                        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0"  >
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0"  >
                             &copy; <a class="border-bottom" href="#" >IMMO INVESTMENT SCI</a>, Tous droits réservés. 	
                         </div>
                     </div>

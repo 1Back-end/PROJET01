@@ -69,13 +69,13 @@ if (isset($_POST["envoyer"])) {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;                   
             $mail->SMTPAuth   = true;                             
             $mail->Username   = 'laurentalphonsewilfried@gmail.com';                 
-            $mail->Password   = 'rqakexlbrywcicdx';                        
+            $mail->Password   = 'xkue sail qegu hxbu';                        
             $mail->SMTPSecure = 'tls';                              
             $mail->Port       = 587;  
             
             // Destinataire
-            $mail->setFrom('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI'); // Votre adresse email et votre nom
-            $mail->addAddress('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI');
+            $mail->setFrom('dilanenguemzi23@gmail.com', 'IMMO INVESTMENT SCI'); // Votre adresse email et votre nom
+            $mail->addAddress('dilanenguemzi23@gmail.com', 'IMMO INVESTMENT SCI');
 
             // Contenu de l'e-mail
             $mail->isHTML(true);

@@ -53,16 +53,17 @@
                         <div class="card-box mb-30">
                             <div class="card-body">
                                 <h5 class="card-title">Informations du produit</h5>
-                                <p class="card-text text-justify"><i class="bi bi-list-ol mr-2 fs-3"></i>Description : <?php echo $row['description']; ?></p>
+                                <p class="card-text text-justify"><i class="bi bi-list-ol mr-2 fs-3"></i>Description : <?php echo $row['description']; ?></p><br>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Statut : <?php echo $row['statut_Louer']; ?></p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Code : <?php echo $row['code']; ?></p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Type Logement : <?php echo $row['type_logement']; ?></p>
-                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Prix : <?php echo $row['prix']; ?>XAF / Mois</p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Prix : <?php echo $row['prix']; ?> FCFA</p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Région : <?php echo $row['region']; ?></p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Département : <?php echo $row['departement']; ?></p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Arrondissement : <?php echo $row['arrondissement']; ?></p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Ville : <?php echo $row['ville']; ?></p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Quartier : <?php echo $row['quartier']; ?></p>
-                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Prix à l'adresse de destination : <?php echo $row['distance']; ?>XAF</p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Prix à l'adresse de destination : <?php echo $row['distance']; ?> FCFA</p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Nombre de kilomètres par rapport à la route : <?php echo $row['destination']; ?></p>
                                 <!-- Informations du propriétaire -->
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Propriétaire : <?php echo $row['prenom'] . ' ' . $row['nom']; ?></p>
