@@ -1,9 +1,12 @@
 
 <?php include_once("../include/menu.php");?>
 <?php include_once("script_add.php");?>
+<?php include_once("requete.php");?>
 <link rel="stylesheet" href="../style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap" async defer></script>
+
 <style>
     /* Ajouter une ombre à la liste de groupe */
     .list-group-shadow {
@@ -55,20 +58,36 @@ font-size: 12px;
                 <div class="row">
 
                 <div class="col-md-6 col-sm-12">
-				
-                        <div class="form-group">
-                            <label for="region">Region</label>
-							<input type="text" id="searchRegions" value="<?php echo isset($_POST['region']) ? htmlspecialchars($_POST['region']) : ''; ?>" class="form-control" placeholder="Sud" name="region">
-						    <div id="typeRegionsSuggestions" class="list-group-shadow"></div>
-                        </div>
-                    
+
+                <div class="form-group">
+                    <label for="region">Région</label>
+                    <select name="region" id="region" class="form-control linked-select" data-target="#ville" data-source="villes.json">
+                        <option disabled selected>Sélectionner une option</option>
+                        <?php
+                            $regions = json_decode(file_get_contents('regions.json'), true);
+                            foreach ($regions as $region): ?>
+                                <option value="<?= htmlspecialchars($region['id']) ?>"><?= htmlspecialchars($region['nom']) ?></option>
+                            <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ville">Ville</label>
+                    <select name="ville" id="ville" class="form-control linked-select" data-target="#quartier" data-source="quartiers.json">
+                        <option disabled selected>Sélectionner une option</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quartier">Quartier</label>
+                    <select name="quartier" id="quartier" class="form-control">
+                        <option disabled selected>Sélectionner une option</option>
+                    </select>
+                </div>
 
 
-                            <div class="form-group">
-                            <label for="ville">Ville</label>
-                            <input type="text" id="searchVille" autocomplete="off" class="form-control" value="<?php echo isset($_POST['ville']) ? htmlspecialchars($_POST['ville']) : ''; ?>" placeholder="Yaoundé" name="ville">
-                            <div id="villeSuggestions" class="list-group"></div>
-                        </div>
+
+
 
                     
                    
@@ -167,4 +186,34 @@ font-size: 12px;
 </script>
 
 
- 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script>
+        $(document).ready(function() {
+            $('.linked-select').on('change', function() {
+                var $this = $(this);
+                var target = $this.data('target');
+                var source = $this.data('source');
+                var selectedValue = $this.val();
+
+                if (target && source) {
+                    $.getJSON(source, function(data) {
+                        var options = '<option disabled selected>Sélectionner une option</option>';
+                        var filteredData = data.filter(function(item) {
+                            if (source === 'villes.json') {
+                                return item.region_id == selectedValue;
+                            } else if (source === 'quartiers.json') {
+                                return item.ville_id == selectedValue;
+                            }
+                        });
+
+                        $.each(filteredData, function(key, value) {
+                            options += '<option value="' + value.id + '">' + value.nom + '</option>';
+                        });
+                        $(target).html(options);
+                    });
+                }
+            });
+        });
+    </script>

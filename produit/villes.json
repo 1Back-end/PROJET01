@@ -1,0 +1,19 @@
+[
+    { "id": 1, "nom": "Yaoundé", "region_id": 1 },
+    { "id": 2, "nom": "Douala", "region_id": 2 },
+    { "id": 3, "nom": "Bafoussam", "region_id": 3 },
+    { "id": 4, "nom": "Garoua", "region_id": 4 },
+    { "id": 5, "nom": "Bertoua", "region_id": 5 },
+    { "id": 6, "nom": "Edéa", "region_id": 6 },
+    { "id": 7, "nom": "Banganté", "region_id": 3 },
+    { "id": 8, "nom": "Nkongsamba", "region_id": 8 },
+    { "id": 9, "nom": "Bamenda", "region_id": 9 },
+    { "id": 10, "nom": "Loum", "region_id": 10 },
+    { "id": 11, "nom": "Kumba", "region_id": 11 },
+    { "id": 12, "nom": "Ebolowa", "region_id": 12 },
+    { "id": 13, "nom": "Kousséri", "region_id": 13 },
+    { "id": 14, "nom": "Bafia", "region_id": 14 },
+    { "id": 15, "nom": "Batouri", "region_id": 15 },
+    { "id": 16, "nom": "Guider", "region_id": 16 },
+    { "id": 17, "nom": "Foumban", "region_id": 17 }
+]
