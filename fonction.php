@@ -6,7 +6,11 @@
  SUM(CASE WHEN type_logement = 'Chambre Moderne' THEN 1 ELSE 0 END) AS total_chambres_moderne,
  SUM(CASE WHEN type_logement = 'Appartement Moderne' THEN 1 ELSE 0 END) AS total_appartements_moderne,
  SUM(CASE WHEN type_logement = 'Studio Moderne' THEN 1 ELSE 0 END) AS total_studios_moderne,
- SUM(CASE WHEN type_logement = 'Duplex' THEN 1 ELSE 0 END) AS total_duplex 
+ SUM(CASE WHEN type_logement = 'Duplex' THEN 1 ELSE 0 END) AS total_duplex,
+ SUM(CASE WHEN type_logement = 'Maison' THEN 1 ELSE 0 END) AS total_Maison,
+ SUM(CASE WHEN type_logement = 'Immeuble' THEN 1 ELSE 0 END) AS total_Immeuble,
+ SUM(CASE WHEN type_logement = 'Villa' THEN 1 ELSE 0 END) AS total_Villa,
+ SUM(CASE WHEN type_logement = 'Terrain' THEN 1 ELSE 0 END) AS total_terrain
 FROM produits";
 // Prépare la requête
 $statement = $connexion->prepare($requete);

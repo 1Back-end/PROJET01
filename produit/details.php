@@ -54,6 +54,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Informations du produit</h5>
                                 <p class="card-text text-justify"><i class="bi bi-list-ol mr-2 fs-3"></i>Description : <?php echo $row['description']; ?></p>
+                                <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Statut : <?php echo $row['statut_Louer']; ?></p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Type Logement : <?php echo $row['type_logement']; ?></p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Prix : <?php echo $row['prix']; ?> Franc CFA / Mois</p>
                                 <p class="card-text"><i class="bi bi-list-ol mr-2 fs-3"></i>Région : <?php echo $row['region']; ?></p>

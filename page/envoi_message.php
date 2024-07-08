@@ -24,6 +24,7 @@ if (isset($_POST["valider"])) {
         // Afficher un message en fonction du résultat de l'envoi
         if ($result === true) {
             $succes = 'Votre message a été envoyé avec succès !';
+            echo '<meta http-equiv="refresh" content="1;url=contact.php">';
         } else {
             $erreur = 'Une erreur s\'est produite lors de l\'envoi de votre message. Veuillez réessayer plus tard.';
         }
@@ -42,7 +43,7 @@ function sendEmail($nom, $email, $sujet, $message) {
         $mail->Host = 'smtp.gmail.com'; // Votre serveur SMTP
         $mail->SMTPAuth = true;
         $mail->Username = 'laurentalphonsewilfried@gmail.com'; // Remplacez par votre adresse e-mail
-        $mail->Password = 'rqakexlbrywcicdx'; // Remplacez par votre mot de passe e-mail
+        $mail->Password = 'xkue sail qegu hxbu'; // Remplacez par votre mot de passe e-mail
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 

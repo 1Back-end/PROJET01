@@ -163,28 +163,6 @@
     </li>
 <?php endif; ?>
 
-
-					
-					<?php if ($IsAdmin): ?>
-					<li class="dropdown mt-2">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon bi bi-circle"></span><span class="mtext">Utilisateurs</span>
-						</a>
-						<ul class="submenu">
-
-								<li>
-									<a href="../client/client.php">
-										<span class="micon bi bi-circle  mr-3"></span>
-										Clients
-									</a>
-								</li><br><br>
-								
-								
-								
-						</ul>
-					</li>
-					<?php endif; ?>
-
 					<?php if ($IsAdmin || $IsSuperAdmin): ?>
 					<li class="dropdown mt-2">
 						<a href="javascript:;" class="dropdown-toggle">
@@ -213,6 +191,30 @@
 								<a href="../chambre/chambre.php">
 									<span class="micon bi bi-circle mr-3"></span>
 									Chambres Moderne
+								</a>
+							</li>
+							<li>
+								<a href="../maisons/maisons.php">
+									<span class="micon bi bi-circle mr-3"></span>
+									Maisons
+								</a>
+							</li>
+							<li>
+								<a href="../immeubles/immeubles.php">
+									<span class="micon bi bi-circle mr-3"></span>
+									Immeubles
+								</a>
+							</li>
+							<li>
+								<a href="../villa/villa.php">
+									<span class="micon bi bi-circle mr-3"></span>
+									Villas
+								</a>
+							</li>
+							<li>
+								<a href="../terrains/terrains.php">
+									<span class="micon bi bi-circle mr-3"></span>
+									Terrains
 								</a>
 							</li>
 						</ul>
@@ -244,7 +246,7 @@
 				</li>
 				<li class="">
 					<a href="../page/mes_produits_loues.php" class="dropdown-toggle no-arrow">
-						<span class="micon bi bi-circle"></span><span class="mtext">Mes produits loués</span>
+						<span class="micon bi bi-circle"></span><span class="mtext">Mes produits Occupés</span>
 					</a>
 				</li>
 			<?php endif; ?>

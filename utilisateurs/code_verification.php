@@ -53,7 +53,7 @@ if(isset($_POST["submit"])) {
 					<h6 class="text-success fw-bolder fs-4 mb-2">Activation du compte</h6>
 
 					<div class="fw-normal text-muted mb-4">
-                    Entrez le code de vérification que nous avons envoyé à
+                    Entrez le code de vérification que nous avons envoyé à l'adresse mail: 
 					</div>  
                     <?php
         // Récupérer le user_id depuis l'URL
@@ -85,7 +85,7 @@ if(isset($_POST["submit"])) {
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
                             <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
                         </svg>
-                        <span>8459</span>
+                        <span>@gmail.com</span>
                     </div>
 
 					<div class="otp_input text-start mb-2">
@@ -95,7 +95,7 @@ if(isset($_POST["submit"])) {
                             <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code2" class="mx-2 text-center form-control font-14" placeholder="">
                             <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code3" class="mx-2 text-center form-control font-14" placeholder="">
                             <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code4" class="mx-2 text-center form-control font-14" placeholder="">
-                            <input type="text" maxlength="1" onkeypress="return isNumberKey(event)"   name="code5" class="mx-2 text-center form-control font-14" placeholder="">
+                            <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code5" class="mx-2 text-center form-control font-14" placeholder="">
                             <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code6" class="mx-2 text-center form-control font-14" placeholder="">
                         </div> 
                        

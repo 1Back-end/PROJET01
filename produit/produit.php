@@ -119,7 +119,7 @@ $departement = $connexion->query($sql)->fetchAll();
 
                     <div class="col-md-2 text-center mb-2">
                         <select name="region" class="form-control col-12 font-12 ">
-                            <option value="">Les regions</option>
+                            <option value="" selected disabled>Les regions</option>
                             <?php foreach ($region as $r): ?>
                                 <option value="<?=$r["region"] ?>"><?=$r["region"] ?></option>
                             <?php endforeach; ?>
@@ -128,7 +128,7 @@ $departement = $connexion->query($sql)->fetchAll();
 
                     <div class="col-md-2 text-center mb-2">
                         <select name="departement" class="form-control col-12  font-12">
-                            <option value="">Les départements</option>
+                            <option value="" selected disabled>Les départements</option>
                             <?php foreach ($departement as $d): ?>
                                 <option value="<?=$d["departement"] ?>"><?=$d["departement"] ?></option>
                             <?php endforeach; ?>
@@ -137,7 +137,7 @@ $departement = $connexion->query($sql)->fetchAll();
 
                     <div class="col-md-2 text-center mb-2">
                         <select name="logement" class="form-control col-12 font-12">
-                            <option value="">Les logements</option>
+                            <option value="" selected disabled>Les logements</option>
                             <?php foreach ($produit as $p): ?>
                                 <option value="<?=$p["type_logement"] ?>"><?=$p["type_logement"] ?></option>
                             <?php endforeach; ?>
@@ -145,7 +145,7 @@ $departement = $connexion->query($sql)->fetchAll();
                     </div>
                     <div class="col-md-2 text-center mb-2">
                         <select class="form-control col-12 font-12" name="statut">
-                            <option value="">Les statuts </option>
+                            <option value="" selected disabled>Les statuts </option>
                             <?php foreach ($statut as $s): ?>
                                 <option value="<?=$s["statut"] ?>"><?=$s["statut"] ?></option>
                             <?php endforeach; ?>
@@ -195,7 +195,7 @@ $departement = $connexion->query($sql)->fetchAll();
                             <tr>
                                <td class="font-12"><?php echo $row['proprietaire_nom']; ?></td>
                                 <td><?php echo $row['type_logement']; ?></td>
-                                <td><?php echo $row['prix']; ?> Franc CFA</td>
+                                <td><?php echo $row['prix']; ?> ( FCFA )</td>
                                 <td><?php echo date('d/m/Y H:i:s', strtotime($row['date_ajout'])); ?></td>
 
                                 <td>

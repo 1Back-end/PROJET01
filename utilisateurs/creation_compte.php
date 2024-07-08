@@ -62,7 +62,7 @@
        <div class="col-md-8 col-sm-12 p-1">  
        
        <div class="card-box p-3 mb-3">
-       <h6 class="text-uppercase text-success text-center ">Créer votre compte chez IMMO SCI </h6> 
+       <h6 class="text-uppercase text-success text-center ">Créer votre compte chez IMMO INVESTMENT SCI </h6> 
        <div class="col-md-12 col-sm-12 mt-3 p-1">
        <div class="mb-3">
                     <input type="text" class="form-control py-3" value="<?php echo isset($_POST['nom']) ? htmlspecialchars($_POST['nom']) : ''; ?>" name="nom" placeholder="Veuillez entrer votre nom">
@@ -95,7 +95,8 @@
         </div>
 
         <div class="mb-3">
-            <input type="text" class="form-control py-3" placeholder="Veuillez entrer votre ville" name="ville" value="<?php echo isset($_POST['ville']) ? htmlspecialchars($_POST['ville']) : ''; ?>">
+            <input type="text" class="form-control py-3" placeholder="Veuillez entrer votre ville" name="ville" id="searchVille" autocomplete="off"  value="<?php echo isset($_POST['ville']) ? htmlspecialchars($_POST['ville']) : ''; ?>">
+            <div id="villeSuggestions" class="list-group"></div>
             <?php if(isset($erreur_ville)): ?>
                 <small class="text-danger"><?=$erreur_ville?></small>
             <?php endif; ?>
@@ -160,3 +161,5 @@ function goBack() {
                  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script src="creation_compte.js"></script>
+
+<script src="../produit/script.js"></script>

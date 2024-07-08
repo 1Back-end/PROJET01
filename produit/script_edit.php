@@ -16,6 +16,7 @@ if (isset($_POST["modifier"])) {
     $type_logement = $_POST["type_logement"];
     $description = $_POST["description"];
     $destination = $_POST["destination"];
+    $statut_Louer = $_POST["statut_Louer"];
     $distance = $_POST["distance"];
     $proprietaire_id = $_SESSION['id'];
     $statut = "En attente";
@@ -33,13 +34,25 @@ if (isset($_POST["modifier"])) {
         case "Duplex":
             $maxPhotos = 12;
             break;
+        case "Terrain":
+            $maxPhotos = 12;
+            break;
+        case "Villa":
+            $maxPhotos = 12;
+            break;
+        case "Maison":
+            $maxPhotos = 12;
+            break;
+        case "Immeuble":
+            $maxPhotos = 12;
+            break;
         default:
             $maxPhotos = 3;
             break;
     }
-
+ 
     // Vérifier si tous les champs sont remplis
-    if (!empty($_POST["ville"]) && !empty($_POST["distance"]) && !empty($_POST["departement"]) && !empty($_POST["destination"]) && !empty($_POST["region"]) && !empty($_POST["arrondissement"]) && !empty($_POST["quartier"]) && !empty($_POST["prix"]) && !empty($_POST["type_logement"]) && !empty($_POST["description"])) {
+    if (!empty($_POST["statut_Louer"]) &&!empty($_POST["ville"]) && !empty($_POST["distance"]) && !empty($_POST["departement"]) && !empty($_POST["destination"]) && !empty($_POST["region"]) && !empty($_POST["arrondissement"]) && !empty($_POST["quartier"]) && !empty($_POST["prix"]) && !empty($_POST["type_logement"]) && !empty($_POST["description"])) {
 
         // Vérifier si de nouvelles images ont été téléchargées
         if (!empty($_FILES["photo"]["name"][0])) {
@@ -99,7 +112,7 @@ if (isset($_POST["modifier"])) {
         if (!isset($errorMessage)) {
             // Mettre à jour les données dans la base de données
             $sql = "UPDATE produits SET ville = :ville, region = :region, departement = :departement, arrondissement = :arrondissement, quartier = :quartier, prix = :prix, type_logement = :type_logement, description = :description, photo = :photo 
-            ,distance = :distance,statut = :statut, destination = :destination ,proprietaire_id = :proprietaire_id  WHERE id = :produit_id";
+            ,distance = :distance,statut = :statut, statut_Louer = :statut_Louer, destination = :destination ,proprietaire_id = :proprietaire_id  WHERE id = :produit_id";
             $stmt = $connexion->prepare($sql);
 
             // Exécuter la requête en utilisant les nouvelles données
@@ -114,6 +127,7 @@ if (isset($_POST["modifier"])) {
                 ":type_logement" => $type_logement,
                 ":description" => $description,
                 ":distance" => $distance,
+                ":statut_Louer" => $statut_Louer,
                 ":statut" => $statut,
                 ":destination" => $destination,
                 ":proprietaire_id" => $proprietaire_id,

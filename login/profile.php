@@ -109,7 +109,8 @@ if (!$user) {
                                 </div>
                                 <div class="mb-3">
                                     <label>Ville</label>
-                                    <input type="text" class="form-control" placeholder="Votre ville" name="ville" value="<?php echo $user['VILLE']; ?>">
+                                    <input type="text" class="form-control" id="searchVille" autocomplete="off" placeholder="Votre ville" name="ville" value="<?php echo $user['VILLE']; ?>">
+                                    <div id="villeSuggestions" class="list-group"></div>
                                 </div>
                                 <div class="mb-3">
                                     <label>Quartier</label>
@@ -179,8 +180,9 @@ if (!$user) {
 
 
 
-
     <script src="profile.js"></script>
+
+<script src="../profuit/script.js"></script>
    
 </body>
 </html>

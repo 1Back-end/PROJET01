@@ -46,15 +46,17 @@
         </div>
         <!-- Spinner End -->
 
+        
 
-       <!-- Navbar Start -->
-       <div class="container-fluid nav-bar bg-transparent">
+
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-bar bg-transparent">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
                 <a href="../index.php" class="navbar-brand d-flex align-items-center text-center">
-                    <div class="icon p-2 me-2">
-                        <img class="img-fluid" src="../package/img/logo.png" alt="Icon" style="width: 30px; height: 30px;">
+                    <div >
+                        <img class="img-fluid" src="../package/img/logo.png" alt="Icon" style="width: 65px; height: 65px; margin-right: 10px;">
                     </div>
-                    <h6 class="m-0 text-primary ">IMMO <span class="text-dark">INVESTMENT </span> SCI</h6>
+                    <h5 class="m-0 text-primary">IMMO INVESTMENT<span class="text-dark"> SCI</span></h5>
                 </a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -62,46 +64,72 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="../index.php" class="nav-item nav-link active">Acceuil</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Propriétés</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a href="chambres.php" class="dropdown-item">Chambres Moderne</a>
-                                <a href="studios.php" class="dropdown-item">Studios Moderne</a>
-                                <a href="appartements.php" class="dropdown-item">Appartements Moderne</a>
-                                <a href="duplex.php" class="dropdown-item">Duplex</a>
-                            </div>
-                        </div>
-                        <a href="apropos.php" class="nav-item nav-link">À propos</a>
-                        
-                        <a href="contact.php" class="nav-item nav-link">Contact</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown">A Vendre</a>
+                    <div class="dropdown-menu rounded-0 m-0 ">
+                        <a href="../pages/Maison.php" class="dropdown-item">Maisons</a>
+                        <a href="../pages/immeuble.php" class="dropdown-item">Immeubles</a>
+                        <a href="../pages/appartements.php" class="dropdown-item">Appartements</a>
+                        <a href="../pages/duplex.php" class="dropdown-item">Duplex</a>
+                        <a href="../pages/villa.php" class="dropdown-item">Villas</a>
+                        <a href="terrains.php" class="dropdown-item">Terrains</a>
                     </div>
-                     <!-- Pour les petits écrans -->
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown">A Louer</a>
+                    <div class="dropdown-menu rounded-0 m-0 ">
+                        <a href="chambres.php" class="dropdown-item">Chambres Moderne</a>
+                        <a href="studios.php" class="dropdown-item">Studios Moderne</a>
+                        <a href="appartements.php" class="dropdown-item">Appartements Moderne</a>
+                        <a href="duplex.php" class="dropdown-item">Duplex</a>
+                        <a href="Maison.php" class="dropdown-item">Maisons</a>
+                        <a href="immeuble.php" class="dropdown-item">Immeubles</a>
+                        <a href="villa.php" class="dropdown-item">Villas</a>
+                        <a href="../pages/terrains.php" class="dropdown-item">Terrains</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown">IMMO</a>
+                    <div class="dropdown-menu rounded-0 m-0 ">
+                        <a href="apropos.php" class="dropdown-item">A propos</a>
+                        <a href="contact.php" class="dropdown-item">Contact</a>
+                    </div>
+                </div>
+                    </div>
+                    <!-- Pour les petits écrans -->
                     <div class="d-block d-lg-none">
-                        <a href="../login/login.php" class="btn btn-dark text-white border-0 btn-sm">Se connecter</a>
+                        <a href="../login/login.php" class="btn-add btn btn-dark text-white outline-none border-0 btn-sm">Se connecter</a>
                         <span class="mx-2"></span>
-                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success btn-sm text-white px-3">S'Inscrire</a>
+                        <a href="../utilisateurs/creation_compte.php" class="btn-add btn btn-success outline-none btn-sm text-white px-3">S'Inscrire</a>
                     </div>
                      <br><br>
                     <!-- Pour les grands écrans -->
                     <div class="d-none d-lg-block">
-                        <a href="../login/login.php" class="btn btn-dark text-white border-0">Se connecter</a>
+                        <a href="../login/login.php" class="btn btn-dark outline-none text-white border-0">Se connecter</a>
                         <span class="mx-2"></span>
-                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success text-white px-3">S'Inscrire</a>
+                        <a href="../utilisateurs/creation_compte.php" class="btn btn-success outline-none text-white px-3">S'Inscrire</a>
                     </div>
-
                 </div>
             </nav>
         </div>
         <!-- Navbar End -->
 
+
         <!-- Header Start -->
         <div class="container-fluid header bg-white p-0">
             <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-                <div class="col-md-6 p-5 mt-lg-5">
-                    <h1 class="display-5 animated fadeIn mt-5">Appartements Moderne</h1>
+                <div class="col-md-6 p-5 mt-lg-5"><br><br><br>
+                    <h1 class="display-5 animated fadeIn mb-4">Votre prochain <span class="text-primary"> chez-vous </span> vous attend</h1> 
+                        <p>
+                            Vous trouverez une sélection de propriétés exceptionnelles 
+                            répondant à divers besoins et styles de vie. Que vous recherchiez
+                            une maison spacieuse pour votre famille, un appartement moderne
+                            en centre-ville, ou un terrain pour un projet de construction, 
+                            nous avons ce qu'il vous faut. 
+                        </p>
                 </div>
                 <div class="col-md-6 animated fadeIn">
-                    <img class="img-entete" src="../package/img/baniere1.jpg" alt="">
+                    <img class="img-fluid" src="../img/carousel-3.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -114,7 +142,7 @@
         <div class="row g-0 gx-5 align-items-end">
             <div class="col-md-6 col-sm-12">
                 <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
-                    <h1 class="mb-3 font-24">Liste des Appartements Moderne</h1>
+                    <h1 class="mb-3 font-24">Liste des appartements moderne à louer</h1>
                     <p>Plongez dans notre collection d'appartements modernes, 
                         fusion parfaite entre élégance et praticité pour un style 
                         de vie Satisfaisant.</p>
@@ -127,7 +155,7 @@
 $totalCount = 0;
 
 // Requête SQL pour récupérer tous les produits de type Duplex avec une seule image aléatoire
-$sql = "SELECT *, SUBSTRING_INDEX(photo, ',', 1) AS photo_principale FROM produits WHERE  statut = 'Accepté' AND STATUS = 'Present' AND type_logement = 'Appartement Moderne'";
+$sql = "SELECT *, SUBSTRING_INDEX(photo, ',', 1) AS photo_principale FROM produits WHERE  statut = 'Accepté' AND STATUS = 'Present' AND type_logement = 'Appartement Moderne' AND statut_Louer = 'A Louer'";
 
 // Pagination
 $itemsPerPage = 9;
@@ -135,7 +163,7 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($currentPage - 1) * $itemsPerPage;
 
 // Compter le nombre total de produits pour la pagination
-$totalCountSQL = "SELECT COUNT(*) AS total FROM produits WHERE statut = 'Accepté' AND STATUS = 'Present' AND type_logement = 'Appartement Moderne'";
+$totalCountSQL = "SELECT COUNT(*) AS total FROM produits WHERE statut = 'Accepté' AND STATUS = 'Present' AND type_logement = 'Appartement Moderne' AND statut_Louer = 'A Louer'";
 
 // Exécution de la requête SQL pour obtenir le nombre total de produits
 $totalCountResult = $connexion->query($totalCountSQL);
@@ -187,7 +215,7 @@ if ($result) {
             }
         } else {
             // Aucun résultat trouvé, afficher un message d'alerte
-            echo '<div class="alert alert-info" role="alert">Aucun  Appartement Moderne n\'a encore été enregistré.</div>';
+            echo '<div class="alert alert-info" role="alert">Aucun  appartement moderne à louer n\'a encore été enregistré.</div>';
 
         }
         ?>

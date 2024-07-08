@@ -69,7 +69,7 @@ if (isset($_POST["envoyer"])) {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;                   
             $mail->SMTPAuth   = true;                             
             $mail->Username   = 'laurentalphonsewilfried@gmail.com';                 
-            $mail->Password   = 'rqakexlbrywcicdx';                        
+            $mail->Password   = 'xkue sail qegu hxbu';                        
             $mail->SMTPSecure = 'tls';                              
             $mail->Port       = 587;  
             
@@ -97,6 +97,7 @@ if (isset($_POST["envoyer"])) {
                 $stmt_reservation->execute();
 
                 $MessageSucces = "Votre demande a été envoyée avec succès !";
+            echo '<meta http-equiv="refresh" content="1;url=../index.php">';
             } catch (PDOException $e) {
                 // En cas d'erreur lors de l'insertion dans la table de réservation
                 $MessageErreur = "Erreur lors de l'envoi de l'e-mail : {$mail->ErrorInfo}";

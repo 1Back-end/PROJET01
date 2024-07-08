@@ -149,6 +149,7 @@ if (isset($_POST["enregistrer"])) {
             // Envoyer le code généré à l'utilisateur par e-mail
             sendVerificationCode($email, $code);
             $succes_message = "Votre compte a été créé avec succès. Un e-mail contenant un code de vérification a été envoyé à votre adresse e-mail. <a href='code_verification.php?user_id=$user_id' class='text-info'>Cliquez ici</a> pour entrer votre code de validation.";
+            echo '<meta http-equiv="refresh" content="1;url=code_verification.php">';
         }
     } else {
         // Si des erreurs sont survenues, construire le message d'erreur
@@ -200,7 +201,7 @@ function sendVerificationCode($email, $code) {
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'laurentalphonsewilfried@gmail.com'; // Adresse Gmail
-        $mail->Password = 'rqakexlbrywcicdx'; // Mot de passe Gmail
+        $mail->Password = 'xkue sail qegu hxbu'; // Mot de passe Gmail
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
@@ -212,7 +213,7 @@ function sendVerificationCode($email, $code) {
         $mail->isHTML(true);
         $mail->Subject = 'Code de vérification';
         $mail->CharSet = 'UTF-8'; // Définir l'encodage des caractères
-        $mail->Body    = 'Votre code de vérification est : ' . $code;
+        $mail->Body    = 'Votre compte a été créé avec succès chez IMMO INVESTMENT SCI.</br> Votre code de vérification est : ' . $code;
 
         $mail->send();
     } catch (Exception $e) {
