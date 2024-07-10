@@ -232,6 +232,31 @@
 						<span class="micon bi bi-circle"></span><span class="mtext">Liste Réservations</span>
 					</a>
 				</li>
+				<li class="dropdown mt-2">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon bi bi-circle"></span><span class="mtext">Localisation</span>
+						</a>
+						<ul class="submenu">
+							<li>
+								<a href="../localisation/region.php">
+									<span class="micon bi bi-circle mr-3"></span>
+									 Régions
+								</a>
+							</li>
+							<li>
+								<a href="../localisation/ville.php">
+									<span class="micon bi bi-circle mr-3"></span>
+									Villes
+								</a>
+							</li>
+							<li>
+								<a href="../localisation/quartier.php">
+									<span class="micon bi bi-circle mr-3"></span>
+									Quartiers
+								</a>
+							</li>
+						</ul>
+					</li><br>
 				
 			<?php elseif ($IsAgentImmobilier || $IsProprietaire): ?>
 				<li class="mt-5">

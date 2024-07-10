@@ -3,7 +3,7 @@
 $serveur = 'localhost'; // ou l'adresse IP de votre serveur MySQL
 $utilisateur = 'root'; // votre nom d'utilisateur MySQL
 $motdepasse = ''; // votre mot de passe MySQL
-$base_de_donnees = 'location_bien'; // le nom de votre base de données
+$base_de_donnees = 'immo'; // le nom de votre base de données
 
 try {
     // Création de la connexion PDO
