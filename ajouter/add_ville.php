@@ -1,6 +1,5 @@
 
 <?php include_once("../include/menu.php");?>
-<?php include_once("script_add.php");?>
 <link rel="stylesheet" href="../style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -74,7 +73,7 @@ try {
                     <label for="region">Région</label>
                     <select name="region" id="regions" class="form-control">
                         <option disabled selected>Sélectionner une option</option>
-                        <?php foreach ($regions as $region): ?>
+                        <?php foreach ($region as $regions): ?>
                     <option value="<?php echo htmlspecialchars($region['nom']); ?>">
                         <?php echo htmlspecialchars($region['region_id']); ?>
                     </option>

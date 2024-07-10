@@ -25,7 +25,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
    <h5 class="text-uppercase">LISTE DE VILLES</h5>
    </div>
      <div class="ml-auto">
-     <a href="../produit/ajouter.php" class="btn btn-dark btn-add btn-sm mt-2 mt-sm-0 order-sm-2"><i class="bi bi-plus-circle mr-2"></i>AJOUTER</a>
+     <a href="../ajouter/add_ville.php" class="btn btn-dark btn-add btn-sm mt-2 mt-sm-0 order-sm-2"><i class="bi bi-plus-circle mr-2"></i>AJOUTER</a>
      </div>
   </div>
 </div>

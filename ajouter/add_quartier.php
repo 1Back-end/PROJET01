@@ -1,7 +1,5 @@
 
 <?php include_once("../include/menu.php");?>
-<?php include_once("script_add.php");?>
-<?php include_once("requete.php");?>
 <link rel="stylesheet" href="../style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -73,7 +71,7 @@ try {
                     <label for="ville">Ville</label>
                     <select name="ville" id="villes" class="form-control">
                         <option disabled selected>Sélectionner une option</option>
-                        <?php foreach ($villes as $ville): ?>
+                        <?php foreach ($ville as $villes): ?>
                     <option value="<?php echo htmlspecialchars($ville['nom']); ?>">
                         <?php echo htmlspecialchars($ville['nom']); ?>
                     </option>

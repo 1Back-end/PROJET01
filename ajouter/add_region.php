@@ -1,7 +1,5 @@
 
 <?php include_once("../include/menu.php");?>
-<?php include_once("script_add.php");?>
-<?php include_once("requete.php");?>
 <link rel="stylesheet" href="../style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -59,9 +57,12 @@ font-size: 12px;
 
                 <div class="col-md-12 col-sm-12">
 
+
                 <div class="form-group">
-                    <label for="quartier">Region</label>
-                    <input type="text" name="quartier" placeholder="Centre">
+                    <label for="ville">Région</label>
+                    
+                    <input type="text" class="form-control" name="region"   placeholder="Centre" required>
+
                 </div>
                         </div>
                   
