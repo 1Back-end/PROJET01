@@ -27,28 +27,8 @@ font-size: 12px;
 <?php
 include_once("../database/db.php");
 try {
-    $stmt = $connexion->query('SELECT nom FROM regions');
+    $stmt = $connexion->query('SELECT id, nom FROM regions');
     $regions = $stmt->fetchAll();
-} catch (PDOException $e) {
-    echo 'Erreur : ' . $e->getMessage();
-}
-?>
-
-<?php
-include_once("../database/db.php");
-try {
-    $stmt = $connexion->query('SELECT nom FROM villes');
-    $villes = $stmt->fetchAll();
-} catch (PDOException $e) {
-    echo 'Erreur : ' . $e->getMessage();
-}
-?>
-
-<?php
-include_once("../database/db.php");
-try {
-    $stmt = $connexion->query('SELECT nom FROM quartiers');
-    $villes = $stmt->fetchAll();
 } catch (PDOException $e) {
     echo 'Erreur : ' . $e->getMessage();
 }
@@ -96,8 +76,8 @@ try {
                     <select name="region" id="regions" class="form-control">
                         <option disabled selected>Sélectionner une option</option>
                         <?php foreach ($regions as $region): ?>
-                    <option value="<?php echo htmlspecialchars($region['nom']); ?>">
-                        <?php echo htmlspecialchars($region['region_id']); ?>
+                    <option value="<?php echo htmlspecialchars($region['id']); ?>">
+                        <?php echo htmlspecialchars($region['nom']); ?>
                     </option>
                 <?php endforeach; ?>
                     </select>
@@ -107,11 +87,6 @@ try {
                     <label for="ville">Ville</label>
                     <select name="ville" id="villes" class="form-control">
                         <option disabled selected>Sélectionner une option</option>
-                        <?php foreach ($villes as $ville): ?>
-                    <option value="<?php echo htmlspecialchars($ville['nom']); ?>">
-                        <?php echo htmlspecialchars($ville['ville_id']); ?>
-                    </option>
-                <?php endforeach; ?>
                     </select>
                 </div>
 
@@ -119,22 +94,33 @@ try {
                     <label for="quartier">Quartier</label>
                     <select name="quartier" id="quartiers" class="form-control">
                         <option disabled selected>Sélectionner une option</option>
-                        <?php foreach ($quartiers as $quartier): ?>
-                    <option value="<?php echo htmlspecialchars($quartier['nom']); ?>">
-                        <?php echo htmlspecialchars($quartier['quartier_id']); ?>
-                    </option>
-                <?php endforeach; ?>
                     </select>
                 </div>
 
-<div class="form-group" id="statut_Louer">
-<label for="type_logement">Statut</label>
-<select name="statut_Louer" class="form-control">
-    <option value="" selected disabled>Choisir une option</option>
-    <option value="A Louer"<?php if(isset($_POST['statut_Louer']) && $_POST['statut_Louer'] == "A Louer") echo " selected"; ?>>A Louer</option>
-    <option value="A Vendre"<?php if(isset($_POST['statut_Louer']) && $_POST['statut_Louer'] == "A Vendre") echo " selected"; ?>>A Vendre</option>
-</select>
-</div>
+
+
+
+
+                    
+                   
+                        <div class="form-group">
+                            <label for="departement">Département</label>
+                            <input type="text" id="searchDepartements" value="<?php echo isset($_POST['departement']) ? htmlspecialchars($_POST['departement']) : ''; ?>" class="form-control" placeholder="Mfoundi" name="departement">
+						    <div id="typeDepartmentsSuggestions" class="list-group"></div>
+                        </div>
+                    
+					
+                        <div class="form-group">
+                            <label for="arrondissement">Arrondissement</label>
+							<input type="text" id="searchArrondissement" class="form-control" value="<?php echo isset($_POST['departement']) ? htmlspecialchars($_POST['departement']) : ''; ?>" placeholder="Bafia" name="arrondissement">
+						    <div id="arrondissementsSuggestions" class="list-group"></div>
+                        </div>
+                        
+                       
+                        <div class="form-group">
+                            <label for="quartier">Quartier</label>
+                            <input class="form-control" type="text" name="quartier" value="<?php echo isset($_POST['quartier']) ? htmlspecialchars($_POST['quartier']) : ''; ?>"  placeholder="Mbankolo">
+                        </div>
                         </div>
                
 
@@ -179,6 +165,15 @@ try {
                         <div class="form-group">
                             <label for="photo">Image (04 chambre moderne , 06 studios moderne , 08 appartements , 12 duplex)</label>
                             <input type="file" class="form-control" name="photo[]" multiple>
+                        </div>
+
+                        <div class="form-group" id="statut_Louer">
+						<label for="type_logement">Statut</label>
+						<select name="statut_Louer" class="form-control">
+                            <option value="" selected disabled>Choisir une option</option>
+                            <option value="A Louer"<?php if(isset($_POST['statut_Louer']) && $_POST['statut_Louer'] == "A Louer") echo " selected"; ?>>A Louer</option>
+                            <option value="A Vendre"<?php if(isset($_POST['statut_Louer']) && $_POST['statut_Louer'] == "A Vendre") echo " selected"; ?>>A Vendre</option>
+                        </select>
                         </div>
                
                         </div>
