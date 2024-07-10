@@ -1,7 +1,9 @@
 <?php
 include_once("../include/menu.php"); 
 include_once("../database/db.php");
+
 $identifiant = $_SESSION['id'];
+
 // Vérifier si l'utilisateur est connecté et s'il est soit un agent immobilier soit un propriétaire
 if (!isset($_SESSION['id']) || (!$IsAgentImmobilier && !$IsProprietaire)) {
     // Rediriger vers la page d'erreur
@@ -14,8 +16,14 @@ $itemsPerPage = 5;
 $page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * $itemsPerPage;
 
-// Requête SQL pour récupérer les produits publiés par l'utilisateur connecté
-$sql = "SELECT * FROM produits WHERE proprietaire_id = :proprietaire_id LIMIT :itemsPerPage OFFSET :offset";
+// Requête SQL pour récupérer les produits publiés par l'utilisateur connecté avec les informations de région, ville et quartier
+$sql = "SELECT p.*, r.nom AS region_nom, v.nom AS ville_nom, q.nom AS quartier_nom 
+        FROM produits p
+        LEFT JOIN regions r ON p.region = r.id
+        LEFT JOIN villes v ON p.ville = v.id
+        LEFT JOIN quartiers q ON p.quartier = q.id
+        WHERE p.proprietaire_id = :proprietaire_id 
+        LIMIT :itemsPerPage OFFSET :offset";
 
 // Préparer la requête SQL avec la clause WHERE et la pagination
 $stmt = $connexion->prepare($sql);
@@ -30,24 +38,21 @@ $totalProducts = $connexion->query("SELECT COUNT(*) AS total FROM produits WHERE
 $totalPages = ceil($totalProducts / $itemsPerPage);
 ?>
 
-
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 <div class="main-container">
-<div class="col-md-12 col-sm-12 ">
-  
-  <div class="card-box p-3 mb-3 d-flex justify-content-between align-items-center">
-   <div class="mr-auto">
-   <h5 class="text-uppercase">MES PRODUITS</h5>
-   </div>
-     <div class="ml-auto">
-     <a href="../produit/ajouter.php" class="btn btn-dark btn-add btn-sm mt-2 mt-sm-0 order-sm-2"><i class="bi bi-plus-circle mr-2"></i>AJOUTER</a>
-     </div>
-  </div>
-</div>
+    <div class="col-md-12 col-sm-12">
+        <div class="card-box p-3 mb-3 d-flex justify-content-between align-items-center">
+            <div class="mr-auto">
+                <h5 class="text-uppercase">MES PRODUITS</h5>
+            </div>
+            <div class="ml-auto">
+                <a href="../produit/ajouter.php" class="btn btn-dark btn-add btn-sm mt-2 mt-sm-0 order-sm-2"><i class="bi bi-plus-circle mr-2"></i>AJOUTER</a>
+            </div>
+        </div>
+    </div>
 
-   
     <?php // Vérifier s'il existe des produits à afficher
     if (empty($result)) {
         echo "<div class='col-md-12 col-sm-12'><div class='alert alert-success text-center' role='alert'>Vous n'avez aucune publication.</div></div>";
@@ -70,59 +75,59 @@ $totalPages = ceil($totalProducts / $itemsPerPage);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($result as $row): ?>
-                            <tr>
-                                <td><?php echo $row['region']; ?></td>
-                                <td><?php echo $row['ville']; ?></td>
-                                <td><?php echo $row['departement']; ?></td>
-                                <td><?php echo $row['quartier']; ?></td>
-                                <td><?php echo $row['prix']; ?> ( FCFA )</td>
-                                <td><?php echo $row['type_logement']; ?></td>
-                                <td>
-                                    <?php 
-                                    // Vérifier le statut et définir la classe CSS en conséquence
-                                    if ($row['statut'] == "Accepté") {
-                                        echo '<button class="btn btn-success btn-xs btn-sm">Accepté</button>';
-                                    } elseif ($row['statut'] == "Rejeté") {
-                                        echo '<button class="btn btn-danger btn-xs btn-sm">Rejeté</button>';
-                                    } elseif ($row['statut'] == "En attente") {
-                                        echo '<button class="btn btn-warning text-white btn-xs btn-sm">en attente</button>';
-                                    } else {
-                                        echo $row['statut']; // Afficher le statut tel quel s'il ne correspond à aucune des valeurs précédentes
-                                    }
-                                    ?>
-                                </td>
-                              
-                                <td>
-                                <div class="d-flex justify-content-center justify-content-md-center">
-                                    <!-- Vérifier s'il existe des commentaires pour ce produit -->
-                                 <?php
-                                $id_produit = $row['id'];
-                                $sql_commentaires = "SELECT COUNT(*) AS total_commentaires FROM commentaire WHERE ID_PRODUIT = :id_produit";
-                                $stmt_commentaires = $connexion->prepare($sql_commentaires);
-                                $stmt_commentaires->execute([':id_produit' => $id_produit]);
-                                $total_commentaires = $stmt_commentaires->fetchColumn();
-
-                                // Vérifier s'il y a des commentaires
-                                if ($total_commentaires > 0) {
-                                    // S'il y a des commentaires, afficher le lien
-                                ?>
-                                    <a class="btn btn-info btn-sm btn-xs" href='mes_commentaires.php?id=<?php echo $row['id']; ?>'>Details</a>
-                                <?php
+                    <?php foreach ($result as $row): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($row['region_nom']); ?></td>
+                            <td><?php echo htmlspecialchars($row['ville_nom']); ?></td>
+                            <td><?php echo htmlspecialchars($row['departement']); ?></td>
+                            <td><?php echo htmlspecialchars($row['quartier_nom']); ?></td>
+                            <td><?php echo htmlspecialchars($row['prix']); ?> ( FCFA )</td>
+                            <td><?php echo htmlspecialchars($row['type_logement']); ?></td>
+                            <td>
+                                <?php 
+                                // Afficher le statut avec une classe CSS correspondante
+                                $statusClass = '';
+                                switch ($row['statut']) {
+                                    case 'Accepté':
+                                        $statusClass = 'btn-success';
+                                        break;
+                                    case 'Rejeté':
+                                        $statusClass = 'btn-danger';
+                                        break;
+                                    case 'En attente':
+                                        $statusClass = 'btn-warning text-white';
+                                        break;
+                                    default:
+                                        $statusClass = 'btn-primary';
+                                        break;
                                 }
                                 ?>
-                                <?php if ($row['statut'] == 'Accepté' || $row['statut'] == 'Rejeté'): ?>
-                                <a class="btn btn-info btn-sm disabled btn-xs mx-2" href='../produit/modifier.php?id=<?php echo $row['id']; ?>'>Modifier</a>
-                                <?php else: ?>
-                                <a class="btn btn-info btn-sm btn-xs mx-2" href='../produit/modifier.php?id=<?php echo $row['id']; ?>'>Modifier</a>
-                                <?php endif; ?>
+                                <button class="btn btn-xs btn-sm <?php echo $statusClass; ?>"><?php echo htmlspecialchars($row['statut']); ?></button>
+                            </td>
+                            <td>
+                                <!-- Actions -->
+                                <div class="d-flex justify-content-center align-item-center">
+                                    <?php if ($row['statut'] == 'Accepté' || $row['statut'] == 'Rejeté'): ?>
+                                        <a class="mx-2 btn btn-info btn-xs disabled" href='../produit/modifier.php?id=<?php echo $row['id']; ?>'>Modifier</a>
+                                    <?php else: ?>
+                                        <a class="mx-2 btn btn-info btn-xs" href='../produit/modifier.php?id=<?php echo $row['id']; ?>'>Modifier</a>
+                                    <?php endif; ?>
+                                    <?php
+                                    // Récupérer le nombre de commentaires pour ce produit
+                                    $id_produit = $row['id'];
+                                    $sql_commentaires = "SELECT COUNT(*) AS total_commentaires FROM commentaire WHERE ID_PRODUIT = :id_produit";
+                                    $stmt_commentaires = $connexion->prepare($sql_commentaires);
+                                    $stmt_commentaires->execute([':id_produit' => $id_produit]);
+                                    $total_commentaires = $stmt_commentaires->fetchColumn();
 
-                                    </div>
-                                </td>
-                               
-
-                            </tr>
-                        <?php endforeach; ?>
+                                    if ($total_commentaires > 0) {
+                                        echo "<a class='btn btn-info btn-xs' href='mes_commentaires.php?id=$id_produit'>Détails</a>";
+                                    }
+                                    ?>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

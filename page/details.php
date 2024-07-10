@@ -40,8 +40,78 @@
     <link href="../package/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="style.css">
+      
 </head>
+<style>
+/* Style pour la galerie d'images et la lightbox */
 
+/* Conteneur de la galerie */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Style des éléments de la galerie */
+.gallery-item {
+    flex: 0 0 calc(50% - 10px);
+    position: relative;
+    cursor: pointer;
+}
+
+/* Style pour la lightbox */
+.gallery-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.lightbox-nav span {
+    font-size: 3em;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.lightbox-nav .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 3em;
+    cursor: pointer;
+    color: white;
+}
+
+
+</style>
 <body>
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
@@ -151,64 +221,65 @@ if (isset($_GET['id'])) {
     include_once("../database/db.php");
 
     // Requête SQL pour récupérer les détails de la chambre spécifique
-    $sql = "SELECT * FROM produits WHERE id = :id";
-    $stmt = $connexion->prepare($sql);
-    $stmt->execute([':id' => $id_chambre]);
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                // Requête SQL pour récupérer les détails de la chambre spécifique avec les jointures
+            $sql = "SELECT p.*, r.nom AS region_nom, v.nom AS ville_nom, q.nom AS quartier_nom
+            FROM produits p
+            LEFT JOIN regions r ON p.region = r.id
+            LEFT JOIN villes v ON p.ville = v.id
+            LEFT JOIN quartiers q ON p.quartier = q.id
+            WHERE p.id = :id";
+            $stmt = $connexion->prepare($sql);
+            $stmt->execute([':id' => $id_chambre]);
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
 
     // Vérifier si la chambre avec l'ID spécifié existe
     if ($row) {
         ?>
-        <div class="container-fluid mt-3 pb-5 p-2">
-            <div class="container">
-                <div class="row">
-                    <!-- Colonne des images et des informations du produit -->
-                    <div class="col-md-6 col-sm-12 shadow-sm py-3 p-3 mt-3">
-                        <h5 class="font-12 text-uppercase">Images du Produit</h5>
-                        <?php 
-                        // Récupérer les images du produit
-                        $images = explode(',', $row['photo']);
-                        $totalImages = count($images);
-                        
-                        for ($i = 0; $i < $totalImages; $i += 2) { ?>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 mb-3">
-                                    <img src="../uploads/<?php echo $images[$i]; ?>" class="img-card img-thumbnail w-100" alt="Image de la galerie">
-                                </div>
-                                <?php if ($i + 1 < $totalImages) { ?>
-                                    <div class="col-md-6 col-sm-6 mb-3">
-                                        <img src="../uploads/<?php echo $images[$i + 1]; ?>" class="img-card img-thumbnail w-100" alt="Image de la galerie">
-                                    </div>
-                                <?php } ?>
+    
+<div class="container-fluid mt-3 pb-5 p-2">
+    <div class="container">
+        <div class="row">
+            <!-- Colonne des images et des informations du produit -->
+            <div class="col-md-6 col-sm-12 shadow-sm py-3 p-3 mt-3">
+                <h5 class="font-12 text-uppercase">Images du Produit</h5>
+                <div class="image-gallery">
+                    <?php 
+                    // Récupérer les images du produit
+                    $images = explode(',', $row['photo']);
+                    foreach ($images as $image) {
+                    ?>
+                        <div class="gallery-item">
+                            <img src="../uploads/<?php echo $image; ?>" class="img-card img-thumbnail w-100 zoomable-image" alt="Image de la galerie">
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="mt-3">
+                    <h5 class="font-12 text-uppercase">Informations sur le Produit</h5>
+                    <p class="text-justify w-100"><?php echo $row['description']; ?></p>
+
+                    <div class="info">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="mb-2"><i class="bi bi-house-lock-fill me-3"></i><?php echo $row['statut_Louer']; ?></p>
+                                <p class="mb-2"><i class="bi bi-house-lock-fill me-3"></i><?php echo $row['type_logement']; ?></p>
+                                <p class="mb-2"><i class="bi bi-currency-dollar me-3"></i><?php echo $row['prix']; ?> ( FCFA )</p>
+                                <p class="mb-2"><i class="bi bi-pin-map-fill me-3"></i>Région : <?php echo $row['region_nom']; ?></p>
+                                <p class="mb-2"><i class="bi bi-radar me-3"></i>Ville : <?php echo $row['ville_nom']; ?></p>
                             </div>
-                        <?php } ?>
-                        <div class="mt-3">
-                            <h5 class="font-12 text-uppercase">Informations sur le Produit</h5>
-                            <p class="text-justify w-100"><?php echo $row['description']; ?></p>
 
-                            <div class="info">
-                                <div class="row">
-                                    <div class="col-md-6"><br>
-                                    <p class="mb-2"><i class="bi bi-house-lock-fill me-3"></i><?php echo $row['statut_Louer']; ?></p>
-                                    <p class="mb-2"><i class="bi bi-house-lock-fill me-3"></i><?php echo $row['type_logement']; ?></p>
-                                    <p class="mb-2"><i class="bi bi-currency-dollar me-3"></i><?php echo $row['prix']; ?> ( FCFA )</p>
-                                    <p class="mb-2"><i class="bi bi-pin-map-fill  me-3"></i>Région : <?php echo $row['region']; ?></p>
-                                    <p class="mb-2"><i class="bi bi-radar me-3"></i>Ville : <?php echo $row['ville']; ?></p>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-                                    <p class="mb-2"><i class="bi bi-geo-fill me-3"></i>Département : <?php echo $row['departement']; ?></p>
-                                     <p class="mb-2"><i class="fas fa-map-marker-alt me-3"></i>Arrondissement : <?php echo $row['arrondissement']; ?></p>
-
-                                    <p class="mb-2"><i class='bx bxs-car me-3'></i><?php echo $row['distance']; ?> FCFA par rapport à la route</p>
-                                    <p class="mb-2"><i class="fas fa-walking me-3"></i><?php echo $row['destination']; ?>  par rapport à la route</p>
-
-                                    </div>
-                                </div>
+                            <div class="col-md-6">
+                                <p class="mb-2"><i class="bi bi-geo-fill me-3"></i>Département : <?php echo $row['departement']; ?></p>
+                                <p class="mb-2"><i class="fas fa-map-marker-alt me-3"></i>Arrondissement : <?php echo $row['arrondissement']; ?></p>
+                                <p class="mb-2"><i class='bx bxs-car me-3'></i><?php echo $row['distance']; ?> FCFA par rapport à la route</p>
+                                <p class="mb-2"><i class="fas fa-walking me-3"></i><?php echo $row['destination']; ?>  par rapport à la route</p>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+       
+
                 
                     <!-- Colonne du formulaire -->
                     <?php include("script_message.php");?>
@@ -287,10 +358,73 @@ window.intlTelInput(input, {
   utilsScript: "/intl-tel-input/js/utils.js?1714642302458"
    // just for formatting/placeholders etc
 });
-    </script>
+</script>
+
+<!-- Inclure jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Script pour la galerie d'images -->
+<script>
+$(document).ready(function() {
+    // Ouvrir la galerie au clic sur une image
+    $('.zoomable-image').click(function() {
+        var currentIndex = $(this).closest('.gallery-item').index();
+        openGallery(currentIndex);
+    });
+
+    // Fonction pour ouvrir la galerie
+    function openGallery(startIndex) {
+        var $gallery = $('.image-gallery');
+        var $items = $gallery.find('.gallery-item');
+        var totalItems = $items.length;
+
+        // Créer la structure de la lightbox
+        var lightbox = '<div class="gallery-lightbox">' +
+                          '<span class="close">&times;</span>' +
+                          '<div class="lightbox-content">' +
+                            '<div class="lightbox-slide"></div>' +
+                            '<div class="lightbox-nav">' +
+                              '<span class="prev">&lt;</span>' +
+                              '<span class="next">&gt;</span>' +
+                            '</div>' +
+                          '</div>' +
+                        '</div>';
+        
+        $('body').append(lightbox);
+
+        // Fonction pour afficher une image
+        function showImage(index) {
+            var imageURL = $items.eq(index).find('.zoomable-image').attr('src');
+            var $slide = $('.lightbox-slide');
+            $slide.html('<img src="' + imageURL + '">');
+        }
+
+        // Afficher l'image de départ
+        showImage(startIndex);
+
+        // Gestionnaire d'événement pour fermer la lightbox
+        $('.gallery-lightbox .close').click(function() {
+            $('.gallery-lightbox').remove();
+        });
+
+        // Gestionnaire d'événement pour l'image suivante
+        $('.lightbox-nav .next').click(function() {
+            startIndex = (startIndex + 1) % totalItems;
+            showImage(startIndex);
+        });
+
+        // Gestionnaire d'événement pour l'image précédente
+        $('.lightbox-nav .prev').click(function() {
+            startIndex = (startIndex - 1 + totalItems) % totalItems;
+            showImage(startIndex);
+        });
+    }
+});
+</script>
 
 
-    <!-- JavaScript Libraries -->
+
+<script src='https://unpkg.com/boxicons@2.1.4/dist/boxicons.js'></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../package/lib/wow/wow.min.js"></script>

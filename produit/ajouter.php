@@ -117,10 +117,7 @@ try {
                         </div>
                         
                        
-                        <div class="form-group">
-                            <label for="quartier">Quartier</label>
-                            <input class="form-control" type="text" name="quartier" value="<?php echo isset($_POST['quartier']) ? htmlspecialchars($_POST['quartier']) : ''; ?>"  placeholder="Mbankolo">
-                        </div>
+                     
                         </div>
                
 
