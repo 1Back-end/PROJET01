@@ -84,6 +84,8 @@ $sql = "SELECT DISTINCT departement FROM produits ORDER BY departement ASC";
 $departement = $connexion->query($sql)->fetchAll();
 ?>
 
+
+
 <?php include_once("../include/menu.php"); ?>
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -254,3 +256,4 @@ $departement = $connexion->query($sql)->fetchAll();
         </nav>
     </div>
 </div>
+

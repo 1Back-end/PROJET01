@@ -22,6 +22,18 @@ font-size: 12px;
 
 </style>
 
+
+
+<?php
+include_once("../database/db.php");
+try {
+    $stmt = $connexion->query('SELECT id, nom FROM regions');
+    $regions = $stmt->fetchAll();
+} catch (PDOException $e) {
+    echo 'Erreur : ' . $e->getMessage();
+}
+?>
+
 <div class="main-container mt-3 pb-5">
 <div class="col-md-12 col-sm-12 ">
   
@@ -54,33 +66,33 @@ font-size: 12px;
 <div class="col-md-12 col-sm-12">
         <div class="pd-20 card-box mb-3 ">
            
-            <form id="studentForm" method="POST" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data">
                 <div class="row">
 
                 <div class="col-md-6 col-sm-12">
 
                 <div class="form-group">
                     <label for="region">Région</label>
-                    <select name="region" id="region" class="form-control linked-select" data-target="#ville" data-source="villes.json">
+                    <select name="region" id="regions" class="form-control">
                         <option disabled selected>Sélectionner une option</option>
-                        <?php
-                            $regions = json_decode(file_get_contents('regions.json'), true);
-                            foreach ($regions as $region): ?>
-                                <option value="<?= htmlspecialchars($region['id']) ?>"><?= htmlspecialchars($region['nom']) ?></option>
-                            <?php endforeach; ?>
+                        <?php foreach ($regions as $region): ?>
+                    <option value="<?php echo htmlspecialchars($region['id']); ?>">
+                        <?php echo htmlspecialchars($region['nom']); ?>
+                    </option>
+                <?php endforeach; ?>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="ville">Ville</label>
-                    <select name="ville" id="ville" class="form-control linked-select" data-target="#quartier" data-source="quartiers.json">
+                    <select name="ville" id="villes" class="form-control">
                         <option disabled selected>Sélectionner une option</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="quartier">Quartier</label>
-                    <select name="quartier" id="quartier" class="form-control">
+                    <select name="quartier" id="quartiers" class="form-control">
                         <option disabled selected>Sélectionner une option</option>
                     </select>
                 </div>
@@ -107,7 +119,7 @@ font-size: 12px;
                        
                         <div class="form-group">
                             <label for="quartier">Quartier</label>
-                            <input id="quartier" class="form-control" type="text" name="quartier" value="<?php echo isset($_POST['quartier']) ? htmlspecialchars($_POST['quartier']) : ''; ?>"  placeholder="Mbankolo">
+                            <input class="form-control" type="text" name="quartier" value="<?php echo isset($_POST['quartier']) ? htmlspecialchars($_POST['quartier']) : ''; ?>"  placeholder="Mbankolo">
                         </div>
                         </div>
                
@@ -200,34 +212,52 @@ font-size: 12px;
 </script>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
 <script>
         $(document).ready(function() {
-            $('.linked-select').on('change', function() {
-                var $this = $(this);
-                var target = $this.data('target');
-                var source = $this.data('source');
-                var selectedValue = $this.val();
+            // Chargement des villes en fonction de la région sélectionnée
+            $('#regions').change(function() {
+                var regionId = $(this).val();
 
-                if (target && source) {
-                    $.getJSON(source, function(data) {
-                        var options = '<option disabled selected>Sélectionner une option</option>';
-                        var filteredData = data.filter(function(item) {
-                            if (source === 'villes.json') {
-                                return item.region_id == selectedValue;
-                            } else if (source === 'quartiers.json') {
-                                return item.ville_id == selectedValue;
-                            }
-                        });
+                $.ajax({
+                    url: 'get_villes.php',
+                    type: 'GET',
+                    data: { region_id: regionId },
+                    success: function(data) {
+                        var villes = JSON.parse(data);
+                        $('#villes').empty().append('<option disabled selected>Sélectionner une option</option>');
 
-                        $.each(filteredData, function(key, value) {
-                            options += '<option value="' + value.id + '">' + value.nom + '</option>';
-                        });
-                        $(target).html(options);
-                    });
-                }
+                        if (villes.error) {
+                            alert(villes.error);
+                        } else {
+                            villes.forEach(function(ville) {
+                                $('#villes').append('<option value="' + ville.id + '">' + ville.nom + '</option>');
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Chargement des quartiers en fonction de la ville sélectionnée
+            $('#villes').change(function() {
+                var villeId = $(this).val();
+
+                $.ajax({
+                    url: 'get_quartiers.php',
+                    type: 'GET',
+                    data: { ville_id: villeId },
+                    success: function(data) {
+                        var quartiers = JSON.parse(data);
+                        $('#quartiers').empty().append('<option disabled selected>Sélectionner une option</option>');
+
+                        if (quartiers.error) {
+                            alert(quartiers.error);
+                        } else {
+                            quartiers.forEach(function(quartier) {
+                                $('#quartiers').append('<option value="' + quartier.id + '">' + quartier.nom + '</option>');
+                            });
+                        }
+                    }
+                });
             });
         });
     </script>
