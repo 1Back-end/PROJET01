@@ -81,7 +81,7 @@ try {
 
                 <div class="form-group">
                     <label for="quartier">Quartier</label>
-                    <input type="text" name="quartier" placeholder="Mendong">
+                    <input type="text" class="form-control" name="quartier" placeholder="Mendong">
                 </div>
                         </div>
                   
