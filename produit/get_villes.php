@@ -6,7 +6,7 @@ if (isset($_GET['region_id'])) {
 
     // Récupérer les villes pour la région donnée
     try {
-        $stmt = $connexion->prepare('SELECT id, nom FROM villes WHERE region_id = :region_id');
+        $stmt = $connexion->prepare('SELECT nom FROM villes WHERE region_id = :region_id');
         $stmt->execute(['region_id' => $region_id]);
         $villes = $stmt->fetchAll();
 
