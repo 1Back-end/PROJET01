@@ -97,7 +97,7 @@ try {
                         <option disabled selected>Sélectionner une option</option>
                         <?php foreach ($regions as $region): ?>
                     <option value="<?php echo htmlspecialchars($region['nom']); ?>">
-                        <?php echo htmlspecialchars($region['nom']); ?>
+                        <?php echo htmlspecialchars($region['region_id']); ?>
                     </option>
                 <?php endforeach; ?>
                     </select>
@@ -109,7 +109,7 @@ try {
                         <option disabled selected>Sélectionner une option</option>
                         <?php foreach ($villes as $ville): ?>
                     <option value="<?php echo htmlspecialchars($ville['nom']); ?>">
-                        <?php echo htmlspecialchars($ville['nom']); ?>
+                        <?php echo htmlspecialchars($ville['ville_id']); ?>
                     </option>
                 <?php endforeach; ?>
                     </select>
@@ -121,7 +121,7 @@ try {
                         <option disabled selected>Sélectionner une option</option>
                         <?php foreach ($quartiers as $quartier): ?>
                     <option value="<?php echo htmlspecialchars($quartier['nom']); ?>">
-                        <?php echo htmlspecialchars($quartier['nom']); ?>
+                        <?php echo htmlspecialchars($quartier['quartier_id']); ?>
                     </option>
                 <?php endforeach; ?>
                     </select>
