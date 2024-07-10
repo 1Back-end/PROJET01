@@ -91,5 +91,3 @@ font-size: 12px;
         element.parentNode.remove(); // Supprimer l'élément parent du bouton de fermeture
     }
 </script>
-
-
