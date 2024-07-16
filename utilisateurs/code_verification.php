@@ -1,111 +1,90 @@
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="64x64" href="../image/logo.png">
-  
+<link rel="icon" type="image/png" sizes="64x64" href="../image/logo.png">
     <title>IMMO INVESTMENT SCI</title> 
-	<!-- Bootstrap 5 CDN Link -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/country-flag-icons/css/country-flag-icons.min.css">
 
-
-	</title>
-
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="../vendors/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../package/img/logo.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../package/img/logo.png">
-
+  
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Mulish:ital,wght@1,500&family=Poppins:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="../vendors/styles/core.css">
 	<link rel="stylesheet" type="text/css" href="../vendors/styles/icon-font.min.css">
 	<link rel="stylesheet" type="text/css" href="../vendors/styles/style.css">
-	<link rel="stylesheet" type="text/css" href="../style.css">
-	
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+ 
+	<!-- Custom CSS Link -->
+	<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body> 
 <?php include_once("script_verification_compte.php");?>
-    <section class="wrapper">
-		<div class="container mt-5">
-       
-        <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3 text-center">
-        <?php
-if(isset($_POST["submit"])) {
-    if(!empty($SuccesMessage)) {
-        echo '<div id="successMessage" class="alert alert-success text-center">' . $SuccesMessage . '</div>';
-    }
-    if(!empty($ErreurMessage)) {
-        echo '<div id="errorMessage" class="alert alert-danger text-center">' . $ErreurMessage. '</div>';
-    }
-}
+<div class="container mt-5">
+    
+<?php
+// Récupération des messages de l'URL
+$message = isset($_GET['message']) ? urldecode($_GET['message']) : "";
+$user_id = isset($_GET['user_id']) ? intval($_GET['user_id']) : 0;
+
 ?>
-         
-		</div>
-			<div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3 text-center">
-				
-				<form class="rounded bg-white card-box p-5" action="" method="POST">
-					<h6 class="text-success fw-bolder fs-4 mb-2">Activation du compte</h6>
 
-					<div class="fw-normal text-muted mb-4">
-                    Entrez le code de vérification que nous avons envoyé à l'adresse mail: 
-					</div>  
-                    <?php
-        // Récupérer le user_id depuis l'URL
-        if (isset($_GET['user_id'])) {
-            $user_id = $_GET['user_id'];
-        } else {
-            // Si user_id n'est pas présent dans l'URL, vous pouvez définir une valeur par défaut ou gérer cette situation selon votre logique
-            $user_id = "";
-        }
-        ?>
-        <!-- Champ input pour le user_id -->
-                   <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user_id); ?>" readonly/>
-                    <div class="d-flex align-items-center justify-content-center fw-bold mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
-                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
-                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
-                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
-                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
-                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
-                            <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
-                        </svg>
-                        <span>@gmail.com</span>
+<div class="col-md-6 col-sm-12 mx-auto">
+<?php if ($message): ?>
+    <div class="alert alert-info text-center" role="alert">
+        <?php echo $message; ?>
+    </div>
+<?php endif; ?>
+</div>
+
+<div class="col-md-6 col-sm-12 mx-auto">
+<?php if (!empty($ErreurMessage)): ?>
+            <div class="alert alert-danger text-center" role="alert">
+                <?php echo $ErreurMessage; ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (!empty($SuccesMessage)): ?>
+            <div class="alert alert-success text-center" role="alert">
+                <?php echo $SuccesMessage; ?>
+            </div>
+        <?php endif; ?>
+</div>
+
+
+        <div class="col-md-6 mx-auto text-center col-sm-12">
+            <form class="card-box p-4" action="" method="POST">
+                <h5 class="fw-bolder fs-4 mb-3 text-center">Tapez votre code</h5>
+                <div class="fw-normal text-muted mb-3">
+                    Vous avez reçu un code par e-mail. Veuillez le saisir dans ces champs.
+                </div>
+                <div class="otp_input text-start mb-3">
+                <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                    <div class="d-flex align-items-center justify-content-between mt-2">
+                        <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code1" class="w-10 shadow-none mx-2 text-center form-control font-14" placeholder="">
+                        <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code2" class="w-10 shadow-none mx-2 text-center form-control font-14" placeholder="">
+                        <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code3" class="w-10 shadow-none mx-2 text-center form-control font-14" placeholder="">
+                        <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code4" class="w-10 shadow-none mx-2 text-center form-control font-14" placeholder="">
+                        <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code5" class="w-10 shadow-none mx-2 text-center form-control font-14" placeholder="">
+                        <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code6" class="w-10 shadow-none mx-2 text-center form-control font-14" placeholder="">
                     </div>
+                </div>
+               <div class="col-md-12">
+                <button type="submit" name="submit" class="btn btn-dark btn-add text-white submit_btn my-4">Soumettre <i class="bi bi-box-arrow-in-right"></i></button>
+               </div>
+                <div class="col-md-12">
+                <small class="text-muted"><a href="?resend_code=1&user_id=<?= isset($user_id) ? htmlspecialchars($user_id) : '' ?>">Vous n'avez pas reçu le code ?</a></small>
+                </div>
+            </form>
+            
+        </div>
+        
+    </div>
 
-					<div class="otp_input text-start mb-2">
-                        <label for="digit">Tapez votre code de sécurité à 6 chiffres</label>
-						<div class="d-flex  align-items-center justify-content-between mt-2">
-                            <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code1" class="mx-2 text-center form-control font-14 " placeholder="">
-                            <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code2" class="mx-2 text-center form-control font-14" placeholder="">
-                            <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code3" class="mx-2 text-center form-control font-14" placeholder="">
-                            <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code4" class="mx-2 text-center form-control font-14" placeholder="">
-                            <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code5" class="mx-2 text-center form-control font-14" placeholder="">
-                            <input type="text" maxlength="1" onkeypress="return isNumberKey(event)" name="code6" class="mx-2 text-center form-control font-14" placeholder="">
-                        </div> 
-                       
-					</div>  
-
-					<button type="submit" name="submit" class="btn btn-add btn-primary submit_btn my-4">Soumettre</button> 
-				</form>
-			</div>
-		</div>
-	</section>
     <script>
         // Récupération de tous les champs de saisie
 var inputs = document.querySelectorAll('input[type="text"]');
@@ -160,13 +139,16 @@ function isNumberKey(evt) {
 
     </script>
 
-
 <script>
-    // Masquer les messages après 2 secondes
-    setTimeout(function(){
-        document.getElementById('errorMessage').style.display = 'none';
-    }, 2000);
+        $(document).ready(function() {
+            // Cacher l'alerte après 2 secondes (2000 ms)
+            setTimeout(function() {
+                $(".alert").alert('close');
+            }, 2000);
+        });
 </script>
+
+
 </body>
 </html>
 

@@ -28,12 +28,13 @@ if (isset($_POST["enregistrer"])) {
     $quartier = htmlspecialchars($_POST['quartier']);
     $password = htmlspecialchars($_POST['password']);
     $cpassword = htmlspecialchars($_POST['cpassword']);
-    $photo = $_FILES['photo']['name'];
+    $photo = isset($_FILES['photo']['name']) ? $_FILES['photo']['name'] : null;
     $type_compte = isset($_POST['type_compte']) ? htmlspecialchars($_POST['type_compte']) : null; // Correction pour éviter l'erreur Undefined index: type_compte
     $statut = "Inactif";
     $role = null; // Initialiser le rôle
     $code = generateSixDigitCode();
     $token = genererCode();
+
     // Vérification des champs obligatoires
     if (empty($nom)) {
         $erreur_nom .= "Veuillez entrer votre nom !<br>";
@@ -72,11 +73,6 @@ if (isset($_POST["enregistrer"])) {
             $erreur_cpassword .= "Les mots de passe ne correspondent pas !<br>";
         }
     }
-    
-    if (empty($photo)) {
-        $erreur_photo .= "Veuillez sélectionner une photo !<br>";
-    }
-    
 
     // Vérification du type de compte
     if (empty($type_compte)) {
@@ -84,7 +80,6 @@ if (isset($_POST["enregistrer"])) {
     } else {
         // Déterminer le rôle en fonction du type de compte sélectionné
         switch ($type_compte) {
-            
             case "Proprietaire":
                 $role = 1;
                 break;
@@ -97,17 +92,17 @@ if (isset($_POST["enregistrer"])) {
                 break;
         }
     }
-            
+
     // Si aucune erreur n'est survenue, procéder à l'insertion dans la base de données
-    if (empty($erreur_nom) && empty($erreur_email) && empty($erreur_tel) && empty($erreur_ville) && empty($erreur_quartier) && empty($erreur_password) && empty($erreur_cpassword) && empty($erreur_photo) && empty($erreur_type_compte)) {
-       // Vérifier si l'e-mail existe déjà dans la base de données
+    if (empty($erreur_nom) && empty($erreur_email) && empty($erreur_tel) && empty($erreur_ville) && empty($erreur_quartier) && empty($erreur_password) && empty($erreur_cpassword) && empty($erreur_type_compte)) {
+        // Vérifier si l'e-mail existe déjà dans la base de données
         $query = "SELECT COUNT(*) AS count FROM utilisateurs WHERE EMAIL = :email";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(":email", $email);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $emailExists = $row['count'] > 0;
-        
+
         // Vérifier si le numéro de téléphone existe déjà dans la base de données
         $query = "SELECT COUNT(*) AS count FROM utilisateurs WHERE TELEPHONE = :tel";
         $stmt = $pdo->prepare($query);
@@ -122,11 +117,11 @@ if (isset($_POST["enregistrer"])) {
             $erreur_message .= "Ce numéro de téléphone est déjà enregistré.";
         } else {
             // Insérer les données dans la base de données
-            $query = "INSERT INTO utilisateurs (TOKEN,NOM,PRENOM,  EMAIL, TELEPHONE, PASSWORD, PHOTO, CODE, STATUS, VILLE, QUARTIER, ROLE) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO utilisateurs (TOKEN, NOM, PRENOM, EMAIL, TELEPHONE, PASSWORD, PHOTO, CODE, STATUS, VILLE, QUARTIER, ROLE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $pdo->prepare($query);
             $stmt->bindValue(1, $token);
             $stmt->bindValue(2, $nom);
-            $stmt->bindValue(3, $nom);
+            $stmt->bindValue(3, $prenom);
             $stmt->bindValue(4, $email);
             $stmt->bindValue(5, $tel);
             // Utiliser password_hash() pour hacher le mot de passe avec bcrypt
@@ -141,19 +136,24 @@ if (isset($_POST["enregistrer"])) {
             $stmt->execute();
             
             $user_id = $pdo->lastInsertId();
-            
 
-            // Déplacer le fichier photo téléchargé vers le dossier "galerie"
-            move_uploaded_file($_FILES['photo']['tmp_name'], '../image_utilisateurs/' . $photo);
+            // Si une photo a été téléchargée, déplacer le fichier photo vers le dossier "image_utilisateurs"
+            if ($photo) {
+                move_uploaded_file($_FILES['photo']['tmp_name'], '../image_utilisateurs/' . $photo);
+            }
 
             // Envoyer le code généré à l'utilisateur par e-mail
             sendVerificationCode($email, $code);
-            $succes_message = "Votre compte a été créé avec succès. Un e-mail contenant un code de vérification a été envoyé à votre adresse e-mail. <a href='code_verification.php?user_id=$user_id' class='text-info'>Cliquez ici</a> pour entrer votre code de validation.";
-            echo '<meta http-equiv="refresh" content="1;url=code_verification.php">';
+
+            // Rediriger l'utilisateur vers la page de vérification du code avec l'ID utilisateur
+            header("Location: code_verification.php?user_id=$user_id&message=" . urlencode("Votre compte a été créé avec succès. Un e-mail contenant un code de vérification a été envoyé à votre adresse e-mail."));
+            exit(); // Assurez-vous de terminer le script après la redirection
         }
     } else {
         // Si des erreurs sont survenues, construire le message d'erreur
-        $erreur_message = "Echec de la creation de votre compte";
+        $erreur_message = "Echec de la création de votre compte : " . $erreur_nom . $erreur_email . $erreur_tel . $erreur_ville . $erreur_quartier . $erreur_password . $erreur_cpassword . $erreur_type_compte;
+        header("Location: code_verification.php?message=" . urlencode($erreur_message));
+        exit();
     }
 }
 
@@ -163,11 +163,9 @@ function passwordIsValid($password) {
         return false;
     }
     
-    // Vérifie si le mot de passe contient au moins une minuscule, une majuscule, un chiffre,
-    // un caractère spécial
+    // Vérifie si le mot de passe contient au moins une minuscule, une majuscule, un chiffre, un caractère spécial
     return preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/', $password);
 }
-
 
 function generateSixDigitCode() {
     // Générer un nombre aléatoire entre 100000 et 999999 (6 chiffres)
@@ -177,7 +175,7 @@ function generateSixDigitCode() {
 function genererCode() {
     // Générer 5 chiffres aléatoires
     $code_chiffres = '';
-    for ($i = 0; $i < 5; $i++) {
+    for ($i = 0; $i < 20; $i++) {
         $code_chiffres .= rand(0, 9);
     }
 
@@ -187,8 +185,6 @@ function genererCode() {
     return $code_final;
 }
 
-
-// Fonction pour envoyer le code de vérification par e-mail
 function sendVerificationCode($email, $code) {
     // Envoyer le code de vérification par e-mail
     // Utilisez PHPMailer ou une autre bibliothèque pour envoyer l'e-mail
@@ -207,7 +203,7 @@ function sendVerificationCode($email, $code) {
 
         // Destinataire
         $mail->setFrom('investmentimmo425@gmail.com', 'IMMO INVESTMENT SCI');
-        $mail->addAddress($email, 'IMMO INVESTMENT SCI');     // Add a recipient
+        $mail->addAddress($email, 'IMMO INVESTMENT SCI'); // Add a recipient
 
         // Contenu
         $mail->isHTML(true);
