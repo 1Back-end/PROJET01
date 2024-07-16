@@ -1,5 +1,6 @@
 
 <?php include_once("../include/menu.php");?>
+<?php include_once("script_add_region.php");?>
 <link rel="stylesheet" href="../style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -61,7 +62,7 @@ font-size: 12px;
                 <div class="form-group">
                     <label for="ville">Région</label>
                     
-                    <input type="text" class="form-control" name="region"   placeholder="Centre" required>
+                    <input type="text" class="form-control" name="nom"   placeholder="Centre" required>
 
                 </div>
                         </div>

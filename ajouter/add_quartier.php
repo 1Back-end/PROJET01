@@ -1,5 +1,6 @@
 
 <?php include_once("../include/menu.php");?>
+<?php include_once("script_add_quartier.php");?>
 <link rel="stylesheet" href="../style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -20,15 +21,6 @@ font-size: 12px;
 
 </style>
 
-<?php
-include_once("../database/db.php");
-try {
-    $stmt = $connexion->query('SELECT nom FROM villes');
-    $villes = $stmt->fetchAll();
-} catch (PDOException $e) {
-    echo 'Erreur : ' . $e->getMessage();
-}
-?>
 
 <div class="main-container mt-3 pb-5">
 <div class="col-md-12 col-sm-12 ">
@@ -69,19 +61,31 @@ try {
 
                 <div class="form-group">
                     <label for="ville">Ville</label>
-                    <select name="ville" id="villes" class="form-control">
-                        <option disabled selected>Sélectionner une option</option>
-                        <?php foreach ($ville as $villes): ?>
-                    <option value="<?php echo htmlspecialchars($ville['nom']); ?>">
-                        <?php echo htmlspecialchars($ville['nom']); ?>
-                    </option>
-                <?php endforeach; ?>
+                    <select name="ville_id" id="villes" class="form-control" require>
+                        <option>
+                            <?php
+                                // Connexion à la base de données
+                                $bdd = new PDO('mysql:host=localhost;dbname=immo;charset=utf8', 'root', '');
+
+                                // Requête pour récupérer les régions
+                                $villes = $bdd->query('SELECT id, nom FROM villes');
+
+                                // Affichage des options du menu déroulant
+                                while ($ville = $villes->fetch()) {
+                                    echo '<option value="' . $ville['nom'] . '">' . $ville['nom'] . '</option>';
+                                }
+
+                                // Fermeture de la connexion à la base de données
+                                $bdd = null;
+                            ?>
+                        </option>
+                        
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="quartier">Quartier</label>
-                    <input type="text" class="form-control" name="quartier" placeholder="Mendong">
+                    <input type="text" class="form-control" name="nom" placeholder="Mendong" require>
                 </div>
                         </div>
                   
